@@ -1,0 +1,210 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 750px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"borderWidth": 2, "borderWidthSelected": 4, "color": "#7bbeff", "font": {"color": "black"}, "id": "John_Doe", "label": "John_Doe", "shape": "dot", "size": 25, "title": "Node: John_Doe\nType: Subject"}, {"borderWidth": 2, "borderWidthSelected": 4, "color": "#e377c2", "font": {"color": "black"}, "id": "National_University_of_Singapore", "label": "National_University_of_Singapore", "shape": "dot", "size": 25, "title": "Node: National_University_of_Singapore\nType: Both Subject \u0026 Object"}, {"borderWidth": 2, "borderWidthSelected": 4, "color": "#7bed9f", "font": {"color": "black"}, "id": "Singapore", "label": "Singapore", "shape": "dot", "size": 25, "title": "Node: Singapore\nType: Object"}, {"borderWidth": 2, "borderWidthSelected": 4, "color": "#7bed9f", "font": {"color": "black"}, "id": "22", "label": "22", "shape": "dot", "size": 25, "title": "Node: 22\nType: Object"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "color": {"color": "#848484", "highlight": "#ff4500"}, "from": "John_Doe", "label": "student", "physics": true, "smooth": {"type": "curvedCW"}, "title": "student", "to": "National_University_of_Singapore", "width": 1.5}, {"arrows": "to", "color": {"color": "#848484", "highlight": "#ff4500"}, "from": "John_Doe", "label": "age", "physics": true, "smooth": {"type": "curvedCW"}, "title": "age", "to": "22", "width": 1.5}, {"arrows": "to", "color": {"color": "#848484", "highlight": "#ff4500"}, "from": "National_University_of_Singapore", "label": "located_in", "physics": true, "smooth": {"type": "curvedCW"}, "title": "located_in", "to": "Singapore", "width": 1.5}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"nodes": {"shape": "dot", "borderWidth": 2, "shadow": true, "font": {"size": 14, "face": "Tahoma"}}, "edges": {"color": {"inherit": false}, "smooth": {"type": "continuous", "forceDirection": "none"}, "arrows": {"to": {"enabled": true, "scaleFactor": 0.5}}, "font": {"size": 11, "align": "middle"}}, "physics": {"hierarchicalRepulsion": {"centralGravity": 0.2, "springLength": 100, "springConstant": 0.01, "nodeDistance": 120, "damping": 0.09}, "minVelocity": 0.75, "solver": "hierarchicalRepulsion"}, "interaction": {"navigationButtons": true, "keyboard": true, "hover": true, "multiselect": true, "tooltipDelay": 100}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    
+        <div style="position: absolute; top: 10px; left: 10px; z-index: 999; background: rgba(255,255,255,0.8); padding: 10px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
+            <h3>Knowledge Graph Controls</h3>
+            <div>
+                <input type="text" id="searchNode" placeholder="Search nodes..." style="margin-bottom: 5px; width: 200px; padding: 5px;">
+                <button onclick="searchNodes()" style="padding: 5px 10px;">Search</button>
+            </div>
+            <div style="margin-top: 10px;">
+                <label><input type="checkbox" id="showSubjects" checked> Show Subjects</label><br>
+                <label><input type="checkbox" id="showObjects" checked> Show Objects</label><br>
+                <label><input type="checkbox" id="showBoth" checked> Show Mixed Nodes</label>
+            </div>
+            <div style="margin-top: 10px;">
+                <button onclick="resetView()" style="padding: 5px 10px;">Reset View</button>
+                <button onclick="expandAll()" style="padding: 5px 10px;">Expand All</button>
+            </div>
+        </div>
+        
+        <script>
+            // Get the network instance
+            var network = document.querySelector('body > div.vis-network');
+            var networkInstance = network.visNetwork;
+            
+            // Search function
+            function searchNodes() {
+                var searchTerm = document.getElementById('searchNode').value.toLowerCase();
+                var allNodes = networkInstance.body.data.nodes.get();
+                var nodesToHighlight = allNodes.filter(node => 
+                    node.label.toLowerCase().includes(searchTerm));
+                
+                if (nodesToHighlight.length > 0) {
+                    networkInstance.focus(nodesToHighlight[0].id, {
+                        scale: 1.2,
+                        animation: true
+                    });
+                    
+                    nodesToHighlight.forEach(node => {
+                        networkInstance.selectNodes([node.id]);
+                    });
+                }
+            }
+            
+            // Filter functions
+            document.getElementById('showSubjects').addEventListener('change', filterNodes);
+            document.getElementById('showObjects').addEventListener('change', filterNodes);
+            document.getElementById('showBoth').addEventListener('change', filterNodes);
+            
+            function filterNodes() {
+                var showSubjects = document.getElementById('showSubjects').checked;
+                var showObjects = document.getElementById('showObjects').checked;
+                var showBoth = document.getElementById('showBoth').checked;
+                
+                var allNodes = networkInstance.body.data.nodes.get();
+                
+                allNodes.forEach(node => {
+                    var nodeType = node.title.includes('Both') ? 'both' : 
+                                  node.title.includes('Subject') ? 'subject' : 'object';
+                    
+                    var visible = (nodeType === 'both' && showBoth) || 
+                                 (nodeType === 'subject' && showSubjects) || 
+                                 (nodeType === 'object' && showObjects);
+                    
+                    if (!visible) {
+                        networkInstance.body.data.nodes.update({id: node.id, hidden: true});
+                    } else {
+                        networkInstance.body.data.nodes.update({id: node.id, hidden: false});
+                    }
+                });
+            }
+            
+            // Reset view
+            function resetView() {
+                networkInstance.fit({animation: true});
+            }
+            
+            // Expand network
+            function expandAll() {
+                var options = networkInstance.physics.options;
+                options.hierarchicalRepulsion.nodeDistance = 200;
+                networkInstance.physics.setOptions(options);
+                networkInstance.startSimulation();
+            }
+        </script>
+        </body>
+</html>

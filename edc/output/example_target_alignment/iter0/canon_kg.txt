@@ -1,0 +1,2 @@
+[['John_Doe', 'student', 'National_University_of_Singapore']]
+[['salah','conquer','champions_league']]

@@ -1,0 +1,311 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Interactive Knowledge Graph</title>
+        <style>
+            body, html {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                font-family: Arial, sans-serif;
+            }
+            .container {
+                display: flex;
+                height: 100%;
+            }
+            .controls {
+                width: 250px;
+                padding: 20px;
+                background-color: #f5f5f5;
+                box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+                z-index: 100;
+                overflow-y: auto;
+            }
+            .controls h1 {
+                font-size: 1.5em;
+                margin-top: 0;
+            }
+            .controls h2 {
+                font-size: 1.2em;
+                margin-top: 20px;
+            }
+            .form-group {
+                margin-bottom: 15px;
+            }
+            label {
+                display: block;
+                margin-bottom: 5px;
+            }
+            input[type="text"], button, select {
+                width: 100%;
+                padding: 8px;
+                box-sizing: border-box;
+            }
+            button {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                cursor: pointer;
+                margin-top: 5px;
+            }
+            button:hover {
+                background-color: #45a049;
+            }
+            .graph-container {
+                flex-grow: 1;
+                position: relative;
+                height: 100%;
+            }
+            iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+            .checkbox-group {
+                margin-bottom: 10px;
+            }
+            .triplet-form {
+                margin-top: 20px;
+                padding-top: 20px;
+                border-top: 1px solid #ddd;
+            }
+            .triplets-list {
+                margin-top: 15px;
+                max-height: 200px;
+                overflow-y: auto;
+                border: 1px solid #ddd;
+                padding: 10px;
+            }
+            .triplet-item {
+                padding: 5px;
+                margin-bottom: 5px;
+                background-color: #eee;
+                border-radius: 3px;
+                display: flex;
+                justify-content: space-between;
+            }
+            .remove-btn {
+                background-color: #f44336;
+                color: white;
+                border: none;
+                padding: 2px 5px;
+                cursor: pointer;
+                font-size: 0.8em;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="controls">
+                <h1>Knowledge Graph Explorer</h1>
+                
+                <h2>Search</h2>
+                <div class="form-group">
+                    <input type="text" id="searchNode" placeholder="Search nodes...">
+                    <button onclick="searchNodes()">Search</button>
+                </div>
+                
+                <h2>Filters</h2>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" id="showSubjects" checked> Show Subjects</label>
+                </div>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" id="showObjects" checked> Show Objects</label>
+                </div>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" id="showBoth" checked> Show Mixed Nodes</label>
+                </div>
+                
+                <h2>View Controls</h2>
+                <div class="form-group">
+                    <button onclick="resetView()">Reset View</button>
+                </div>
+                <div class="form-group">
+                    <button onclick="expandAll()">Expand Graph</button>
+                </div>
+                
+                <div class="triplet-form">
+                    <h2>Add New Data</h2>
+                    <div class="form-group">
+                        <label>Subject:</label>
+                        <input type="text" id="subject" placeholder="E.g., John_Doe">
+                    </div>
+                    <div class="form-group">
+                        <label>Relation:</label>
+                        <input type="text" id="relation" placeholder="E.g., student">
+                    </div>
+                    <div class="form-group">
+                        <label>Object:</label>
+                        <input type="text" id="object" placeholder="E.g., University">
+                    </div>
+                    <button onclick="addTriplet()">Add Triplet</button>
+                    
+                    <h3>Current Triplets</h3>
+                    <div class="triplets-list" id="tripletsList"></div>
+                    
+                    <div class="form-group" style="margin-top: 15px;">
+                        <button onclick="regenerateGraph()">Regenerate Graph</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="graph-container">
+                <iframe id="graphFrame" src="/graph"></iframe>
+            </div>
+        </div>
+        
+        <script>
+            // Store triplets in memory
+            let triplets = [
+                ['John_Doe', 'student', 'National_University_of_Singapore'],
+                ['National_University_of_Singapore', 'located_in', 'Singapore'],
+                ['John_Doe', 'age', '22']
+            ];
+            
+            // Show initial triplets
+            displayTriplets();
+            
+            // Functions to interact with the graph
+            function getGraphDocument() {
+                return document.getElementById('graphFrame').contentWindow.document;
+            }
+            
+            function getNetwork() {
+                const doc = getGraphDocument();
+                const network = doc.querySelector('.vis-network');
+                return network ? network.visNetwork : null;
+            }
+            
+            function searchNodes() {
+                const network = getNetwork();
+                if (!network) return;
+                
+                const searchTerm = document.getElementById('searchNode').value.toLowerCase();
+                const allNodes = network.body.data.nodes.get();
+                const nodesToHighlight = allNodes.filter(node => 
+                    node.label.toLowerCase().includes(searchTerm));
+                
+                if (nodesToHighlight.length > 0) {
+                    network.focus(nodesToHighlight[0].id, {
+                        scale: 1.2,
+                        animation: true
+                    });
+                    
+                    network.selectNodes([nodesToHighlight[0].id]);
+                }
+            }
+            
+            function applyFilters() {
+                const network = getNetwork();
+                if (!network) return;
+                
+                const showSubjects = document.getElementById('showSubjects').checked;
+                const showObjects = document.getElementById('showObjects').checked;
+                const showBoth = document.getElementById('showBoth').checked;
+                
+                const allNodes = network.body.data.nodes.get();
+                
+                allNodes.forEach(node => {
+                    const nodeType = node.title.includes('Both') ? 'both' : 
+                                    node.title.includes('Subject') ? 'subject' : 'object';
+                    
+                    const visible = (nodeType === 'both' && showBoth) || 
+                                   (nodeType === 'subject' && showSubjects) || 
+                                   (nodeType === 'object' && showObjects);
+                    
+                    network.body.data.nodes.update({id: node.id, hidden: !visible});
+                });
+            }
+            
+            // Add event listeners for filters
+            document.getElementById('showSubjects').addEventListener('change', applyFilters);
+            document.getElementById('showObjects').addEventListener('change', applyFilters);
+            document.getElementById('showBoth').addEventListener('change', applyFilters);
+            
+            function resetView() {
+                const network = getNetwork();
+                if (network) network.fit({animation: true});
+            }
+            
+            function expandAll() {
+                const network = getNetwork();
+                if (!network) return;
+                
+                const options = network.physics.options;
+                options.hierarchicalRepulsion.nodeDistance = 200;
+                network.physics.setOptions(options);
+                network.startSimulation();
+            }
+            
+            function addTriplet() {
+                const subject = document.getElementById('subject').value.trim();
+                const relation = document.getElementById('relation').value.trim();
+                const object = document.getElementById('object').value.trim();
+                
+                if (subject && relation && object) {
+                    triplets.push([subject, relation, object]);
+                    displayTriplets();
+                    
+                    // Clear input fields
+                    document.getElementById('subject').value = '';
+                    document.getElementById('relation').value = '';
+                    document.getElementById('object').value = '';
+                } else {
+                    alert('Please fill in all three fields');
+                }
+            }
+            
+            function removeTriplet(index) {
+                triplets.splice(index, 1);
+                displayTriplets();
+            }
+            
+            function displayTriplets() {
+                const list = document.getElementById('tripletsList');
+                list.innerHTML = '';
+                
+                triplets.forEach((triplet, index) => {
+                    const item = document.createElement('div');
+                    item.className = 'triplet-item';
+                    item.innerHTML = `
+                        <div>${triplet[0]} → ${triplet[1]} → ${triplet[2]}</div>
+                        <button class="remove-btn" onclick="removeTriplet(${index})">X</button>
+                    `;
+                    list.appendChild(item);
+                });
+            }
+            
+            function regenerateGraph() {
+                // Send triplets to server to regenerate graph
+                fetch('/update_graph', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ triplets: triplets }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Reload the iframe to show new graph
+                        document.getElementById('graphFrame').src = '/graph?t=' + new Date().getTime();
+                    }
+                });
+            }
+            
+            // Wait for iframe to load
+            document.getElementById('graphFrame').onload = function() {
+                // Allow some time for the graph to initialize
+                setTimeout(() => {
+                    const network = getNetwork();
+                    if (network) {
+                        // Set initial view
+                        resetView();
+                    }
+                }, 1000);
+            };
+        </script>
+    </body>
+    </html>
+    
