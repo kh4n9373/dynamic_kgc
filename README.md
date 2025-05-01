@@ -1,4 +1,4 @@
-# Knowledge Graph Processing Pipeline
+# Step 1: Non-dynamic Graph Construction
 
 This repository contains a comprehensive pipeline for processing, evaluating, and visualizing knowledge graphs from various datasets. The pipeline extracts relation triplets, processes them through a sequence of steps, and generates evaluation metrics and visualizations.
 
