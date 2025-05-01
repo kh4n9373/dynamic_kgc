@@ -1,0 +1,4321 @@
+[
+    {
+        "index": 0,
+        "input_text": "\" sonic cd \" marks the video game debuts of amy rose and metal sonic , both designed by artist kazuyuki hoshino .\n",
+        "entity_hint": "['sonic_cd', 'amy_rose', 'kazuyuki_hoshino']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "sonic_cd",
+                "debutOf",
+                "amy_rose"
+            ],
+            [
+                "sonic_cd",
+                "debutOf",
+                "metal_sonic"
+            ],
+            [
+                "amy_rose",
+                "designedBy",
+                "kazuyuki_hoshino"
+            ],
+            [
+                "metal_sonic",
+                "designedBy",
+                "kazuyuki_hoshino"
+            ]
+        ],
+        "schema_definition": {
+            "debutOf": "The subject entity marks the first appearance or introduction of the object entity in a specific context, such as a video game or other media.",
+            "designedBy": "The subject entity was created or conceptualized by the individual or entity specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'platform': 0.63283384, 'language of work or name': 0.60717475, 'publisher': 0.6051847, 'competition class': 0.5929652, 'record label': 0.586959}, {'platform': 0.6328337, 'language of work or name': 0.60717475, 'publisher': 0.60518456, 'competition class': 0.59296507, 'record label': 0.5869591}, {'developer': 0.72532964, 'owned by': 0.680058, 'architect': 0.6615777, 'screenwriter': 0.65882164, 'participant': 0.65605676}, {'developer': 0.7253295, 'owned by': 0.6800579, 'architect': 0.6615775, 'screenwriter': 0.6588216, 'participant': 0.65605676}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            [
+                "amy_rose",
+                "developer",
+                "kazuyuki_hoshino"
+            ],
+            [
+                "metal_sonic",
+                "developer",
+                "kazuyuki_hoshino"
+            ]
+        ]
+    },
+    {
+        "index": 1,
+        "input_text": "in 2006 , mcgraw played jane braun , campaign advisor to presidential candidate arnold vinick , in several episodes of \" the west wing \" and appeared in an episode of \" bones \" .\n",
+        "entity_hint": "['the_west_wing', 'arnold_vinick', '2006', 'mcgraw', 'jane_braun']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "mcgraw",
+                "played",
+                "jane_braun"
+            ],
+            [
+                "jane_braun",
+                "role",
+                "campaign_advisor"
+            ],
+            [
+                "jane_braun",
+                "to",
+                "arnold_vinick"
+            ],
+            [
+                "mcgraw",
+                "appearedIn",
+                "the_west_wing"
+            ],
+            [
+                "mcgraw",
+                "appearedIn",
+                "bones"
+            ],
+            [
+                "mcgraw",
+                "year",
+                "2006"
+            ]
+        ],
+        "schema_definition": {
+            "played": "The subject entity performed the role specified by the object entity in a production or performance.",
+            "role": "The subject entity represents a specific function or character type as indicated by the object entity.",
+            "to": "The subject entity is associated with or serves in relation to the object entity, often indicating a hierarchical or advisory relationship.",
+            "appearedIn": "The subject entity was featured or made an appearance in the production specified by the object entity.",
+            "year": "The subject entity is associated with the specified year, indicating when an event or action took place."
+        },
+        "canonicalization_candidates": "[{'performer': 0.67893, 'participant': 0.67623067, 'position held': 0.66787136, 'member of': 0.64238185, 'operator': 0.64121485}, {'instance of': 0.6975764, 'position held': 0.6959331, 'part of': 0.68074167, 'participant': 0.6734983, 'spouse': 0.6635746}, {'position held': 0.69043094, 'child': 0.6663003, 'spouse': 0.661891, 'subsidiary': 0.6584847, 'operator': 0.65545666}, {'participant': 0.6471802, 'participant of': 0.6407182, 'member of': 0.6323966, 'screenwriter': 0.63111717, 'position held': 0.6302444}, {'participant': 0.6471801, 'participant of': 0.64071804, 'member of': 0.6323966, 'screenwriter': 0.631117, 'position held': 0.63024426}, {'participant': 0.6911849, 'participant of': 0.6759424, 'position held': 0.6561986, 'follows': 0.6538253, 'followed by': 0.64480907}]",
+        "schema_canonicalizaiton": [
+            [
+                "mcgraw",
+                "performer",
+                "jane_braun"
+            ],
+            [
+                "jane_braun",
+                "position held",
+                "campaign_advisor"
+            ],
+            [
+                "jane_braun",
+                "position held",
+                "arnold_vinick"
+            ],
+            [
+                "mcgraw",
+                "participant",
+                "the_west_wing"
+            ],
+            null,
+            [
+                "mcgraw",
+                "participant",
+                "2006"
+            ]
+        ]
+    },
+    {
+        "index": 2,
+        "input_text": "opus was the second \" bloom county \" regular to appear in the sunday - only \" outland \" strip , after \" outland \" 's original protagonist , ronald - ann smith .\n",
+        "entity_hint": "['bloom_county', 'ronald_-_ann_smith', 'opus', 'outland', 'outland']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "opus",
+                "isSecondIn",
+                "bloom_county"
+            ],
+            [
+                "outland",
+                "hasProtagonist",
+                "ronald_-_ann_smith"
+            ],
+            [
+                "opus",
+                "appearsIn",
+                "outland"
+            ],
+            [
+                "outland",
+                "isRegularStrip",
+                "bloom_county"
+            ]
+        ],
+        "schema_definition": {
+            "isSecondIn": "The subject entity is the second instance or example within the context specified by the object entity.",
+            "hasProtagonist": "The subject entity features or includes the character specified by the object entity as its main character.",
+            "appearsIn": "The subject entity is present or featured within the context or work specified by the object entity.",
+            "isRegularStrip": "The subject entity is classified as a regular comic strip or series within the context specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'instance of': 0.7394991, 'followed by': 0.69308424, 'follows': 0.68408674, 'part of': 0.680007, 'child': 0.6649895}, {'characters': 0.6728462, 'position held': 0.6569135, 'owned by': 0.6560826, 'screenwriter': 0.6544802, 'part of': 0.6536108}, {'part of': 0.7226509, 'position held': 0.6989786, 'instance of': 0.6951915, 'child': 0.68275225, 'spouse': 0.6821976}, {'followed by': 0.6624244, 'instance of': 0.66126037, 'follows': 0.6549813, 'competition class': 0.6479968, 'member of': 0.6399475}]",
+        "schema_canonicalizaiton": [
+            [
+                "opus",
+                "followed by",
+                "bloom_county"
+            ],
+            [
+                "outland",
+                "characters",
+                "ronald_-_ann_smith"
+            ],
+            [
+                "opus",
+                "part of",
+                "outland"
+            ],
+            [
+                "outland",
+                "instance of",
+                "bloom_county"
+            ]
+        ]
+    },
+    {
+        "index": 3,
+        "input_text": "in \" breaking dawn \" he is shown to have developed an unlikely friendship with edward , and attends his and bella 's wedding .\n",
+        "entity_hint": "['breaking_dawn', 'bella', 'edward']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "breaking_dawn",
+                "featuresFriendship",
+                "edward"
+            ],
+            [
+                "edward",
+                "attendsWedding",
+                "bella"
+            ]
+        ],
+        "schema_definition": {
+            "featuresFriendship": "The subject entity is depicted as having a friendship with the object entity, indicating a relationship of camaraderie or connection between the two.",
+            "attendsWedding": "The subject entity is present at the wedding of the object entity, signifying participation in a significant social event related to marriage."
+        },
+        "canonicalization_candidates": "[{'spouse': 0.67479783, 'sibling': 0.63125795, 'country of citizenship': 0.6170331, 'member of': 0.6061622, 'child': 0.6025711}, {'spouse': 0.6812336, 'participant': 0.6235493, 'participant of': 0.62143457, 'country of citizenship': 0.6047088, 'position held': 0.6025257}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "edward",
+                "participant",
+                "bella"
+            ]
+        ]
+    },
+    {
+        "index": 4,
+        "input_text": "stephen dedalus \u2013 the main character of \" a portrait of the artist as a young man \" .\n",
+        "entity_hint": "['a_portrait_of_the_artist_as_a_young_man', 'stephen_dedalus']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "stephen_dedalus",
+                "isMainCharacterOf",
+                "a_portrait_of_the_artist_as_a_young_man"
+            ]
+        ],
+        "schema_definition": {
+            "isMainCharacterOf": "The subject entity is the primary character or protagonist in the work specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'main subject': 0.68593323, 'owned by': 0.67113906, 'position held': 0.66219044, 'screenwriter': 0.66213405, 'notable work': 0.6553998}]",
+        "schema_canonicalizaiton": [
+            null
+        ]
+    },
+    {
+        "index": 5,
+        "input_text": "beginning immediately after \" pilot \" , \" 0 - 8 - 4 \" sees skye accept agent phil coulson 's offer to join his s.h.i.e.l.d.\n",
+        "entity_hint": "['pilot', 'phil_coulson', 'skye', 's.h.i.e.l.d']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "skye",
+                "acceptsOffer",
+                "phil_coulson"
+            ],
+            [
+                "phil_coulson",
+                "offersToJoin",
+                "s.h.i.e.l.d"
+            ],
+            [
+                "s.h.i.e.l.d",
+                "relatedTo",
+                "pilot"
+            ]
+        ],
+        "schema_definition": {
+            "offersToJoin": "The subject entity extends an invitation or proposal for the object entity to join or become a part of it.",
+            "acceptsOffer": "The subject entity agrees to the proposal or invitation made by the object entity.",
+            "relatedTo": "The subject entity has a connection or association with the object entity."
+        },
+        "canonicalization_candidates": "[{'country of citizenship': 0.6500968, 'spouse': 0.6464337, 'position held': 0.6307281, 'owned by': 0.62792, 'sibling': 0.6238604}, {'country of citizenship': 0.6417813, 'part of': 0.6414387, 'member of': 0.6320339, 'spouse': 0.6286228, 'position held': 0.6264051}, {'spouse': 0.73487806, 'child': 0.7199538, 'part of': 0.700094, 'country of citizenship': 0.6939166, 'position held': 0.69162434}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "phil_coulson",
+                "member of",
+                "s.h.i.e.l.d"
+            ],
+            [
+                "s.h.i.e.l.d",
+                "part of",
+                "pilot"
+            ]
+        ]
+    },
+    {
+        "index": 6,
+        "input_text": "although he considers jetrel a monster , neelix agrees to be examined , and jetrel informs him that he has incipient metremia .\n",
+        "entity_hint": "['jetrel', 'neelix']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "neelix",
+                "considers",
+                "jetrel"
+            ],
+            [
+                "jetrel",
+                "informs",
+                "neelix"
+            ],
+            [
+                "jetrel",
+                "is",
+                "monster"
+            ],
+            [
+                "jetrel",
+                "has",
+                "incipient_metremia"
+            ]
+        ],
+        "schema_definition": {
+            "is": "The subject entity is identified or classified as the type specified by the object entity.",
+            "informs": "The subject entity provides information or communicates details to the object entity.",
+            "has": "The subject entity possesses or contains the attribute or condition specified by the object entity.",
+            "considers": "The subject entity holds a particular opinion or belief about the object entity."
+        },
+        "canonicalization_candidates": "[{'owned by': 0.6849818, 'position held': 0.68125147, 'child': 0.66718596, 'spouse': 0.66457725, 'country of citizenship': 0.659997}, {'operator': 0.65700376, 'position held': 0.6474414, 'participant': 0.64475024, 'owned by': 0.6445932, 'spouse': 0.6383846}, {'instance of': 0.74965215, 'part of': 0.70583695, 'country of citizenship': 0.7027724, 'competition class': 0.6911139, 'position held': 0.6905048}, {'part of': 0.7286986, 'child': 0.72138333, 'position held': 0.7063058, 'owned by': 0.70282745, 'spouse': 0.6999371}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 7,
+        "input_text": "it was destroyed by the x - men , with the help of professor x and the mannite named nina . this takes place during the 1998\u201399 storyline the hunt for xavier .\n",
+        "entity_hint": "['x_-_men', 'professor_x', 'nina']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "x_-_men",
+                "destroyedBy",
+                "professor_x"
+            ],
+            [
+                "x_-_men",
+                "helpedBy",
+                "nina"
+            ],
+            [
+                "nina",
+                "partOf",
+                "x_-_men"
+            ]
+        ],
+        "schema_definition": {
+            "destroyedBy": "The subject entity was destroyed by the entity specified by the object entity.",
+            "helpedBy": "The subject entity received assistance from the entity specified by the object entity.",
+            "partOf": "The subject entity is a component or member of the entity specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'position held': 0.63804454, 'child': 0.63035965, 'part of': 0.6126393, 'spouse': 0.6117699, 'sibling': 0.60900325}, {'country of citizenship': 0.62157905, 'participant': 0.6110954, 'position held': 0.6084174, 'spouse': 0.6075916, 'child': 0.6035335}, {'part of': 0.7867111, 'instance of': 0.7622454, 'subsidiary': 0.72399694, 'child': 0.7222093, 'country of citizenship': 0.71330124}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "x_-_men",
+                "participant",
+                "nina"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 8,
+        "input_text": "7-eleven issued a \" god of war iii \" poster for pre - orders and sold a kratos ' fury slurpee in \" god of war iii \" cups .\n",
+        "entity_hint": "['god_of_war_iii', 'kratos', '7-eleven']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "7-eleven",
+                "issued",
+                "\"god of war iii\" poster"
+            ],
+            [
+                "7-eleven",
+                "sold",
+                "kratos' fury slurpee"
+            ],
+            [
+                "kratos",
+                "associatedWith",
+                "god_of_war_iii"
+            ],
+            [
+                "7-eleven",
+                "uses",
+                "\"god of war iii\" cups"
+            ]
+        ],
+        "schema_definition": {
+            "issued": "The subject entity made available or distributed the item specified by the object entity.",
+            "associatedWith": "The subject entity has a connection or relationship with the entity specified by the object entity.",
+            "sold": "The subject entity engaged in the transaction of providing the item specified by the object entity in exchange for payment.",
+            "uses": "The subject entity employs or utilizes the item specified by the object entity for a specific purpose."
+        },
+        "canonicalization_candidates": "[{'developer': 0.6829909, 'located in the administrative territorial entity': 0.65723956, 'operator': 0.6502042, 'distributor': 0.64990854, 'position held': 0.64809686}, {'operator': 0.6278454, 'located in the administrative territorial entity': 0.6032767, 'applies to jurisdiction': 0.60199213, 'position held': 0.58882296, 'country of citizenship': 0.58408606}, {'spouse': 0.744151, 'child': 0.7273425, 'sibling': 0.7014059, 'part of': 0.6981145, 'position held': 0.69775116}, {'operator': 0.68331313, 'developer': 0.6407504, 'position held': 0.6388314, 'part of': 0.63876086, 'instance of': 0.6358558}]",
+        "schema_canonicalizaiton": [
+            [
+                "7-eleven",
+                "distributor",
+                "\"god of war iii\" poster"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 9,
+        "input_text": "\" the simpsons \" is an animated series about a working class family , which consists of homer , marge , bart , lisa , and maggie .\n",
+        "entity_hint": "['the_simpsons', 'maggie', 'homer', 'marge', 'bart', 'lisa']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "the_simpsons",
+                "isType",
+                "animated_series"
+            ],
+            [
+                "the_simpsons",
+                "consistsOf",
+                "homer"
+            ],
+            [
+                "the_simpsons",
+                "consistsOf",
+                "marge"
+            ],
+            [
+                "the_simpsons",
+                "consistsOf",
+                "bart"
+            ],
+            [
+                "the_simpsons",
+                "consistsOf",
+                "lisa"
+            ],
+            [
+                "the_simpsons",
+                "consistsOf",
+                "maggie"
+            ]
+        ],
+        "schema_definition": {
+            "isType": "The subject entity is categorized or classified under the type specified by the object entity.",
+            "consistsOf": "The subject entity is made up of or includes the components or members specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'instance of': 0.75867087, 'part of': 0.7060635, 'competition class': 0.7019776, 'child': 0.6968212, 'country of citizenship': 0.69311017}, {'part of': 0.71344596, 'instance of': 0.7024051, 'member of': 0.6663939, 'subsidiary': 0.66154313, 'country of citizenship': 0.65980744}, {'part of': 0.71344584, 'instance of': 0.70240515, 'member of': 0.66639376, 'subsidiary': 0.661543, 'country of citizenship': 0.65980744}, {'part of': 0.71344566, 'instance of': 0.70240504, 'member of': 0.66639364, 'subsidiary': 0.66154295, 'country of citizenship': 0.6598072}, {'part of': 0.71344566, 'instance of': 0.7024051, 'member of': 0.6663938, 'subsidiary': 0.661543, 'country of citizenship': 0.65980726}, {'part of': 0.71344596, 'instance of': 0.70240515, 'member of': 0.666394, 'subsidiary': 0.6615431, 'country of citizenship': 0.65980756}]",
+        "schema_canonicalizaiton": [
+            [
+                "the_simpsons",
+                "instance of",
+                "animated_series"
+            ],
+            null,
+            [
+                "the_simpsons",
+                "part of",
+                "marge"
+            ],
+            [
+                "the_simpsons",
+                "part of",
+                "bart"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 10,
+        "input_text": "an overdose of aconite was the method in which rudolph bloom , father of leopold bloom in james joyce 's \" ulysses \" , committed suicide .\n",
+        "entity_hint": "['ulysses', 'leopold_bloom', 'rudolph_bloom', 'james_joyce']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "rudolph_bloom",
+                "method",
+                "overdose_of_aconite"
+            ],
+            [
+                "rudolph_bloom",
+                "fatherOf",
+                "leopold_bloom"
+            ],
+            [
+                "leopold_bloom",
+                "work",
+                "ulysses"
+            ],
+            [
+                "james_joyce",
+                "authorOf",
+                "ulysses"
+            ]
+        ],
+        "schema_definition": {
+            "method": "The subject entity refers to the means or technique used to achieve the action specified by the object entity.",
+            "fatherOf": "The subject entity is the parent of the individual specified by the object entity.",
+            "work": "The subject entity is associated with or is a creation of the work specified by the object entity.",
+            "authorOf": "The subject entity is the creator or writer of the work specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'instance of': 0.6703347, 'part of': 0.6670047, 'participant': 0.6642657, 'operator': 0.6582879, 'position held': 0.64390105}, {'child': 0.8200142, 'sibling': 0.77607346, 'owned by': 0.73951757, 'spouse': 0.73189086, 'father': 0.72235787}, {'language of work or name': 0.74923575, 'notable work': 0.7401763, 'after a work by': 0.70830804, 'genre': 0.704576, 'part of': 0.70347744}, {'screenwriter': 0.76937556, 'owned by': 0.7372074, 'composer': 0.7355989, 'notable work': 0.71537113, 'language of work or name': 0.7027224}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "rudolph_bloom",
+                "father",
+                "leopold_bloom"
+            ],
+            [
+                "leopold_bloom",
+                "notable work",
+                "ulysses"
+            ],
+            [
+                "james_joyce",
+                "notable work",
+                "ulysses"
+            ]
+        ]
+    },
+    {
+        "index": 11,
+        "input_text": "beryl is slain when she attacks qualinost and is brought down by laurana wielding a dragonlance .\n",
+        "entity_hint": "['dragonlance', 'laurana', 'beryl']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "beryl",
+                "attacks",
+                "qualinost"
+            ],
+            [
+                "beryl",
+                "slainBy",
+                "laurana"
+            ],
+            [
+                "laurana",
+                "wields",
+                "dragonlance"
+            ]
+        ],
+        "schema_definition": {
+            "attacks": "The subject entity initiates an aggressive action against the object entity.",
+            "slainBy": "The subject entity is killed by the entity specified as the object.",
+            "wields": "The subject entity holds and uses the object entity as a weapon or tool."
+        },
+        "canonicalization_candidates": "[{'participant': 0.6325958, 'child': 0.62666893, 'position held': 0.6258012, 'owned by': 0.61824536, 'participating team': 0.6121826}, {'position held': 0.65714216, 'child': 0.65041035, 'spouse': 0.6450924, 'sibling': 0.63338804, 'owned by': 0.6262131}, {'position held': 0.6742034, 'child': 0.6551757, 'spouse': 0.6510477, 'owned by': 0.6447402, 'operator': 0.635649}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 12,
+        "input_text": "mordin solus is a salarian , voiced by michael beattie in \" mass effect 2 \" , and voiced by william salyers in \" mass effect 3 \" .\n",
+        "entity_hint": "['mass_effect_2', 'mordin_solus', 'michael_beattie', 'william_salyers']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "mordin_solus",
+                "voicedBy",
+                "michael_beattie"
+            ],
+            [
+                "mordin_solus",
+                "voicedBy",
+                "william_salyers"
+            ],
+            [
+                "mordin_solus",
+                "appearsIn",
+                "mass_effect_2"
+            ],
+            [
+                "mordin_solus",
+                "appearsIn",
+                "mass_effect_3"
+            ]
+        ],
+        "schema_definition": {
+            "voicedBy": "The subject entity is represented by the person specified by the object entity in a vocal performance, such as in a film, video game, or other media.",
+            "appearsIn": "The subject entity is featured or included in the work specified by the object entity, such as a film, video game, or television show."
+        },
+        "canonicalization_candidates": "[{'performer': 0.6846757, 'language of work or name': 0.6495771, 'position held': 0.643308, 'voice type': 0.6420822, 'original language of film or TV show': 0.6373975}, {'performer': 0.68467575, 'language of work or name': 0.6495772, 'position held': 0.6433079, 'voice type': 0.6420823, 'original language of film or TV show': 0.63739765}, {'language of work or name': 0.68582475, 'characters': 0.66227984, 'publisher': 0.6519072, 'platform': 0.64792895, 'notable work': 0.6476755}, {'language of work or name': 0.6858248, 'characters': 0.66227984, 'publisher': 0.65190727, 'platform': 0.64792895, 'notable work': 0.6476756}]",
+        "schema_canonicalizaiton": [
+            [
+                "mordin_solus",
+                "performer",
+                "michael_beattie"
+            ],
+            [
+                "mordin_solus",
+                "performer",
+                "william_salyers"
+            ],
+            [
+                "mordin_solus",
+                "characters",
+                "mass_effect_2"
+            ],
+            [
+                "mordin_solus",
+                "characters",
+                "mass_effect_3"
+            ]
+        ]
+    },
+    {
+        "index": 13,
+        "input_text": "mulligan 's most notable film role was as general custer in \" little big man \" , whom he portrayed as a borderline psychotic .\n",
+        "entity_hint": "['little_big_man', 'general_custer', 'mulligan']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "mulligan",
+                "notableFilmRole",
+                "general_custer"
+            ],
+            [
+                "general_custer",
+                "portrayedIn",
+                "little_big_man"
+            ],
+            [
+                "mulligan",
+                "portrayedAs",
+                "borderline psychotic"
+            ]
+        ],
+        "schema_definition": {
+            "notableFilmRole": "The subject entity is recognized for a significant role in a film, represented by the object entity.",
+            "portrayedIn": "The subject entity is featured or represented in the work specified by the object entity.",
+            "portrayedAs": "The subject entity is depicted or characterized in a particular manner as specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'country of citizenship': 0.6503013, 'performer': 0.6454069, 'notable work': 0.63654447, 'participant': 0.63472056, 'screenwriter': 0.6342384}, {'notable work': 0.7139926, 'after a work by': 0.6910841, 'language of work or name': 0.6890901, 'part of': 0.6868328, 'position held': 0.679239}, {'instance of': 0.69501144, 'part of': 0.6899613, 'position held': 0.67333597, 'spouse': 0.66772103, 'child': 0.66468906}]",
+        "schema_canonicalizaiton": [
+            [
+                "mulligan",
+                "performer",
+                "general_custer"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 14,
+        "input_text": "he is best known for his work as the voice of the master chief in the \" halo \" video game series .\n",
+        "entity_hint": "['halo', 'master_chief', 'he']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "he",
+                "knownFor",
+                "master_chief"
+            ],
+            [
+                "master_chief",
+                "voiceOf",
+                "halo"
+            ]
+        ],
+        "schema_definition": {
+            "knownFor": "The subject entity is recognized or celebrated for the contributions or achievements associated with the object entity.",
+            "voiceOf": "The subject entity provides the vocal performance for the character or entity specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'country of citizenship': 0.67949986, 'position held': 0.6603819, 'notable work': 0.65162075, 'participant': 0.65000993, 'member of': 0.6378256}, {'performer': 0.7073027, 'voice type': 0.6757213, 'member of': 0.63157326, 'language of work or name': 0.6302371, 'position held': 0.622581}]",
+        "schema_canonicalizaiton": [
+            [
+                "he",
+                "notable work",
+                "master_chief"
+            ],
+            [
+                "master_chief",
+                "performer",
+                "halo"
+            ]
+        ]
+    },
+    {
+        "index": 15,
+        "input_text": "\" the godfather \" dvd collection documentary \" a look inside , \" [ 2001 ] john cazale was given the part of fredo corleone after coppola saw him perform in an off broadway production .\n",
+        "entity_hint": "['the_godfather', 'fredo_corleone', '2001', 'john_cazale', 'coppola', 'off_broadway']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "john_cazale",
+                "played",
+                "fredo_corleone"
+            ],
+            [
+                "john_cazale",
+                "givenPart",
+                "fredo_corleone"
+            ],
+            [
+                "coppola",
+                "saw",
+                "john_cazale"
+            ],
+            [
+                "john_cazale",
+                "performedIn",
+                "off_broadway"
+            ],
+            [
+                "the_godfather",
+                "dvdCollection",
+                "2001"
+            ]
+        ],
+        "schema_definition": {
+            "performedIn": "The subject entity took part in a performance or production specified by the object entity.",
+            "dvdCollection": "The subject entity is part of a collection of DVDs released in the year specified by the object entity.",
+            "givenPart": "The subject entity was assigned or awarded a specific role or part as indicated by the object entity.",
+            "saw": "The subject entity observed or watched the performance or actions of the object entity.",
+            "played": "The subject entity portrayed or acted in the role specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'position held': 0.6898009, 'performer': 0.68932194, 'participant': 0.68210995, 'spouse': 0.6603625, 'owned by': 0.6513805}, {'position held': 0.7029231, 'participant': 0.68425524, 'part of': 0.6752003, 'country of citizenship': 0.65944636, 'spouse': 0.6567532}, {'participant': 0.6472237, 'position held': 0.6297314, 'owned by': 0.61099803, 'spouse': 0.6095623, 'participating team': 0.6087665}, {'participant': 0.70214725, 'participant of': 0.70201826, 'participating team': 0.6883515, 'member of': 0.6694175, 'performer': 0.66611964}, {'platform': 0.628892, 'sports season of league or competition': 0.6255394, 'publisher': 0.62330365, 'distributor': 0.61933374, 'followed by': 0.61055684}]",
+        "schema_canonicalizaiton": [
+            [
+                "john_cazale",
+                "performer",
+                "fredo_corleone"
+            ],
+            null,
+            null,
+            [
+                "john_cazale",
+                "performer",
+                "off_broadway"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 16,
+        "input_text": "jessie also appears in pixar 's production of \" toy story of terror ! \"\n",
+        "entity_hint": "['toy_story_of_terror_!', 'jessie', 'pixar']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "jessie",
+                "appearsIn",
+                "toy_story_of_terror_!"
+            ],
+            [
+                "toy_story_of_terror_!",
+                "productionCompany",
+                "pixar"
+            ]
+        ],
+        "schema_definition": {
+            "appearsIn": "The subject entity is featured or included in the work specified by the object entity.",
+            "productionCompany": "The subject entity was produced or created by the company specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'notable work': 0.7043756, 'part of': 0.69902134, 'language of work or name': 0.6789632, 'instance of': 0.6719687, 'position held': 0.6703105}, {'developer': 0.75295246, 'manufacturer': 0.7446174, 'publisher': 0.6728938, 'subsidiary': 0.6707887, 'operator': 0.6549713}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "toy_story_of_terror_!",
+                "manufacturer",
+                "pixar"
+            ]
+        ]
+    },
+    {
+        "index": 17,
+        "input_text": "mezco toyz has also released a screen grab statuette of alice , which depicts the hallucination of jason attacking her from the ending of \" friday the 13th \" .\n",
+        "entity_hint": "['friday_the_13th', 'jason', 'alice']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "mezco_toyz",
+                "released",
+                "screen_grab_statuette"
+            ],
+            [
+                "screen_grab_statuette",
+                "depicts",
+                "hallucination"
+            ],
+            [
+                "hallucination",
+                "involves",
+                "jason"
+            ],
+            [
+                "hallucination",
+                "involves",
+                "alice"
+            ],
+            [
+                "hallucination",
+                "from",
+                "friday_the_13th"
+            ]
+        ],
+        "schema_definition": {
+            "released": "The subject entity made the object entity available to the public or distributed it in some form.",
+            "depicts": "The subject entity represents or illustrates the object entity in a visual or artistic manner.",
+            "involves": "The subject entity includes or is connected to the object entity as a participant or element within its context.",
+            "from": "The subject entity originates from or is associated with the object entity, indicating a source or reference point."
+        },
+        "canonicalization_candidates": "[{'position held': 0.6417824, 'developer': 0.63655317, 'publisher': 0.634746, 'distributor': 0.6226079, 'country of citizenship': 0.6188249}, {'after a work by': 0.6833159, 'instance of': 0.6550473, 'part of': 0.64311475, 'genre': 0.63795924, 'language of work or name': 0.63663185}, {'part of': 0.7448096, 'participant': 0.6969533, 'instance of': 0.69656754, 'child': 0.6901483, 'spouse': 0.68684804}, {'part of': 0.74480957, 'participant': 0.6969533, 'instance of': 0.69656754, 'child': 0.69014835, 'spouse': 0.68684804}, {'part of': 0.70868844, 'instance of': 0.68900263, 'applies to jurisdiction': 0.68591934, 'country of citizenship': 0.68547505, 'child': 0.6843321}]",
+        "schema_canonicalizaiton": [
+            [
+                "mezco_toyz",
+                "developer",
+                "screen_grab_statuette"
+            ],
+            null,
+            [
+                "hallucination",
+                "participant",
+                "jason"
+            ],
+            [
+                "hallucination",
+                "part of",
+                "alice"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 18,
+        "input_text": "in \" the lord of the rings \" , he was first mentioned in \" the fellowship of the ring \" as a d\u00fanadan of n\u00famenor , elder son of elendil .\n",
+        "entity_hint": "['the_fellowship_of_the_ring', 'elendil', 'n\u00famenor']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "the_fellowship_of_the_ring",
+                "mentions",
+                "the_lord_of_the_rings"
+            ],
+            [
+                "the_fellowship_of_the_ring",
+                "character",
+                "elendil"
+            ],
+            [
+                "elendil",
+                "sonOf",
+                "n\u00famenor"
+            ]
+        ],
+        "schema_definition": {
+            "mentions": "The subject entity references or brings attention to the object entity within its context.",
+            "character": "The subject entity is associated with or represents the character specified by the object entity.",
+            "sonOf": "The subject entity is identified as the offspring of the entity specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'part of': 0.7155061, 'child': 0.6856551, 'instance of': 0.6854933, 'country of citizenship': 0.6834434, 'position held': 0.6807825}, {'position held': 0.72502667, 'spouse': 0.7192345, 'part of': 0.7083944, 'owned by': 0.7071975, 'child': 0.706851}, {'child': 0.75594985, 'sibling': 0.7502424, 'country of citizenship': 0.6878447, 'position held': 0.6865585, 'spouse': 0.6829034}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            [
+                "elendil",
+                "child",
+                "n\u00famenor"
+            ]
+        ]
+    },
+    {
+        "index": 19,
+        "input_text": "in the 2012 \" glee \" episode \" britney 2.0 \" , the character of brittany pierce ( heather morris ) performed a cover of the track .\n",
+        "entity_hint": "['glee', 'brittany_pierce', '2012', 'heather_morris']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "brittany_pierce",
+                "performedIn",
+                "glee"
+            ],
+            [
+                "brittany_pierce",
+                "playedBy",
+                "heather_morris"
+            ],
+            [
+                "glee",
+                "episodeYear",
+                "2012"
+            ]
+        ],
+        "schema_definition": {
+            "episodeYear": "The subject entity refers to a specific episode that was released in the year specified by the object entity.",
+            "playedBy": "The subject entity is portrayed by the individual specified by the object entity.",
+            "performedIn": "The subject entity is featured in the context of the performance specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'member of': 0.68108225, 'participant': 0.675912, 'performer': 0.6708694, 'position held': 0.669106, 'part of': 0.6615195}, {'performer': 0.6907149, 'position held': 0.6877786, 'owned by': 0.6828408, 'spouse': 0.6663757, 'participant': 0.6636587}, {'sports season of league or competition': 0.6522461, 'instance of': 0.6456622, 'follows': 0.6385101, 'followed by': 0.63569987, 'original network': 0.6327763}]",
+        "schema_canonicalizaiton": [
+            [
+                "brittany_pierce",
+                "performer",
+                "glee"
+            ],
+            [
+                "brittany_pierce",
+                "performer",
+                "heather_morris"
+            ],
+            [
+                "glee",
+                "original network",
+                "2012"
+            ]
+        ]
+    },
+    {
+        "index": 20,
+        "input_text": "in 2004 he was directed by oliver hirschbiegel in the role of rochus misch in the oscar - nominated film \" der untergang \" .\n",
+        "entity_hint": "['der_untergang', 'rochus_misch', 'in_2004', 'oliver_hirschbiegel']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "rochus_misch",
+                "role",
+                "der_untergang"
+            ],
+            [
+                "der_untergang",
+                "director",
+                "oliver_hirschbiegel"
+            ],
+            [
+                "rochus_misch",
+                "year",
+                "in_2004"
+            ],
+            [
+                "der_untergang",
+                "year",
+                "in_2004"
+            ]
+        ],
+        "schema_definition": {
+            "year": "The subject entity is associated with the specified year, indicating when the event or role took place or was relevant.",
+            "role": "The subject entity played the specified role in the context of the object entity, which typically refers to a film, play, or similar performance.",
+            "director": "The subject entity was directed by the person or entity specified by the object entity, indicating the individual responsible for overseeing the production."
+        },
+        "canonicalization_candidates": "[{'performer': 0.6986505, 'participant': 0.6693926, 'position held': 0.6476674, 'original language of film or TV show': 0.6397929, 'member of': 0.6382199}, {}, {'participant': 0.6893185, 'position held': 0.68813944, 'participant of': 0.66660583, 'member of': 0.6570718, 'follows': 0.6463162}, {'participant': 0.68931866, 'position held': 0.6881396, 'participant of': 0.666606, 'member of': 0.657072, 'follows': 0.6463162}]",
+        "schema_canonicalizaiton": [
+            [
+                "rochus_misch",
+                "performer",
+                "der_untergang"
+            ],
+            [
+                "der_untergang",
+                "director",
+                "oliver_hirschbiegel"
+            ],
+            [
+                "rochus_misch",
+                "participant of",
+                "in_2004"
+            ],
+            [
+                "der_untergang",
+                "participant of",
+                "in_2004"
+            ]
+        ]
+    },
+    {
+        "index": 21,
+        "input_text": "green did an impression of the buffalo bill character from the thriller film \" the silence of the lambs \" during his audition .\n",
+        "entity_hint": "['the_silence_of_the_lambs', 'buffalo_bill', 'green']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "green",
+                "impressionOf",
+                "buffalo_bill"
+            ],
+            [
+                "green",
+                "auditionFor",
+                "the_silence_of_the_lambs"
+            ]
+        ],
+        "schema_definition": {
+            "impressionOf": "The subject entity performed an imitation or representation of the character specified by the object entity.",
+            "auditionFor": "The subject entity participated in a performance or tryout for the production specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'performer': 0.6536499, 'after a work by': 0.6306937, 'position held': 0.62639415, 'participant': 0.61236894, 'sibling': 0.6106854}, {'participant of': 0.6544195, 'participant': 0.64522785, 'performer': 0.6383857, 'member of': 0.6359401, 'participating team': 0.6333623}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "green",
+                "performer",
+                "the_silence_of_the_lambs"
+            ]
+        ]
+    },
+    {
+        "index": 22,
+        "input_text": "in the following fifth series , he was joined by karen gillan playing a character called amy pond .\n",
+        "entity_hint": "['fifth_series', 'amy_pond', 'karen_gillan']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "karen_gillan",
+                "plays",
+                "amy_pond"
+            ],
+            [
+                "fifth_series",
+                "features",
+                "karen_gillan"
+            ]
+        ],
+        "schema_definition": {
+            "plays": "The subject entity performs the role or character specified by the object entity in a production or performance.",
+            "features": "The subject entity includes or showcases the person or entity specified by the object entity as part of its content or cast."
+        },
+        "canonicalization_candidates": "[{'performer': 0.70573545, 'participant': 0.6784518, 'position held': 0.67126715, 'operator': 0.64951193, 'member of': 0.64752614}, {'participant': 0.68189245, 'part of': 0.6735854, 'position held': 0.66712284, 'instance of': 0.659194, 'member of': 0.6578479}]",
+        "schema_canonicalizaiton": [
+            [
+                "karen_gillan",
+                "performer",
+                "amy_pond"
+            ],
+            [
+                "fifth_series",
+                "participant",
+                "karen_gillan"
+            ]
+        ]
+    },
+    {
+        "index": 23,
+        "input_text": "the 1906 \" jewish encyclopedia \" states that \" son of man \" is found in the book of enoch , but never in the original material .\n",
+        "entity_hint": "['book_of_enoch', 'son_of_man', '1906', 'jewish_encyclopedia']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "jewish_encyclopedia",
+                "states",
+                "1906"
+            ],
+            [
+                "jewish_encyclopedia",
+                "contains",
+                "son_of_man"
+            ],
+            [
+                "son_of_man",
+                "foundIn",
+                "book_of_enoch"
+            ]
+        ],
+        "schema_definition": {
+            "states": "The subject entity provides information or makes a declaration regarding the object entity.",
+            "contains": "The subject entity includes or has within it the element specified by the object entity.",
+            "foundIn": "The subject entity is located or referenced within the context of the object entity."
+        },
+        "canonicalization_candidates": "[{'position held': 0.68504626, 'applies to jurisdiction': 0.68472236, 'owned by': 0.6764244, 'country of citizenship': 0.67112243, 'part of': 0.6625917}, {'part of': 0.73942804, 'child': 0.7144638, 'instance of': 0.7069678, 'country of citizenship': 0.67697656, 'spouse': 0.6740576}, {'part of': 0.74949795, 'position held': 0.72033113, 'country of citizenship': 0.72017026, 'child': 0.7189815, 'spouse': 0.7125343}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 24,
+        "input_text": "unferth \u2019s taunt spurs beowulf into action and reignites hrothgar \u2019s and the people \u2019s faith in him .\n",
+        "entity_hint": "['beowulf', 'hrothgar', 'unferth', 'people']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "unferth",
+                "taunt",
+                "beowulf"
+            ],
+            [
+                "beowulf",
+                "action",
+                "hrothgar"
+            ],
+            [
+                "hrothgar",
+                "faith",
+                "people"
+            ],
+            [
+                "beowulf",
+                "reignitesFaith",
+                "hrothgar"
+            ]
+        ],
+        "schema_definition": {
+            "reignitesFaith": "The subject entity causes a renewal or revival of the faith or belief in the object entity.",
+            "action": "The subject entity engages in a specific act or deed that involves the object entity.",
+            "taunt": "The subject entity delivers a mocking or insulting remark directed at the object entity.",
+            "faith": "The subject entity represents a belief or trust held by the object entity."
+        },
+        "canonicalization_candidates": "[{'position held': 0.632319, 'spouse': 0.61909664, 'child': 0.61329705, 'owned by': 0.60993046, 'sibling': 0.599552}, {'participant': 0.7089307, 'position held': 0.67254245, 'spouse': 0.6719637, 'part of': 0.6667563, 'participating team': 0.6622652}, {'country of citizenship': 0.689783, 'position held': 0.686882, 'religion': 0.6864532, 'part of': 0.6825274, 'spouse': 0.6738064}, {'religion': 0.6785692, 'country of citizenship': 0.6353247, 'position held': 0.6219885, 'part of': 0.61765563, 'spouse': 0.610289}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "beowulf",
+                "participant",
+                "hrothgar"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 25,
+        "input_text": "\" the fellowship of the ring \" opened with a celebration of bilbo 's birthday .\n",
+        "entity_hint": "['the_fellowship_of_the_ring', 'bilbo']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "the_fellowship_of_the_ring",
+                "openedWith",
+                "bilbo"
+            ]
+        ],
+        "schema_definition": {
+            "openedWith": "The subject entity commenced or began with the event or action specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'participant': 0.6897415, 'participant of': 0.66058016, 'position held': 0.65341955, 'follows': 0.65032464, 'followed by': 0.6485156}]",
+        "schema_canonicalizaiton": [
+            null
+        ]
+    },
+    {
+        "index": 26,
+        "input_text": "later the same year , she was again hired by fairbanks to play the substantial part of milady de winter in \" the three musketeers \" .\n",
+        "entity_hint": "['the_three_musketeers', 'milady_de_winter', 'later_the_same_year', 'she', 'fairbanks']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "she",
+                "hiredBy",
+                "fairbanks"
+            ],
+            [
+                "she",
+                "playedRole",
+                "milady_de_winter"
+            ],
+            [
+                "milady_de_winter",
+                "in",
+                "the_three_musketeers"
+            ],
+            [
+                "later_the_same_year",
+                "event",
+                "hiredBy"
+            ]
+        ],
+        "schema_definition": {
+            "hiredBy": "The subject entity was employed or contracted by the entity specified by the object entity.",
+            "playedRole": "The subject entity performed or portrayed the role specified by the object entity.",
+            "in": "The subject entity is associated with or occurs within the context of the object entity.",
+            "event": "The subject entity refers to a specific occurrence or action related to the object entity."
+        },
+        "canonicalization_candidates": "[{'position held': 0.6830119, 'operator': 0.66910255, 'work location': 0.65750504, 'subsidiary': 0.64742374, 'spouse': 0.64671075}, {'performer': 0.6920886, 'position held': 0.6861378, 'participant': 0.6835713, 'spouse': 0.6468037, 'owned by': 0.64674777}, {'part of': 0.73682606, 'spouse': 0.71092355, 'child': 0.7094975, 'instance of': 0.70224464, 'position held': 0.7008936}, {'participant': 0.7138487, 'part of': 0.7096654, 'instance of': 0.70341516, 'participant of': 0.6840713, 'follows': 0.6820625}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "she",
+                "performer",
+                "milady_de_winter"
+            ],
+            [
+                "milady_de_winter",
+                "part of",
+                "the_three_musketeers"
+            ],
+            [
+                "later_the_same_year",
+                "participant of",
+                "hiredBy"
+            ]
+        ]
+    },
+    {
+        "index": 27,
+        "input_text": "in addition he is the co - writer of \" bill \" , a bbc - produced comedy film based loosely around the early life of william shakespeare , which involved the same starring troupe .\n",
+        "entity_hint": "['bill', 'william_shakespeare', 'bbc']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "bill",
+                "coWriter",
+                "william_shakespeare"
+            ],
+            [
+                "bill",
+                "producedBy",
+                "bbc"
+            ]
+        ],
+        "schema_definition": {
+            "coWriter": "The subject entity is a co-writer of the work specified by the object entity, indicating a collaborative effort in the creation of the work.",
+            "producedBy": "The subject entity was produced by the organization or entity specified by the object entity, indicating the producer's role in the creation or distribution of the work."
+        },
+        "canonicalization_candidates": "[{'screenwriter': 0.69545454, 'composer': 0.6596081, 'notable work': 0.65705645, 'language of work or name': 0.64618725, 'after a work by': 0.63850665}, {'developer': 0.7061349, 'manufacturer': 0.69146335, 'publisher': 0.6906187, 'distributor': 0.6832383, 'participant': 0.6500246}]",
+        "schema_canonicalizaiton": [
+            [
+                "bill",
+                "screenwriter",
+                "william_shakespeare"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 28,
+        "input_text": "harry kim and tom paris ( \" star trek : voyager \" ) are volleyball players .\n",
+        "entity_hint": "['star_trek_:_voyager', 'harry_kim', 'tom_paris']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "harry_kim",
+                "isPlayerIn",
+                "star_trek_:_voyager"
+            ],
+            [
+                "tom_paris",
+                "isPlayerIn",
+                "star_trek_:_voyager"
+            ]
+        ],
+        "schema_definition": {
+            "isPlayerIn": "The subject entity is a player in the specified game, show, or event represented by the object entity."
+        },
+        "canonicalization_candidates": "[{'participant': 0.70529306, 'position held': 0.69831127, 'position played on team / speciality': 0.6911441, 'league': 0.6860201, 'winner': 0.6839398}, {'participant': 0.7052932, 'position held': 0.6983114, 'position played on team / speciality': 0.6911442, 'league': 0.68602026, 'winner': 0.68394}]",
+        "schema_canonicalizaiton": [
+            [
+                "harry_kim",
+                "participant",
+                "star_trek_:_voyager"
+            ],
+            [
+                "tom_paris",
+                "participant",
+                "star_trek_:_voyager"
+            ]
+        ]
+    },
+    {
+        "index": 29,
+        "input_text": "\" champagne for one \" is one of the \" nero wolfe \" episodes released on region 4 dvd in australia under license by fremantlemedia enterprises .\n",
+        "entity_hint": "['champagne_for_one', 'nero_wolfe', 'australia', 'fremantlemedia_enterprises']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "champagne_for_one",
+                "isEpisodeOf",
+                "nero_wolfe"
+            ],
+            [
+                "champagne_for_one",
+                "releasedIn",
+                "australia"
+            ],
+            [
+                "champagne_for_one",
+                "licensedBy",
+                "fremantlemedia_enterprises"
+            ]
+        ],
+        "schema_definition": {
+            "releasedIn": "The subject entity was made available or distributed in the location specified by the object entity.",
+            "licensedBy": "The subject entity is authorized or permitted by the entity specified by the object entity to be distributed or produced.",
+            "isEpisodeOf": "The subject entity is a part of or belongs to the series or collection specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'part of': 0.7530092, 'instance of': 0.73968947, 'followed by': 0.7180835, 'member of': 0.70708597, 'follows': 0.70705956}, {'located in the administrative territorial entity': 0.70249754, 'location': 0.6610164, 'position held': 0.6584829, 'country of citizenship': 0.6562003, 'applies to jurisdiction': 0.6537336}, {'distributor': 0.6664003, 'manufacturer': 0.6622218, 'publisher': 0.65884376, 'developer': 0.6541404, 'country of citizenship': 0.6454245}]",
+        "schema_canonicalizaiton": [
+            [
+                "champagne_for_one",
+                "part of",
+                "nero_wolfe"
+            ],
+            [
+                "champagne_for_one",
+                "located in the administrative territorial entity",
+                "australia"
+            ],
+            [
+                "champagne_for_one",
+                "distributor",
+                "fremantlemedia_enterprises"
+            ]
+        ]
+    },
+    {
+        "index": 30,
+        "input_text": "grossman concurred , writing of \" a dance with dragons \" , \" now the camera has swung back to the main characters : jon snow and daenerys targaryen and tyrion lannister . \"\n",
+        "entity_hint": "['a_dance_with_dragons', 'daenerys_targaryen', 'grossman', 'jon_snow', 'tyrion_lannister']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "grossman",
+                "wrote",
+                "a_dance_with_dragons"
+            ],
+            [
+                "a_dance_with_dragons",
+                "features",
+                "jon_snow"
+            ],
+            [
+                "a_dance_with_dragons",
+                "features",
+                "daenerys_targaryen"
+            ],
+            [
+                "a_dance_with_dragons",
+                "features",
+                "tyrion_lannister"
+            ]
+        ],
+        "schema_definition": {
+            "wrote": "The subject entity created or authored the work specified by the object entity.",
+            "features": "The subject entity includes or showcases the elements or characters specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'screenwriter': 0.72835815, 'notable work': 0.7265062, 'developer': 0.71006835, 'owned by': 0.7051902, 'after a work by': 0.7007798}, {'instance of': 0.67725706, 'part of': 0.6748408, 'characters': 0.6591674, 'child': 0.65389967, 'language of work or name': 0.650446}, {'instance of': 0.6772571, 'part of': 0.6748407, 'characters': 0.65916723, 'child': 0.65389955, 'language of work or name': 0.65044594}, {'instance of': 0.67725706, 'part of': 0.6748407, 'characters': 0.6591674, 'child': 0.65389967, 'language of work or name': 0.65044594}]",
+        "schema_canonicalizaiton": [
+            [
+                "grossman",
+                "notable work",
+                "a_dance_with_dragons"
+            ],
+            [
+                "a_dance_with_dragons",
+                "characters",
+                "jon_snow"
+            ],
+            [
+                "a_dance_with_dragons",
+                "characters",
+                "daenerys_targaryen"
+            ],
+            [
+                "a_dance_with_dragons",
+                "characters",
+                "tyrion_lannister"
+            ]
+        ]
+    },
+    {
+        "index": 31,
+        "input_text": "woods was the original voice of the title character of the walt disney animated feature \" cinderella \" , for which she was named a disney legend in 2003 .\n",
+        "entity_hint": "['cinderella', 'title_character', 'woods', 'walt_disney', '2003']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "woods",
+                "originalVoice",
+                "title_character"
+            ],
+            [
+                "title_character",
+                "name",
+                "cinderella"
+            ],
+            [
+                "cinderella",
+                "producedBy",
+                "walt_disney"
+            ],
+            [
+                "woods",
+                "honoredAs",
+                "disney legend"
+            ],
+            [
+                "woods",
+                "year",
+                "2003"
+            ]
+        ],
+        "schema_definition": {
+            "originalVoice": "The subject entity provided the original voice for the character specified by the object entity.",
+            "name": "The subject entity is identified by the name specified by the object entity.",
+            "producedBy": "The subject entity was produced by the entity specified by the object entity.",
+            "honoredAs": "The subject entity was recognized or honored in the capacity specified by the object entity.",
+            "year": "The subject entity is associated with the year specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'performer': 0.6375246, 'owned by': 0.63566875, 'screenwriter': 0.6345461, 'voice type': 0.62119377, 'sibling': 0.61445546}, {'country of citizenship': 0.70410603, 'owned by': 0.6961106, 'position held': 0.6943448, 'sibling': 0.69232833, 'spouse': 0.6875247}, {'manufacturer': 0.7314218, 'developer': 0.7312696, 'owned by': 0.6697787, 'child': 0.664973, 'sibling': 0.6588651}, {'country of citizenship': 0.70673513, 'position held': 0.70155525, 'nominated for': 0.6646421, 'participant': 0.6645286, 'winner': 0.66041887}, {'position held': 0.7022732, 'country of citizenship': 0.6935386, 'owned by': 0.6867956, 'member of': 0.6840928, 'participant': 0.68025637}]",
+        "schema_canonicalizaiton": [
+            [
+                "woods",
+                "performer",
+                "title_character"
+            ],
+            null,
+            [
+                "cinderella",
+                "manufacturer",
+                "walt_disney"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 32,
+        "input_text": "in \" dune \" , paul atreides and his mother lady jessica flee a harkonnen attack and find refuge among the fremen of sietch tabr .\n",
+        "entity_hint": "['dune', 'lady_jessica', 'paul_atreides', 'fremen_of_sietch_tabr']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "paul_atreides",
+                "mother",
+                "lady_jessica"
+            ],
+            [
+                "paul_atreides",
+                "refuge",
+                "fremen_of_sietch_tabr"
+            ],
+            [
+                "lady_jessica",
+                "refuge",
+                "fremen_of_sietch_tabr"
+            ],
+            [
+                "dune",
+                "contains",
+                "paul_atreides"
+            ],
+            [
+                "dune",
+                "contains",
+                "lady_jessica"
+            ]
+        ],
+        "schema_definition": {
+            "refuge": "The subject entity seeks safety or shelter provided by the object entity.",
+            "contains": "The subject entity includes or has within it the object entity.",
+            "mother": "The subject entity is the parent of the object entity, specifically in the maternal role."
+        },
+        "canonicalization_candidates": "[{}, {'country of citizenship': 0.6452129, 'child': 0.6357825, 'residence': 0.62805676, 'spouse': 0.62545526, 'position held': 0.6239152}, {'country of citizenship': 0.64521295, 'child': 0.63578254, 'residence': 0.62805694, 'spouse': 0.6254554, 'position held': 0.6239153}, {'part of': 0.72938967, 'child': 0.72624934, 'country of citizenship': 0.6813078, 'instance of': 0.67908853, 'spouse': 0.67691624}, {'part of': 0.72938967, 'child': 0.7262492, 'country of citizenship': 0.68130773, 'instance of': 0.6790885, 'spouse': 0.67691624}]",
+        "schema_canonicalizaiton": [
+            [
+                "paul_atreides",
+                "mother",
+                "lady_jessica"
+            ],
+            [
+                "paul_atreides",
+                "residence",
+                "fremen_of_sietch_tabr"
+            ],
+            [
+                "lady_jessica",
+                "residence",
+                "fremen_of_sietch_tabr"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 33,
+        "input_text": "he also appeared as the king of france in \" henry v \" , and most recently giles corey in \" the crucible \" at the same venue .\n",
+        "entity_hint": "['the_crucible', 'giles_corey', 'henry_v']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "giles_corey",
+                "appearedIn",
+                "the_crucible"
+            ],
+            [
+                "giles_corey",
+                "role",
+                "king_of_france"
+            ],
+            [
+                "henry_v",
+                "appearedIn",
+                "giles_corey"
+            ]
+        ],
+        "schema_definition": {
+            "appearedIn": "The subject entity is featured or presented in the context of the object entity, indicating a performance or participation in a specific work or event.",
+            "role": "The subject entity represents or embodies the character or position specified by the object entity within a performance or narrative."
+        },
+        "canonicalization_candidates": "[{'participant': 0.69225425, 'participant of': 0.68859076, 'member of': 0.66519415, 'part of': 0.6598277, 'position held': 0.656429}, {'performer': 0.6860465, 'position held': 0.6809044, 'participant': 0.65938395, 'part of': 0.63721144, 'instance of': 0.63668966}, {'participant': 0.6922544, 'participant of': 0.6885909, 'member of': 0.66519433, 'part of': 0.65982777, 'position held': 0.65642905}]",
+        "schema_canonicalizaiton": [
+            [
+                "giles_corey",
+                "participant",
+                "the_crucible"
+            ],
+            [
+                "giles_corey",
+                "performer",
+                "king_of_france"
+            ],
+            [
+                "henry_v",
+                "participant of",
+                "giles_corey"
+            ]
+        ]
+    },
+    {
+        "index": 34,
+        "input_text": "deutch began her career at the age of 15 in 2010 on the disney channel original series \" the suite life on deck \" as maya , zack martin 's love interest .\n",
+        "entity_hint": "['the_suite_life_on_deck', 'zack_martin', 'deutch', '2010', 'disney_channel', 'maya']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "deutch",
+                "beganCareerAtAge",
+                "15"
+            ],
+            [
+                "deutch",
+                "yearStarted",
+                "2010"
+            ],
+            [
+                "deutch",
+                "character",
+                "maya"
+            ],
+            [
+                "maya",
+                "loveInterest",
+                "zack_martin"
+            ],
+            [
+                "the_suite_life_on_deck",
+                "featuresCharacter",
+                "maya"
+            ],
+            [
+                "the_suite_life_on_deck",
+                "broadcastOn",
+                "disney_channel"
+            ]
+        ],
+        "schema_definition": {
+            "beganCareerAtAge": "The subject entity started their career at the age specified by the object entity.",
+            "yearStarted": "The subject entity began their professional activities in the year specified by the object entity.",
+            "character": "The subject entity portrays or embodies the character specified by the object entity.",
+            "loveInterest": "The subject entity is romantically linked to the character specified by the object entity.",
+            "featuresCharacter": "The subject entity includes or showcases the character specified by the object entity.",
+            "broadcastOn": "The subject entity is aired or transmitted on the platform specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'position held': 0.63630193, 'owned by': 0.607099, 'member of': 0.6044818, 'country of citizenship': 0.6024445, 'sibling': 0.59067637}, {'position held': 0.63549876, 'work location': 0.6184857, 'operator': 0.6117892, 'participant': 0.6113107, 'member of': 0.6054143}, {'performer': 0.6749807, 'position held': 0.67206013, 'participant': 0.6527115, 'spouse': 0.6521834, 'owned by': 0.6504718}, {'spouse': 0.7703208, 'sibling': 0.66181064, 'child': 0.65773755, 'position held': 0.6440613, 'owned by': 0.6404544}, {'part of': 0.6990309, 'instance of': 0.69833505, 'child': 0.69177127, 'position held': 0.6887647, 'owned by': 0.6800723}, {'original network': 0.6988441, 'platform': 0.6693355, 'operator': 0.6534631, 'publisher': 0.65212953, 'licensed to broadcast to': 0.64772135}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            [
+                "deutch",
+                "performer",
+                "maya"
+            ],
+            null,
+            null,
+            [
+                "the_suite_life_on_deck",
+                "original network",
+                "disney_channel"
+            ]
+        ]
+    },
+    {
+        "index": 35,
+        "input_text": "dr. nicholas riviera ( usually referred to as simply dr. nick ) is a recurring fictional character in the american animated sitcom \" the simpsons \" .\n",
+        "entity_hint": "['the_simpsons', 'nicholas_riviera']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "nicholas_riviera",
+                "isCharacterIn",
+                "the_simpsons"
+            ]
+        ],
+        "schema_definition": {
+            "isCharacterIn": "The subject entity is a character that appears in the work specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'characters': 0.7048474, 'language of work or name': 0.68144715, 'notable work': 0.67243075, 'screenwriter': 0.6707373, 'position held': 0.6672977}]",
+        "schema_canonicalizaiton": [
+            [
+                "nicholas_riviera",
+                "characters",
+                "the_simpsons"
+            ]
+        ]
+    },
+    {
+        "index": 36,
+        "input_text": "two months after their elopement , heathcliff and isabella return to wuthering heights , where heathcliff discovers that catherine is dying .\n",
+        "entity_hint": "['wuthering_heights', 'heathcliff', 'isabella', 'catherine']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "heathcliff",
+                "returnsTo",
+                "wuthering_heights"
+            ],
+            [
+                "heathcliff",
+                "discovers",
+                "catherine"
+            ],
+            [
+                "isabella",
+                "returnsTo",
+                "wuthering_heights"
+            ],
+            [
+                "catherine",
+                "isDying",
+                "true"
+            ]
+        ],
+        "schema_definition": {
+            "returnsTo": "The subject entity goes back to the location specified by the object entity.",
+            "discovers": "The subject entity finds out or becomes aware of the information or entity specified by the object entity.",
+            "isDying": "The subject entity is in a state of dying or approaching death, as indicated by the object entity."
+        },
+        "canonicalization_candidates": "[{'residence': 0.71796215, 'country of citizenship': 0.6898323, 'located in the administrative territorial entity': 0.685845, 'position held': 0.6683747, 'location': 0.6678878}, {'position held': 0.66328144, 'owned by': 0.65977204, 'participant': 0.65476406, 'country of citizenship': 0.6542232, 'part of': 0.65282476}, {'residence': 0.7179623, 'country of citizenship': 0.6898323, 'located in the administrative territorial entity': 0.68584496, 'position held': 0.6683749, 'location': 0.6678879}, {'position held': 0.6285454, 'spouse': 0.618132, 'follows': 0.61257875, 'child': 0.6113228, 'country of citizenship': 0.60886633}]",
+        "schema_canonicalizaiton": [
+            [
+                "heathcliff",
+                "residence",
+                "wuthering_heights"
+            ],
+            null,
+            [
+                "isabella",
+                "residence",
+                "wuthering_heights"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 37,
+        "input_text": "in the \" hyndlulj\u00f3\u00f0 \" ( 7 ) he is said to have made freyja 's boar hildisv\u00edni , along with another dwarf , his brother nabbi .\n",
+        "entity_hint": "['hyndlulj\u00f3\u00f0', 'freyja', 'nabbi']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "hyndlulj\u00f3\u00f0",
+                "features",
+                "freyja"
+            ],
+            [
+                "hyndlulj\u00f3\u00f0",
+                "createdBy",
+                "nabbi"
+            ]
+        ],
+        "schema_definition": {
+            "features": "The subject entity includes or showcases the object entity as a significant element or character within its content.",
+            "createdBy": "The subject entity was made or crafted by the person or entity specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'part of': 0.6702616, 'instance of': 0.64363813, 'notable work': 0.64253575, 'child': 0.63916695, 'language of work or name': 0.6380327}, {'developer': 0.7212529, 'manufacturer': 0.6963539, 'owned by': 0.68540496, 'screenwriter': 0.6756101, 'architect': 0.6715821}]",
+        "schema_canonicalizaiton": [
+            [
+                "hyndlulj\u00f3\u00f0",
+                "notable work",
+                "freyja"
+            ],
+            [
+                "hyndlulj\u00f3\u00f0",
+                "manufacturer",
+                "nabbi"
+            ]
+        ]
+    },
+    {
+        "index": 38,
+        "input_text": "english completed some production on lana del rey \u2019s single \" i can fly , \u201d alongside rick nowels and s1 which was featured in tim burton \u2019s 2014 movie \" big eyes \" .\n",
+        "entity_hint": "['big_eyes', 'lana_del_rey', 'english', 'rick_nowels', 's1', 'tim_burton', '2014']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "lana_del_rey",
+                "single",
+                "\"i can fly\""
+            ],
+            [
+                "big_eyes",
+                "featuredIn",
+                "tim_burton"
+            ],
+            [
+                "big_eyes",
+                "releaseYear",
+                "2014"
+            ],
+            [
+                "english",
+                "collaboratedWith",
+                "rick_nowels"
+            ],
+            [
+                "english",
+                "collaboratedWith",
+                "s1"
+            ]
+        ],
+        "schema_definition": {
+            "single": "The subject entity is a musical single performed by the artist specified by the object entity.",
+            "releaseYear": "The subject entity was released in the year specified by the object entity.",
+            "collaboratedWith": "The subject entity worked together with the person or entity specified by the object entity on a project or production.",
+            "featuredIn": "The subject entity is included or appears in the work specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'performer': 0.6840081, 'composer': 0.67233735, 'record label': 0.6692409, 'member of': 0.66521263, 'notable work': 0.63369036}, {'part of': 0.7071835, 'notable work': 0.6993675, 'language of work or name': 0.6866915, 'instance of': 0.67769015, 'position held': 0.6705568}, {'platform': 0.63577414, 'developer': 0.63260573, 'position held': 0.62951094, 'country of citizenship': 0.62793654, 'located in the administrative territorial entity': 0.61897767}, {'participant': 0.6452088, 'spouse': 0.63122714, 'participating team': 0.6219187, 'developer': 0.6186203, 'screenwriter': 0.61478764}, {'participant': 0.6452087, 'spouse': 0.631227, 'participating team': 0.6219187, 'developer': 0.6186203, 'screenwriter': 0.6147876}]",
+        "schema_canonicalizaiton": [
+            [
+                "lana_del_rey",
+                "notable work",
+                "\"i can fly\""
+            ],
+            [
+                "big_eyes",
+                "notable work",
+                "tim_burton"
+            ],
+            null,
+            [
+                "english",
+                "participant",
+                "rick_nowels"
+            ],
+            [
+                "english",
+                "participant",
+                "s1"
+            ]
+        ]
+    },
+    {
+        "index": 39,
+        "input_text": "she is also partially the inspiration for \" the west wing \" character mandy hampton .\n",
+        "entity_hint": "['the_west_wing', 'mandy_hampton', 'she']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "she",
+                "inspirationFor",
+                "mandy_hampton"
+            ],
+            [
+                "mandy_hampton",
+                "appearsIn",
+                "the_west_wing"
+            ]
+        ],
+        "schema_definition": {
+            "inspirationFor": "The subject entity served as a source of inspiration for the creation or development of the object entity.",
+            "appearsIn": "The subject entity is featured or included in the context of the object entity, such as a show, book, or other media."
+        },
+        "canonicalization_candidates": "[{'after a work by': 0.68342334, 'developer': 0.68308896, 'part of': 0.6319622, 'child': 0.6178576, 'instance of': 0.6176089}, {'language of work or name': 0.6743951, 'part of': 0.658829, 'publisher': 0.65106213, 'instance of': 0.64858115, 'member of': 0.64729685}]",
+        "schema_canonicalizaiton": [
+            null,
+            null
+        ]
+    },
+    {
+        "index": 40,
+        "input_text": "in 2014 , the film biopics on two british scientists ( hawking and turing ) , \" the theory of everything \" and \" the imitation game \" , both achieved critical and commercial success .\n",
+        "entity_hint": "['the_imitation_game', 'turing', '2014', 'british']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "the_imitation_game",
+                "releaseYear",
+                "2014"
+            ],
+            [
+                "the_imitation_game",
+                "achieved",
+                "critical and commercial success"
+            ],
+            [
+                "turing",
+                "isBritish",
+                "british"
+            ]
+        ],
+        "schema_definition": {
+            "releaseYear": "The subject entity was released in the year specified by the object entity.",
+            "isBritish": "The subject entity is identified as being from the British nationality or origin specified by the object entity.",
+            "achieved": "The subject entity accomplished or reached the status or level of success specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'platform': 0.6357742, 'developer': 0.63260555, 'position held': 0.6295109, 'country of citizenship': 0.62793636, 'located in the administrative territorial entity': 0.61897767}, {'winner': 0.66893435, 'position held': 0.6641567, 'country of citizenship': 0.6471254, 'military rank': 0.645913, 'participant': 0.6431354}, {'country of citizenship': 0.72333, 'position held': 0.67837286, 'owned by': 0.6585471, 'sibling': 0.64995956, 'located in the administrative territorial entity': 0.64665294}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            [
+                "turing",
+                "country of citizenship",
+                "british"
+            ]
+        ]
+    },
+    {
+        "index": 41,
+        "input_text": "otto mann is a fictional character on the animated tv series \" the simpsons \" , voiced by harry shearer .\n",
+        "entity_hint": "['the_simpsons', 'otto_mann', 'harry_shearer']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "otto_mann",
+                "voicedBy",
+                "harry_shearer"
+            ],
+            [
+                "otto_mann",
+                "appearsIn",
+                "the_simpsons"
+            ]
+        ],
+        "schema_definition": {
+            "voicedBy": "The subject entity is represented by the person or entity specified by the object entity in a performance or production.",
+            "appearsIn": "The subject entity is featured or included in the work specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'position held': 0.68849415, 'participant': 0.6850891, 'performer': 0.68129826, 'operator': 0.65970343, 'member of': 0.6547655}, {'notable work': 0.7043755, 'part of': 0.6990212, 'language of work or name': 0.67896295, 'instance of': 0.6719686, 'position held': 0.6703103}]",
+        "schema_canonicalizaiton": [
+            [
+                "otto_mann",
+                "performer",
+                "harry_shearer"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 42,
+        "input_text": "in \" peanuts \" , for example , the notes played by schroeder occasionally take substance and are used in various ways , including christmas decorations or perches for birds .\n",
+        "entity_hint": "['peanuts', 'schroeder']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "peanuts",
+                "playedBy",
+                "schroeder"
+            ]
+        ],
+        "schema_definition": {
+            "playedBy": "The subject entity is performed or represented by the individual or entity specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'position held': 0.6961691, 'participant': 0.68848294, 'owned by': 0.6687326, 'performer': 0.6665968, 'spouse': 0.660391}]",
+        "schema_canonicalizaiton": [
+            [
+                "peanuts",
+                "performer",
+                "schroeder"
+            ]
+        ]
+    },
+    {
+        "index": 43,
+        "input_text": "he played the role of jules maigret in the 1932 film \" the yellow dog \" , directed by his son .\n",
+        "entity_hint": "['the_yellow_dog', 'jules_maigret', '1932', 'his_son']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "jules_maigret",
+                "roleIn",
+                "the_yellow_dog"
+            ],
+            [
+                "the_yellow_dog",
+                "releaseYear",
+                "1932"
+            ],
+            [
+                "the_yellow_dog",
+                "director",
+                "his_son"
+            ]
+        ],
+        "schema_definition": {
+            "releaseYear": "The subject entity was released or made available to the public in the year specified by the object entity.",
+            "roleIn": "The subject entity is a character or role portrayed in the work specified by the object entity.",
+            "director": "The subject entity was directed by the person or entity specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'performer': 0.706972, 'position held': 0.6813836, 'characters': 0.6696197, 'participant': 0.66430235, 'language of work or name': 0.6628264}, {'position held': 0.6379991, 'platform': 0.61574, 'located in the administrative territorial entity': 0.6150824, 'country of citizenship': 0.6143451, 'applies to jurisdiction': 0.6140655}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "jules_maigret",
+                "performer",
+                "the_yellow_dog"
+            ],
+            null,
+            [
+                "the_yellow_dog",
+                "director",
+                "his_son"
+            ]
+        ]
+    },
+    {
+        "index": 44,
+        "input_text": "this is contrary to the traditional christian view of the event based on the book of exodus , which contends that god hardened the heart of pharaoh . olyan ( 1993 ) , 26 .\n",
+        "entity_hint": "['book_of_exodus', 'pharaoh', 'olyan', '1993', '26']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "book_of_exodus",
+                "contradicts",
+                "traditional_christian_view"
+            ],
+            [
+                "book_of_exodus",
+                "contends",
+                "god_hardened_the_heart_of_pharaoh"
+            ],
+            [
+                "olyan",
+                "published",
+                "1993"
+            ],
+            [
+                "olyan",
+                "page",
+                "26"
+            ]
+        ],
+        "schema_definition": {
+            "contradicts": "The subject entity presents a viewpoint or assertion that is in opposition to the viewpoint or assertion specified by the object entity.",
+            "contends": "The subject entity asserts or maintains a particular argument or claim regarding the object entity.",
+            "published": "The subject entity was made publicly available or released in the year specified by the object entity.",
+            "page": "The subject entity refers to a specific page number in the publication specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'position held': 0.6417022, 'said to be the same as': 0.6295923, 'part of': 0.6063113, 'applies to jurisdiction': 0.6061962, 'instance of': 0.6032027}, {'position held': 0.66686106, 'owned by': 0.65522516, 'said to be the same as': 0.64990133, 'applies to jurisdiction': 0.64893484, 'part of': 0.6457716}, {'position held': 0.64682835, 'country of citizenship': 0.62389994, 'applies to jurisdiction': 0.623652, 'located in the administrative territorial entity': 0.6223512, 'developer': 0.6189661}, {'applies to jurisdiction': 0.6486949, 'position held': 0.6457913, 'located in the administrative territorial entity': 0.64554095, 'instance of': 0.6423143, 'country of citizenship': 0.640159}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 45,
+        "input_text": "the player controls either sonic the hedgehog or blaze the cat , who differ in terms of special abilities .\n",
+        "entity_hint": "['sonic_the_hedgehog', 'blaze_the_cat', 'the_player']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "the_player",
+                "controls",
+                "sonic_the_hedgehog"
+            ],
+            [
+                "the_player",
+                "controls",
+                "blaze_the_cat"
+            ],
+            [
+                "sonic_the_hedgehog",
+                "hasSpecialAbilities",
+                "blaze_the_cat"
+            ]
+        ],
+        "schema_definition": {
+            "controls": "The subject entity has the ability to manage or direct the actions of the object entity.",
+            "hasSpecialAbilities": "The subject entity possesses unique skills or powers that distinguish it from the object entity."
+        },
+        "canonicalization_candidates": "[{'position held': 0.64529085, 'child': 0.6446438, 'owned by': 0.64283514, 'operator': 0.6269947, 'head of government': 0.6254072}, {'position held': 0.6452907, 'child': 0.6446438, 'owned by': 0.64283514, 'operator': 0.62699467, 'head of government': 0.6254072}, {'instance of': 0.61390007, 'part of': 0.59728515, 'owned by': 0.59665847, 'position held': 0.5960763, 'country of citizenship': 0.5918747}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 46,
+        "input_text": "many characters in the cyber thriller movie series , \" the matrix \" exclusively wear mirrored sunglasses , morpheus in particular .\n",
+        "entity_hint": "['the_matrix', 'morpheus']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "morpheus",
+                "appearsIn",
+                "the_matrix"
+            ],
+            [
+                "morpheus",
+                "wears",
+                "mirrored_sunglasses"
+            ]
+        ],
+        "schema_definition": {
+            "wears": "The subject entity is wearing or using the item specified by the object entity.",
+            "appearsIn": "The subject entity is featured or present in the work specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'notable work': 0.7089243, 'part of': 0.69882816, 'language of work or name': 0.6896859, 'position held': 0.6863049, 'after a work by': 0.68103176}, {'owned by': 0.69095117, 'spouse': 0.68874645, 'position held': 0.6807517, 'child': 0.67338985, 'country of citizenship': 0.6662529}]",
+        "schema_canonicalizaiton": [
+            null,
+            null
+        ]
+    },
+    {
+        "index": 47,
+        "input_text": "blaine anderson ( played by darren criss ) , a fictional character from the american musical comedy - drama television series glee , is presented as a gold star gay man .\n",
+        "entity_hint": "['glee', 'blaine_anderson', 'darren_criss']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "blaine_anderson",
+                "portrayedBy",
+                "darren_criss"
+            ],
+            [
+                "blaine_anderson",
+                "show",
+                "glee"
+            ],
+            [
+                "glee",
+                "genre",
+                "musical comedy - drama"
+            ]
+        ],
+        "schema_definition": {
+            "portrayedBy": "The subject entity is represented or acted by the person specified by the object entity.",
+            "show": "The subject entity is featured in or is a part of the television show specified by the object entity.",
+            "genre": "The subject entity belongs to the genre specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'position held': 0.71317637, 'participant': 0.6988198, 'owned by': 0.68588656, 'performer': 0.6802039, 'spouse': 0.6751227}, {'original network': 0.65676594, 'position held': 0.63454413, 'part of': 0.6318886, 'spouse': 0.6273432, 'sports season of league or competition': 0.6258713}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "blaine_anderson",
+                "performer",
+                "darren_criss"
+            ],
+            [
+                "blaine_anderson",
+                "part of",
+                "glee"
+            ],
+            [
+                "glee",
+                "genre",
+                "musical comedy - drama"
+            ]
+        ]
+    },
+    {
+        "index": 48,
+        "input_text": "apollo also helped admetus win the hand of alcestis , the daughter of pelias , king of iolcus .\n",
+        "entity_hint": "['alcestis', 'admetus', 'apollo', 'pelias', 'iolcus']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "apollo",
+                "helped",
+                "admetus"
+            ],
+            [
+                "admetus",
+                "won",
+                "alcestis"
+            ],
+            [
+                "alcestis",
+                "daughterOf",
+                "pelias"
+            ],
+            [
+                "pelias",
+                "kingOf",
+                "iolcus"
+            ]
+        ],
+        "schema_definition": {
+            "helped": "The subject entity provided assistance or support to the object entity in achieving a specific goal or outcome.",
+            "won": "The subject entity successfully obtained or achieved the object entity, often through effort or competition.",
+            "daughterOf": "The subject entity is the female offspring of the object entity, indicating a familial relationship.",
+            "kingOf": "The subject entity holds the title of king over the territory or realm specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'participant': 0.60427886, 'operator': 0.5768857, 'part of': 0.57050216, 'spouse': 0.5641172, 'participating team': 0.5622617}, {'winner': 0.68221027, 'participant': 0.62798214, 'position held': 0.6183257, 'sports season of league or competition': 0.6073301, 'participating team': 0.5965812}, {'child': 0.74996305, 'sibling': 0.7377355, 'mother': 0.7168889, 'spouse': 0.6987506, 'country of citizenship': 0.66342705}, {'country of citizenship': 0.67094874, 'position held': 0.6675892, 'located in the administrative territorial entity': 0.6632849, 'applies to jurisdiction': 0.6623187, 'head of government': 0.6514621}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            [
+                "alcestis",
+                "child",
+                "pelias"
+            ],
+            [
+                "pelias",
+                "head of government",
+                "iolcus"
+            ]
+        ]
+    },
+    {
+        "index": 49,
+        "input_text": "milcah ( \" milk\u0101h \" , related to the hebrew word for \" queen \" ) was the daughter of haran and the wife of nahor in genesis .\n",
+        "entity_hint": "['genesis', 'haran', 'milcah', 'nahor']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "milcah",
+                "daughterOf",
+                "haran"
+            ],
+            [
+                "milcah",
+                "wifeOf",
+                "nahor"
+            ],
+            [
+                "milcah",
+                "inBook",
+                "genesis"
+            ]
+        ],
+        "schema_definition": {
+            "daughterOf": "The subject entity is the child of the person or entity specified by the object entity.",
+            "wifeOf": "The subject entity is married to the person specified by the object entity.",
+            "inBook": "The subject entity is mentioned or featured in the book specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'child': 0.81149876, 'sibling': 0.7545154, 'owned by': 0.7140736, 'spouse': 0.7110257, 'country of citizenship': 0.70689535}, {'spouse': 0.828115, 'position held': 0.6839297, 'sibling': 0.68196917, 'owned by': 0.6816497, 'country of citizenship': 0.6813203}, {'language of work or name': 0.6401905, 'instance of': 0.63490105, 'part of': 0.63415885, 'notable work': 0.63374513, 'country of citizenship': 0.6326556}]",
+        "schema_canonicalizaiton": [
+            [
+                "milcah",
+                "child",
+                "haran"
+            ],
+            [
+                "milcah",
+                "spouse",
+                "nahor"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 50,
+        "input_text": "nothing is known of puddleglum 's life before he appears in chapter 5 of \" the silver chair \" , where he first introduces himself by saying , \" puddleglum 's my name .\n",
+        "entity_hint": "['the_silver_chair', 'puddleglum']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "puddleglum",
+                "appearsIn",
+                "the_silver_chair"
+            ],
+            [
+                "puddleglum",
+                "introducesHimselfIn",
+                "the_silver_chair"
+            ]
+        ],
+        "schema_definition": {
+            "appearsIn": "The subject entity is featured or present in the work specified by the object entity.",
+            "introducesHimselfIn": "The subject entity makes a self-introduction within the context of the work specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'notable work': 0.7089244, 'part of': 0.6988282, 'language of work or name': 0.68968594, 'position held': 0.68630505, 'after a work by': 0.6810319}, {'owned by': 0.6659269, 'part of': 0.6615467, 'position held': 0.6601106, 'member of': 0.6545156, 'language of work or name': 0.64999056}]",
+        "schema_canonicalizaiton": [
+            null,
+            null
+        ]
+    },
+    {
+        "index": 51,
+        "input_text": "in \" lenin in paris \" he plays paul lafargue .\n",
+        "entity_hint": "['lenin_in_paris', 'paul_lafargue']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "lenin_in_paris",
+                "featuresCharacter",
+                "paul_lafargue"
+            ]
+        ],
+        "schema_definition": {
+            "featuresCharacter": "The subject entity includes or portrays the character specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'part of': 0.6994772, 'child': 0.690362, 'instance of': 0.68787324, 'position held': 0.68732136, 'sibling': 0.6845187}]",
+        "schema_canonicalizaiton": [
+            null
+        ]
+    },
+    {
+        "index": 52,
+        "input_text": "in 1982 decker created the role of nelly dean in the world premiere of bernard herrmann 's \" wuthering heights \" at the portland opera .\n",
+        "entity_hint": "['wuthering_heights', 'nelly_dean', '1982', 'decker', 'bernard_herrmann', 'portland_opera']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "decker",
+                "createdRole",
+                "nelly_dean"
+            ],
+            [
+                "nelly_dean",
+                "inPlay",
+                "wuthering_heights"
+            ],
+            [
+                "wuthering_heights",
+                "premiereYear",
+                "1982"
+            ],
+            [
+                "wuthering_heights",
+                "composer",
+                "bernard_herrmann"
+            ],
+            [
+                "wuthering_heights",
+                "performedAt",
+                "portland_opera"
+            ]
+        ],
+        "schema_definition": {
+            "createdRole": "The subject entity was responsible for creating or originating the role specified by the object entity.",
+            "inPlay": "The subject entity is a character or role that exists within the play or production specified by the object entity.",
+            "premiereYear": "The subject entity had its first performance or was released in the year specified by the object entity.",
+            "composer": "The subject entity was composed or created by the individual or entity specified by the object entity.",
+            "performedAt": "The subject entity was presented or performed at the location specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'developer': 0.70827055, 'position held': 0.6933634, 'owned by': 0.6900924, 'participant': 0.6787672, 'screenwriter': 0.6641027}, {'performer': 0.67688406, 'participant': 0.6538735, 'position held': 0.64900136, 'part of': 0.645954, 'characters': 0.6401619}, {'platform': 0.6200779, 'member of': 0.6183269, 'developer': 0.61590534, 'position held': 0.6132194, 'participant': 0.6041143}, {}, {'located in the administrative territorial entity': 0.6686889, 'position held': 0.6650537, 'location': 0.6644701, 'residence': 0.6517261, 'member of': 0.6498083}]",
+        "schema_canonicalizaiton": [
+            [
+                "decker",
+                "developer",
+                "nelly_dean"
+            ],
+            [
+                "nelly_dean",
+                "characters",
+                "wuthering_heights"
+            ],
+            null,
+            [
+                "wuthering_heights",
+                "composer",
+                "bernard_herrmann"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 53,
+        "input_text": "he also provided the voices of aslan in \" the chronicles of narnia \" trilogy ( 2005\u20132010 ) and the titular monster in \" a monster calls \" ( 2016 ) .\n",
+        "entity_hint": "['the_chronicles_of_narnia', 'aslan', '2005', '2016']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "aslan",
+                "voiceOf",
+                "the_chronicles_of_narnia"
+            ],
+            [
+                "the_chronicles_of_narnia",
+                "releaseYear",
+                "2005"
+            ],
+            [
+                "aslan",
+                "appearsIn",
+                "the_chronicles_of_narnia"
+            ],
+            [
+                "the_chronicles_of_narnia",
+                "lastYear",
+                "2010"
+            ],
+            [
+                "aslan",
+                "voiceOf",
+                "a_monster_calls"
+            ],
+            [
+                "a_monster_calls",
+                "releaseYear",
+                "2016"
+            ]
+        ],
+        "schema_definition": {
+            "releaseYear": "The subject entity was released or published in the year specified by the object entity.",
+            "appearsIn": "The subject entity is featured or included in the work specified by the object entity.",
+            "lastYear": "The subject entity had its final release or ended in the year specified by the object entity.",
+            "voiceOf": "The subject entity is the character or entity that is voiced by the individual or entity specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'owned by': 0.68582284, 'position held': 0.681237, 'participant': 0.66080046, 'spouse': 0.6600239, 'sibling': 0.6577687}, {'publisher': 0.6674286, 'position held': 0.6543916, 'platform': 0.6431292, 'country of citizenship': 0.6354918, 'developer': 0.63228095}, {'notable work': 0.7043754, 'part of': 0.6990213, 'language of work or name': 0.67896295, 'instance of': 0.6719687, 'position held': 0.67031026}, {'position held': 0.6280881, 'follows': 0.6133729, 'located in the administrative territorial entity': 0.5988591, 'applies to jurisdiction': 0.5936308, 'country of citizenship': 0.5933703}, {'owned by': 0.6858228, 'position held': 0.68123686, 'participant': 0.6608005, 'spouse': 0.6600239, 'sibling': 0.6577687}, {'publisher': 0.6674286, 'position held': 0.6543915, 'platform': 0.643129, 'country of citizenship': 0.6354917, 'developer': 0.63228095}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            [
+                "aslan",
+                "notable work",
+                "the_chronicles_of_narnia"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 54,
+        "input_text": "a similar effect has led to the personalisation and \" reification \" in the discworld universe of mythological beings symbolising abstract concepts , such as death , the hogfather and other anthropomorphic personifications .\n",
+        "entity_hint": "['hogfather', 'death']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "hogfather",
+                "symbolises",
+                "death"
+            ],
+            [
+                "death",
+                "isPartOf",
+                "discworld_universe"
+            ],
+            [
+                "hogfather",
+                "isPartOf",
+                "discworld_universe"
+            ]
+        ],
+        "schema_definition": {
+            "symbolises": "The subject entity represents or embodies the abstract concept specified by the object entity.",
+            "isPartOf": "The subject entity is a component or element that belongs to the larger entity specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'instance of': 0.7084335, 'part of': 0.6895392, 'position held': 0.6767578, 'country of citizenship': 0.6686495, 'child': 0.6646595}, {'part of': 0.76127875, 'instance of': 0.724324, 'subsidiary': 0.6999669, 'child': 0.693553, 'country of citizenship': 0.67217225}, {'part of': 0.76127887, 'instance of': 0.724324, 'subsidiary': 0.6999669, 'child': 0.6935531, 'country of citizenship': 0.67217225}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "death",
+                "instance of",
+                "discworld_universe"
+            ],
+            [
+                "hogfather",
+                "instance of",
+                "discworld_universe"
+            ]
+        ]
+    },
+    {
+        "index": 55,
+        "input_text": "he portrayed kyle reese in \" terminator genisys \" and dc comics villain captain boomerang in the 2016 film \" suicide squad \" .\n",
+        "entity_hint": "['terminator_genisys', 'kyle_reese', 'dc_comics', 'captain_boomerang']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "kyle_reese",
+                "portrayedIn",
+                "terminator_genisys"
+            ],
+            [
+                "captain_boomerang",
+                "portrayedIn",
+                "suicide_squad"
+            ],
+            [
+                "suicide_squad",
+                "basedOn",
+                "dc_comics"
+            ]
+        ],
+        "schema_definition": {
+            "basedOn": "The subject entity is derived from or inspired by the source material specified by the object entity.",
+            "portrayedIn": "The subject entity is represented or acted by an individual in the work specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'performer': 0.7020219, 'position held': 0.6738523, 'participant': 0.6685113, 'screenwriter': 0.66596997, 'language of work or name': 0.6597445}, {'performer': 0.7020218, 'position held': 0.6738524, 'participant': 0.6685113, 'screenwriter': 0.66596997, 'language of work or name': 0.6597445}, {'after a work by': 0.7399973, 'language of work or name': 0.6740987, 'instance of': 0.6680717, 'developer': 0.6660237, 'part of': 0.66076154}]",
+        "schema_canonicalizaiton": [
+            [
+                "kyle_reese",
+                "performer",
+                "terminator_genisys"
+            ],
+            [
+                "captain_boomerang",
+                "performer",
+                "suicide_squad"
+            ],
+            [
+                "suicide_squad",
+                "after a work by",
+                "dc_comics"
+            ]
+        ]
+    },
+    {
+        "index": 56,
+        "input_text": "\" the last airbender \" stars noah ringer as aang , nicola peltz as katara , jackson rathbone as sokka , dev patel as zuko , and shaun toub as iroh .\n",
+        "entity_hint": "['the_last_airbender', 'sokka', 'noah_ringer', 'aang', 'nicola_peltz', 'katara', 'jackson_rathbone']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "the_last_airbender",
+                "stars",
+                "noah_ringer"
+            ],
+            [
+                "the_last_airbender",
+                "stars",
+                "nicola_peltz"
+            ],
+            [
+                "the_last_airbender",
+                "stars",
+                "jackson_rathbone"
+            ],
+            [
+                "the_last_airbender",
+                "stars",
+                "dev_patel"
+            ],
+            [
+                "the_last_airbender",
+                "stars",
+                "shaun_toub"
+            ],
+            [
+                "noah_ringer",
+                "plays",
+                "aang"
+            ],
+            [
+                "nicola_peltz",
+                "plays",
+                "katara"
+            ],
+            [
+                "jackson_rathbone",
+                "plays",
+                "sokka"
+            ]
+        ],
+        "schema_definition": {
+            "stars": "The subject entity features the person specified by the object entity in a prominent role, typically in a performance such as a film or television show.",
+            "plays": "The subject entity portrays the character specified by the object entity in a performance, such as a film, television show, or theatrical production."
+        },
+        "canonicalization_candidates": "[{'performer': 0.66231, 'participant': 0.64607245, 'position held': 0.63815415, 'screenwriter': 0.62094724, 'language of work or name': 0.61785483}, {'performer': 0.6623101, 'participant': 0.6460723, 'position held': 0.638154, 'screenwriter': 0.62094724, 'language of work or name': 0.6178547}, {'performer': 0.6623101, 'participant': 0.64607245, 'position held': 0.63815415, 'screenwriter': 0.6209473, 'language of work or name': 0.61785483}, {'performer': 0.6623101, 'participant': 0.6460724, 'position held': 0.63815415, 'screenwriter': 0.6209473, 'language of work or name': 0.61785483}, {'performer': 0.6623102, 'participant': 0.6460724, 'position held': 0.63815415, 'screenwriter': 0.6209473, 'language of work or name': 0.6178549}, {'performer': 0.6838846, 'original language of film or TV show': 0.62247807, 'characters': 0.6216355, 'language of work or name': 0.60986745, 'participant': 0.6051829}, {'performer': 0.68388456, 'original language of film or TV show': 0.62247825, 'characters': 0.6216356, 'language of work or name': 0.60986745, 'participant': 0.605183}, {'performer': 0.68388474, 'original language of film or TV show': 0.62247837, 'characters': 0.62163574, 'language of work or name': 0.6098676, 'participant': 0.6051831}]",
+        "schema_canonicalizaiton": [
+            [
+                "the_last_airbender",
+                "performer",
+                "noah_ringer"
+            ],
+            [
+                "the_last_airbender",
+                "performer",
+                "nicola_peltz"
+            ],
+            [
+                "the_last_airbender",
+                "performer",
+                "jackson_rathbone"
+            ],
+            [
+                "the_last_airbender",
+                "performer",
+                "dev_patel"
+            ],
+            [
+                "the_last_airbender",
+                "performer",
+                "shaun_toub"
+            ],
+            [
+                "noah_ringer",
+                "performer",
+                "aang"
+            ],
+            [
+                "nicola_peltz",
+                "performer",
+                "katara"
+            ],
+            [
+                "jackson_rathbone",
+                "performer",
+                "sokka"
+            ]
+        ]
+    },
+    {
+        "index": 57,
+        "input_text": "in video games , she voiced jasmine and junko in \" \" , coco bandicoot and polar in \" crash team racing \" .\n",
+        "entity_hint": "['crash_team_racing', 'coco_bandicoot', 'she']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "she",
+                "voiced",
+                "coco_bandicoot"
+            ],
+            [
+                "she",
+                "voiced",
+                "jasmine"
+            ],
+            [
+                "she",
+                "voiced",
+                "junko"
+            ],
+            [
+                "coco_bandicoot",
+                "inGame",
+                "crash_team_racing"
+            ]
+        ],
+        "schema_definition": {
+            "voiced": "The subject entity provided the voice for the character specified by the object entity in a performance or production.",
+            "inGame": "The subject entity is featured or appears in the game specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'performer': 0.6637069, 'voice type': 0.6253698, 'screenwriter': 0.606509, 'language of work or name': 0.6058824, 'participant': 0.6017734}, {'performer': 0.6637069, 'voice type': 0.62536955, 'screenwriter': 0.6065089, 'language of work or name': 0.6058823, 'participant': 0.6017733}, {'performer': 0.66370696, 'voice type': 0.62536967, 'screenwriter': 0.6065091, 'language of work or name': 0.6058824, 'participant': 0.6017734}, {'position held': 0.65200734, 'characters': 0.64492685, 'platform': 0.64241534, 'country of citizenship': 0.6403045, 'league': 0.6385716}]",
+        "schema_canonicalizaiton": [
+            [
+                "she",
+                "performer",
+                "coco_bandicoot"
+            ],
+            [
+                "she",
+                "performer",
+                "jasmine"
+            ],
+            [
+                "she",
+                "performer",
+                "junko"
+            ],
+            [
+                "coco_bandicoot",
+                "characters",
+                "crash_team_racing"
+            ]
+        ]
+    },
+    {
+        "index": 58,
+        "input_text": "honey ryder , too , was beaten and raped as a teenager by a drunken acquaintance . fleming , ian , \" doctor no \" ( glidrose , 1958 ) , ch .\n",
+        "entity_hint": "['doctor_no', 'honey_ryder', 'fleming_,_ian', '1958']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "honey_ryder",
+                "wasVictimOf",
+                "drunken_acquaintance"
+            ],
+            [
+                "fleming_,_ian",
+                "wrote",
+                "doctor_no"
+            ],
+            [
+                "doctor_no",
+                "publishedIn",
+                "1958"
+            ]
+        ],
+        "schema_definition": {
+            "publishedIn": "The subject entity was published or released in the year specified by the object entity.",
+            "wrote": "The subject entity is the author or creator of the work specified by the object entity.",
+            "wasVictimOf": "The subject entity experienced a harmful act or crime perpetrated by the individual or entity specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'participant': 0.63376504, 'position held': 0.62657475, 'spouse': 0.6003947, 'child': 0.5972463, 'part of': 0.5900942}, {'screenwriter': 0.74576247, 'owned by': 0.7403453, 'notable work': 0.7203656, 'composer': 0.7158723, 'after a work by': 0.70614845}, {'publisher': 0.6727061, 'position held': 0.6546425, 'platform': 0.6544479, 'developer': 0.64406383, 'country of citizenship': 0.63562214}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "fleming_,_ian",
+                "notable work",
+                "doctor_no"
+            ],
+            [
+                "doctor_no",
+                "publisher",
+                "1958"
+            ]
+        ]
+    },
+    {
+        "index": 59,
+        "input_text": "his big break came when oliver stone cast him as perdiccas in \" alexander \" alongside colin farrell and angelina jolie .\n",
+        "entity_hint": "['alexander', 'perdiccas', 'colin_farrell', 'angelina_jolie']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "perdiccas",
+                "castIn",
+                "alexander"
+            ],
+            [
+                "perdiccas",
+                "coStar",
+                "colin_farrell"
+            ],
+            [
+                "perdiccas",
+                "coStar",
+                "angelina_jolie"
+            ]
+        ],
+        "schema_definition": {
+            "castIn": "The subject entity was included in the production specified by the object entity, indicating a role or participation in that work.",
+            "coStar": "The subject entity shares the screen or stage with the person specified by the object entity, indicating a collaborative performance in the same production."
+        },
+        "canonicalization_candidates": "[{'participant': 0.66212946, 'part of': 0.64809686, 'participant of': 0.6403749, 'competition class': 0.63301647, 'member of': 0.6293056}, {'sibling': 0.6519269, 'spouse': 0.6518711, 'performer': 0.64825356, 'participant': 0.64585364, 'member of': 0.63005483}, {'sibling': 0.65192676, 'spouse': 0.65187097, 'performer': 0.64825326, 'participant': 0.6458534, 'member of': 0.63005483}]",
+        "schema_canonicalizaiton": [
+            [
+                "perdiccas",
+                "participant of",
+                "alexander"
+            ],
+            [
+                "perdiccas",
+                "performer",
+                "colin_farrell"
+            ],
+            [
+                "perdiccas",
+                "performer",
+                "angelina_jolie"
+            ]
+        ]
+    },
+    {
+        "index": 60,
+        "input_text": "douglas gresham , lewis ' step - son , created the name lilliandil for the 2010 film version of \" the voyage of the dawn treader \" .\n",
+        "entity_hint": "['the_voyage_of_the_dawn_treader', 'lilliandil', 'douglas_gresham', '2010']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "douglas_gresham",
+                "createdName",
+                "lilliandil"
+            ],
+            [
+                "lilliandil",
+                "filmVersionOf",
+                "the_voyage_of_the_dawn_treader"
+            ],
+            [
+                "the_voyage_of_the_dawn_treader",
+                "releaseYear",
+                "2010"
+            ]
+        ],
+        "schema_definition": {
+            "releaseYear": "The subject entity was released or published in the year specified by the object entity.",
+            "filmVersionOf": "The subject entity is a film adaptation or version of the work specified by the object entity.",
+            "createdName": "The subject entity is a name that was created or coined by the person or entity specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'language of work or name': 0.68901515, 'developer': 0.6878483, 'participant': 0.66075313, 'owned by': 0.6578169, 'position held': 0.6507664}, {'original language of film or TV show': 0.67471737, 'screenwriter': 0.64914346, 'language of work or name': 0.64504623, 'after a work by': 0.6434069, 'notable work': 0.6432749}, {'publisher': 0.6674285, 'position held': 0.6543915, 'platform': 0.643129, 'country of citizenship': 0.6354917, 'developer': 0.63228095}]",
+        "schema_canonicalizaiton": [
+            [
+                "douglas_gresham",
+                "developer",
+                "lilliandil"
+            ],
+            [
+                "lilliandil",
+                "after a work by",
+                "the_voyage_of_the_dawn_treader"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 61,
+        "input_text": "\" the tempest \" has only one female character , miranda .\n",
+        "entity_hint": "['the_tempest', 'miranda']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "the_tempest",
+                "hasCharacter",
+                "miranda"
+            ]
+        ],
+        "schema_definition": {
+            "hasCharacter": "The subject entity features or includes the character specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'part of': 0.7168561, 'instance of': 0.7023117, 'child': 0.6979586, 'position held': 0.6877513, 'owned by': 0.68154967}]",
+        "schema_canonicalizaiton": [
+            null
+        ]
+    },
+    {
+        "index": 62,
+        "input_text": "according to the book of genesis , noah and his three sons shem , ham , and japheth survived the flood aboard the ark , along with their wives .\n",
+        "entity_hint": "['book_of_genesis', 'japheth', 'noah', 'shem', 'ham']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "noah",
+                "survivedWith",
+                "shem"
+            ],
+            [
+                "noah",
+                "survivedWith",
+                "ham"
+            ],
+            [
+                "noah",
+                "survivedWith",
+                "japheth"
+            ],
+            [
+                "noah",
+                "fromBook",
+                "book_of_genesis"
+            ]
+        ],
+        "schema_definition": {
+            "survivedWith": "The subject entity continued to exist or live alongside the entities specified by the object entity during or after a significant event.",
+            "fromBook": "The subject entity is referenced or mentioned in the literary work specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'participant': 0.6288356, 'position held': 0.59651744, 'spouse': 0.594931, 'sibling': 0.591841, 'followed by': 0.59173167}, {'participant': 0.62883556, 'position held': 0.59651744, 'spouse': 0.59493095, 'sibling': 0.591841, 'followed by': 0.59173167}, {'participant': 0.62883556, 'position held': 0.59651756, 'spouse': 0.594931, 'sibling': 0.591841, 'followed by': 0.59173167}, {'notable work': 0.70539415, 'language of work or name': 0.6933646, 'movement': 0.66478, 'part of': 0.66268766, 'instance of': 0.65116745}]",
+        "schema_canonicalizaiton": [
+            [
+                "noah",
+                "participant",
+                "shem"
+            ],
+            [
+                "noah",
+                "participant",
+                "ham"
+            ],
+            [
+                "noah",
+                "participant",
+                "japheth"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 63,
+        "input_text": "clear and present danger ( 1994 ) has jack ryan appointed as acting cia deputy director of intelligence , as vice admiral james greer ( james earl jones ) has become sick with cancer .\n",
+        "entity_hint": "['clear_and_present_danger', 'jack_ryan', '1994', 'cia', 'vice_admiral_james_greer', 'james_earl_jones']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "clear_and_present_danger",
+                "releaseYear",
+                "1994"
+            ],
+            [
+                "jack_ryan",
+                "position",
+                "acting_cia_deputy_director_of_intelligence"
+            ],
+            [
+                "vice_admiral_james_greer",
+                "actor",
+                "james_earl_jones"
+            ],
+            [
+                "vice_admiral_james_greer",
+                "condition",
+                "sick_with_cancer"
+            ],
+            [
+                "jack_ryan",
+                "organization",
+                "cia"
+            ]
+        ],
+        "schema_definition": {
+            "releaseYear": "The subject entity was released or published in the year specified by the object entity.",
+            "position": "The subject entity holds the specified position or title within the organization mentioned by the object entity.",
+            "actor": "The subject entity is portrayed by the person specified by the object entity in a performance or production.",
+            "condition": "The subject entity is experiencing the state or situation described by the object entity.",
+            "organization": "The subject entity is associated with or belongs to the organization specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'publisher': 0.66742873, 'position held': 0.65439177, 'platform': 0.6431292, 'country of citizenship': 0.6354919, 'developer': 0.63228106}, {'position held': 0.760931, 'head of government': 0.6847416, 'owned by': 0.6842786, 'member of': 0.67917895, 'country of citizenship': 0.6738621}, {'performer': 0.6986898, 'participant': 0.6622906, 'position held': 0.66166514, 'screenwriter': 0.6468591, 'owned by': 0.6379624}, {'part of': 0.6987377, 'position held': 0.69815195, 'country of citizenship': 0.69586384, 'spouse': 0.6947341, 'child': 0.68908525}, {'member of': 0.7613727, 'part of': 0.7164577, 'subsidiary': 0.7141539, 'position held': 0.7133715, 'country of citizenship': 0.711779}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "jack_ryan",
+                "position held",
+                "acting_cia_deputy_director_of_intelligence"
+            ],
+            [
+                "vice_admiral_james_greer",
+                "performer",
+                "james_earl_jones"
+            ],
+            null,
+            [
+                "jack_ryan",
+                "position held",
+                "cia"
+            ]
+        ]
+    },
+    {
+        "index": 64,
+        "input_text": "xavier is first introduced in \" x - men \" , when he sends storm and cyclops to rescue wolverine and rogue from sabretooth .\n",
+        "entity_hint": "['x_-_men', 'cyclops', 'xavier']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "xavier",
+                "firstIntroducedIn",
+                "x_-_men"
+            ],
+            [
+                "xavier",
+                "sends",
+                "cyclops"
+            ],
+            [
+                "cyclops",
+                "rescue",
+                "wolverine"
+            ],
+            [
+                "cyclops",
+                "rescue",
+                "rogue"
+            ],
+            [
+                "sabretooth",
+                "opposes",
+                "wolverine"
+            ]
+        ],
+        "schema_definition": {
+            "firstIntroducedIn": "The subject entity is introduced for the first time in the context specified by the object entity.",
+            "sends": "The subject entity dispatches or directs the action of the entity specified by the object entity.",
+            "rescue": "The subject entity performs an action to save or help the entity specified by the object entity from danger or harm.",
+            "opposes": "The subject entity acts in opposition to or against the entity specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'position held': 0.658558, 'part of': 0.6582974, 'country of citizenship': 0.6510122, 'instance of': 0.6478467, 'child': 0.6470647}, {'participant': 0.6654314, 'position held': 0.66361606, 'child': 0.64964736, 'owned by': 0.64425236, 'operator': 0.6421491}, {'participant': 0.6113584, 'position held': 0.5955082, 'spouse': 0.5908029, 'child': 0.58440894, 'operator': 0.5808164}, {'participant': 0.61135834, 'position held': 0.5955082, 'spouse': 0.5908029, 'child': 0.5844089, 'operator': 0.58081645}, {'position held': 0.6651659, 'participant': 0.65361315, 'child': 0.6352134, 'spouse': 0.63038725, 'part of': 0.6260971}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 65,
+        "input_text": "in september 2015 , it was announced that alex kingston would reprise the role of recurring character river song for the first time since the 2013 episode \" the name of the doctor \" .\n",
+        "entity_hint": "['the_name_of_the_doctor', 'river_song', 'september_2015', 'alex_kingston']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "alex_kingston",
+                "repriseRole",
+                "river_song"
+            ],
+            [
+                "river_song",
+                "firstAppearance",
+                "the_name_of_the_doctor"
+            ],
+            [
+                "the_name_of_the_doctor",
+                "announcementDate",
+                "september_2015"
+            ]
+        ],
+        "schema_definition": {
+            "repriseRole": "The subject entity returns to perform or portray the role specified by the object entity after a period of absence.",
+            "firstAppearance": "The subject entity is the initial episode or instance in which the character or entity specified by the object entity is introduced.",
+            "announcementDate": "The subject entity refers to the date on which the information or news regarding the event or entity specified by the object entity was made public."
+        },
+        "canonicalization_candidates": "[{'position held': 0.658509, 'performer': 0.6496833, 'follows': 0.6135664, 'participant': 0.61275494, 'member of': 0.610034}, {'instance of': 0.6449349, 'follows': 0.63757026, 'position held': 0.6367588, 'part of': 0.6339662, 'participant': 0.63191545}, {'position held': 0.64488393, 'participant': 0.63760006, 'applies to jurisdiction': 0.63336134, 'participant of': 0.6276936, 'follows': 0.615504}]",
+        "schema_canonicalizaiton": [
+            [
+                "alex_kingston",
+                "performer",
+                "river_song"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 66,
+        "input_text": "in the \" t\u00e1in b\u00f3 c\u00faailnge \" , macha and the morr\u00edgan similarly appear as larger - than - life figures , yet never described as goddesses .\n",
+        "entity_hint": "['t\u00e1in_b\u00f3_c\u00faailnge', 'the_morr\u00edgan', 'macha']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "t\u00e1in_b\u00f3_c\u00faailnge",
+                "features",
+                "macha"
+            ],
+            [
+                "t\u00e1in_b\u00f3_c\u00faailnge",
+                "features",
+                "the_morr\u00edgan"
+            ],
+            [
+                "macha",
+                "description",
+                "larger-than-life figure"
+            ],
+            [
+                "the_morr\u00edgan",
+                "description",
+                "larger-than-life figure"
+            ]
+        ],
+        "schema_definition": {
+            "features": "The subject entity includes or showcases the object entity as a notable element or characteristic within its context.",
+            "description": "The subject entity is characterized or defined by the qualities or attributes specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'part of': 0.6912093, 'instance of': 0.6776366, 'country of citizenship': 0.64794993, 'child': 0.6364194, 'position held': 0.6359384}, {'part of': 0.69120944, 'instance of': 0.67763644, 'country of citizenship': 0.6479499, 'child': 0.63641936, 'position held': 0.6359384}, {'part of': 0.6820684, 'instance of': 0.6753113, 'position held': 0.6387049, 'child': 0.63341063, 'country of citizenship': 0.6325259}, {'part of': 0.6820685, 'instance of': 0.67531145, 'position held': 0.638705, 'child': 0.6334108, 'country of citizenship': 0.6325261}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            [
+                "macha",
+                "instance of",
+                "larger-than-life figure"
+            ],
+            [
+                "the_morr\u00edgan",
+                "instance of",
+                "larger-than-life figure"
+            ]
+        ]
+    },
+    {
+        "index": 67,
+        "input_text": "his first professional role was as rum tum tugger in the andrew lloyd webber musical \" cats \" , in 1990 - 1991 .\n",
+        "entity_hint": "['cats', 'rum_tum_tugger', 'andrew_lloyd_webber']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "rum_tum_tugger",
+                "roleIn",
+                "cats"
+            ],
+            [
+                "cats",
+                "composer",
+                "andrew_lloyd_webber"
+            ],
+            [
+                "rum_tum_tugger",
+                "musical",
+                "cats"
+            ]
+        ],
+        "schema_definition": {
+            "composer": "The subject entity is the person or entity responsible for creating the music for the work specified by the object entity.",
+            "roleIn": "The subject entity represents a character or part played in the production specified by the object entity.",
+            "musical": "The subject entity is associated with the musical work specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'performer': 0.7109624, 'participant': 0.6945822, 'part of': 0.6773607, 'position held': 0.67357135, 'member of': 0.6670741}, {}, {'member of': 0.7342696, 'composer': 0.7306018, 'performer': 0.70906883, 'record label': 0.701506, 'language of work or name': 0.700585}]",
+        "schema_canonicalizaiton": [
+            [
+                "rum_tum_tugger",
+                "performer",
+                "cats"
+            ],
+            [
+                "cats",
+                "composer",
+                "andrew_lloyd_webber"
+            ],
+            [
+                "rum_tum_tugger",
+                "performer",
+                "cats"
+            ]
+        ]
+    },
+    {
+        "index": 68,
+        "input_text": "in \" the girl with the dragon tattoo \" ( 2005 ) , lisbeth salander is introduced as a gifted , but deeply troubled , researcher and computer hacker working for milton security .\n",
+        "entity_hint": "['the_girl_with_the_dragon_tattoo', 'lisbeth_salander', '2005', 'milton_security']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "lisbeth_salander",
+                "introducedIn",
+                "the_girl_with_the_dragon_tattoo"
+            ],
+            [
+                "the_girl_with_the_dragon_tattoo",
+                "releaseYear",
+                "2005"
+            ],
+            [
+                "lisbeth_salander",
+                "worksFor",
+                "milton_security"
+            ]
+        ],
+        "schema_definition": {
+            "releaseYear": "The subject entity was released or published in the year specified by the object entity.",
+            "introducedIn": "The subject entity is presented or first appears in the work specified by the object entity.",
+            "worksFor": "The subject entity is employed by or associated with the organization specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'notable work': 0.6823337, 'language of work or name': 0.6742801, 'part of': 0.6572265, 'main subject': 0.6534078, 'instance of': 0.65234673}, {'publisher': 0.66742873, 'position held': 0.65439177, 'platform': 0.6431292, 'country of citizenship': 0.63549197, 'developer': 0.6322812}, {'position held': 0.7174897, 'member of': 0.7133226, 'operator': 0.6983025, 'subsidiary': 0.6815248, 'country of citizenship': 0.6797658}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            [
+                "lisbeth_salander",
+                "operator",
+                "milton_security"
+            ]
+        ]
+    },
+    {
+        "index": 69,
+        "input_text": "in the unfinished adventure \" tintin and alph - art \" , haddock and tintin visit bianca castafiore at an island villa .\n",
+        "entity_hint": "['tintin_and_alph_-_art', 'bianca_castafiore', 'haddock', 'island_villa']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "tintin_and_alph_-_art",
+                "featuresCharacter",
+                "haddock"
+            ],
+            [
+                "tintin_and_alph_-_art",
+                "featuresCharacter",
+                "tintin"
+            ],
+            [
+                "tintin_and_alph_-_art",
+                "visit",
+                "bianca_castafiore"
+            ],
+            [
+                "bianca_castafiore",
+                "location",
+                "island_villa"
+            ]
+        ],
+        "schema_definition": {
+            "featuresCharacter": "The subject entity includes or showcases the character specified by the object entity as part of its narrative or storyline.",
+            "visit": "The subject entity involves an action where the characters or entities specified by the subject go to see or meet the entity specified by the object entity.",
+            "location": "The subject entity is situated in or associated with the place specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'characters': 0.6724906, 'part of': 0.6714637, 'language of work or name': 0.6522683, 'instance of': 0.65191734, 'participant': 0.6462691}, {'characters': 0.6724906, 'part of': 0.67146355, 'language of work or name': 0.6522681, 'instance of': 0.6519172, 'participant': 0.64626896}, {'participant': 0.64696556, 'position held': 0.61805373, 'spouse': 0.61331093, 'sibling': 0.6044287, 'member of': 0.60310984}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "tintin_and_alph_-_art",
+                "characters",
+                "haddock"
+            ],
+            [
+                "tintin_and_alph_-_art",
+                "characters",
+                "tintin"
+            ],
+            null,
+            [
+                "bianca_castafiore",
+                "location",
+                "island_villa"
+            ]
+        ]
+    },
+    {
+        "index": 70,
+        "input_text": "and for gregory peck , who portrayed captain ahab , in the 1956 picture \" moby dick \" , based on the herman melville novel .\n",
+        "entity_hint": "['moby_dick', 'ahab', 'gregory_peck', '1956', 'herman_melville']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "gregory_peck",
+                "portrayed",
+                "ahab"
+            ],
+            [
+                "ahab",
+                "inPicture",
+                "moby_dick"
+            ],
+            [
+                "moby_dick",
+                "basedOn",
+                "herman_melville"
+            ],
+            [
+                "moby_dick",
+                "releaseYear",
+                "1956"
+            ]
+        ],
+        "schema_definition": {
+            "releaseYear": "The subject entity was released or published in the year specified by the object entity.",
+            "inPicture": "The subject entity is featured in the picture specified by the object entity.",
+            "basedOn": "The subject entity is derived from or inspired by the work specified by the object entity.",
+            "portrayed": "The subject entity represents or plays the character specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'performer': 0.69904786, 'position held': 0.6894324, 'participant': 0.6657411, 'spouse': 0.65811455, 'owned by': 0.65579855}, {'country of citizenship': 0.6958417, 'owned by': 0.695727, 'position held': 0.6904811, 'child': 0.68614006, 'spouse': 0.6860483}, {'after a work by': 0.7649263, 'notable work': 0.691922, 'language of work or name': 0.68599105, 'instance of': 0.66866004, 'genre': 0.66183996}, {'publisher': 0.6674286, 'position held': 0.65439177, 'platform': 0.64312905, 'country of citizenship': 0.635492, 'developer': 0.632281}]",
+        "schema_canonicalizaiton": [
+            [
+                "gregory_peck",
+                "performer",
+                "ahab"
+            ],
+            null,
+            [
+                "moby_dick",
+                "after a work by",
+                "herman_melville"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 71,
+        "input_text": "he is a cousin of annabeth chase , a main character of the \" percy jackson and the olympians \" and \" the heroes of olympus \" series , who links the two series together .\n",
+        "entity_hint": "['the_heroes_of_olympus', 'percy_jackson', 'annabeth_chase']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "annabeth_chase",
+                "isCousinOf",
+                "he"
+            ],
+            [
+                "annabeth_chase",
+                "isMainCharacterOf",
+                "percy_jackson"
+            ],
+            [
+                "annabeth_chase",
+                "links",
+                "the_heroes_of_olympus"
+            ],
+            [
+                "percy_jackson",
+                "isPartOf",
+                "the_heroes_of_olympus"
+            ]
+        ],
+        "schema_definition": {
+            "isCousinOf": "The subject entity is related to the object entity as a cousin, indicating a familial relationship between them.",
+            "isMainCharacterOf": "The subject entity is recognized as a main character in the work specified by the object entity, indicating its significance in that narrative.",
+            "isPartOf": "The subject entity is included within or is a component of the larger entity specified by the object entity, indicating a relationship of inclusion or membership.",
+            "links": "The subject entity establishes a connection or relationship with the object entity, indicating that they are related in a way that ties them together within a narrative or thematic context."
+        },
+        "canonicalization_candidates": "[{'sibling': 0.7116864, 'spouse': 0.68659747, 'child': 0.6463419, 'instance of': 0.6385634, 'country of citizenship': 0.63317907}, {'notable work': 0.65827096, 'main subject': 0.6144142, 'characters': 0.60112727, 'position held': 0.59539413, 'instance of': 0.5940685}, {'spouse': 0.6728519, 'part of': 0.6469989, 'sibling': 0.6438968, 'child': 0.632557, 'instance of': 0.6260437}, {'part of': 0.706303, 'instance of': 0.6939538, 'subsidiary': 0.64580834, 'child': 0.6454505, 'member of': 0.64542055}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "annabeth_chase",
+                "characters",
+                "percy_jackson"
+            ],
+            null,
+            [
+                "percy_jackson",
+                "part of",
+                "the_heroes_of_olympus"
+            ]
+        ]
+    },
+    {
+        "index": 72,
+        "input_text": "live production of ian fleming 's \" casino royale \" , in which pate played the role of \" clarence leiter \" , opposite barry nelson 's \" jimmy bond \" .\n",
+        "entity_hint": "['casino_royale', 'clarence_leiter', 'ian_fleming', 'pate', 'barry_nelson']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "casino_royale",
+                "writtenBy",
+                "ian_fleming"
+            ],
+            [
+                "casino_royale",
+                "character",
+                "clarence_leiter"
+            ],
+            [
+                "clarence_leiter",
+                "playedBy",
+                "pate"
+            ],
+            [
+                "jimmy_bond",
+                "playedBy",
+                "barry_nelson"
+            ],
+            [
+                "casino_royale",
+                "oppositeCharacter",
+                "jimmy_bond"
+            ]
+        ],
+        "schema_definition": {
+            "playedBy": "The subject entity is portrayed by the person specified by the object entity in a performance or production.",
+            "writtenBy": "The subject entity was authored or created by the individual specified by the object entity.",
+            "character": "The subject entity is a character that is part of the narrative or story of the subject entity.",
+            "oppositeCharacter": "The subject entity is a character that is positioned as a counterpart or adversary to the character specified by the object entity in the narrative."
+        },
+        "canonicalization_candidates": "[{'screenwriter': 0.7360751, 'developer': 0.72076, 'owned by': 0.716513, 'composer': 0.706235, 'after a work by': 0.6938905}, {'part of': 0.70387316, 'participant': 0.6827232, 'owned by': 0.68249875, 'sibling': 0.67588556, 'spouse': 0.6730076}, {'performer': 0.6986899, 'participant': 0.6622905, 'position held': 0.6616651, 'screenwriter': 0.64685905, 'owned by': 0.63796234}, {'performer': 0.6986898, 'participant': 0.6622905, 'position held': 0.66166514, 'screenwriter': 0.6468591, 'owned by': 0.63796234}, {'position held': 0.65706694, 'spouse': 0.62842333, 'participant': 0.62426186, 'follows': 0.61357504, 'part of': 0.61292434}]",
+        "schema_canonicalizaiton": [
+            [
+                "casino_royale",
+                "screenwriter",
+                "ian_fleming"
+            ],
+            [
+                "casino_royale",
+                "participant",
+                "clarence_leiter"
+            ],
+            [
+                "clarence_leiter",
+                "performer",
+                "pate"
+            ],
+            [
+                "jimmy_bond",
+                "performer",
+                "barry_nelson"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 73,
+        "input_text": "in his second form , bob resembles baron vladimir harkonnen from the original 1984 \" dune \" film .\n",
+        "entity_hint": "['\"_dune_\"_film', 'baron_vladimir_harkonnen', '1984']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "bob",
+                "resembles",
+                "baron_vladimir_harkonnen"
+            ],
+            [
+                "baron_vladimir_harkonnen",
+                "from",
+                "\"_dune_\"_film"
+            ],
+            [
+                "\"_dune_\"_film",
+                "releaseYear",
+                "1984"
+            ]
+        ],
+        "schema_definition": {
+            "releaseYear": "The subject entity indicates the year in which the object entity was released or published.",
+            "resembles": "The subject entity has a similarity or likeness to the object entity in appearance or characteristics.",
+            "from": "The subject entity originates or is associated with the object entity, indicating a source or reference point."
+        },
+        "canonicalization_candidates": "[{'said to be the same as': 0.71000105, 'sibling': 0.7041587, 'instance of': 0.66556454, 'part of': 0.6551509, 'spouse': 0.64183116}, {'part of': 0.7135495, 'instance of': 0.6945418, 'applies to jurisdiction': 0.69372404, 'child': 0.69281566, 'country of citizenship': 0.68972445}, {'publisher': 0.6620859, 'platform': 0.65639055, 'developer': 0.64651513, 'position held': 0.64633036, 'country of citizenship': 0.63374436}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 74,
+        "input_text": "in norse mythology , hraudung was a human king and the father of geirr\u00f6d and agnar according to the prose header of the poem \" gr\u00edmnism\u00e1l \" from the \" poetic edda \" .\n",
+        "entity_hint": "['gr\u00edmnism\u00e1l', 'geirr\u00f6d', 'hraudung', 'agnar']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "hraudung",
+                "fatherOf",
+                "geirr\u00f6d"
+            ],
+            [
+                "hraudung",
+                "fatherOf",
+                "agnar"
+            ],
+            [
+                "gr\u00edmnism\u00e1l",
+                "source",
+                "poetic edda"
+            ]
+        ],
+        "schema_definition": {
+            "fatherOf": "The subject entity is the parent of the object entity, indicating a direct familial relationship between them.",
+            "source": "The subject entity is derived from or originates in the object entity, indicating that the object entity provides the context or material for the subject entity."
+        },
+        "canonicalization_candidates": "[{'child': 0.75898874, 'sibling': 0.75536156, 'spouse': 0.7057846, 'father': 0.6635088, 'part of': 0.65864134}, {'child': 0.75898886, 'sibling': 0.7553616, 'spouse': 0.7057846, 'father': 0.6635088, 'part of': 0.65864146}, {'part of': 0.6721401, 'child': 0.65992105, 'instance of': 0.64871216, 'sibling': 0.638235, 'country of citizenship': 0.62748015}]",
+        "schema_canonicalizaiton": [
+            [
+                "hraudung",
+                "child",
+                "geirr\u00f6d"
+            ],
+            [
+                "hraudung",
+                "child",
+                "agnar"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 75,
+        "input_text": "\" evil under the sun \" features hercule poirot as the protagonist , unlike the previous game in the series , \" \" , which had featured poirot as a non - playable character .\n",
+        "entity_hint": "['evil_under_the_sun', 'hercule_poirot']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "evil_under_the_sun",
+                "features",
+                "hercule_poirot"
+            ]
+        ],
+        "schema_definition": {
+            "features": "The subject entity includes or showcases the object entity as a significant element or character within its content."
+        },
+        "canonicalization_candidates": "[{'part of': 0.6702616, 'instance of': 0.64363813, 'notable work': 0.6425356, 'child': 0.63916683, 'language of work or name': 0.6380327}]",
+        "schema_canonicalizaiton": [
+            [
+                "evil_under_the_sun",
+                "notable work",
+                "hercule_poirot"
+            ]
+        ]
+    },
+    {
+        "index": 76,
+        "input_text": "she made her european debut in vienna as christine daa\u00e9 in andrew lloyd webber 's \" the phantom of the opera \" from 1990 until 1992 .\n",
+        "entity_hint": "['the_phantom_of_the_opera', 'christine_daa\u00e9', 'vienna', 'andrew_lloyd_webber', '1990', '1992']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "christine_daa\u00e9",
+                "debutIn",
+                "vienna"
+            ],
+            [
+                "christine_daa\u00e9",
+                "roleIn",
+                "the_phantom_of_the_opera"
+            ],
+            [
+                "the_phantom_of_the_opera",
+                "composer",
+                "andrew_lloyd_webber"
+            ],
+            [
+                "the_phantom_of_the_opera",
+                "startYear",
+                "1990"
+            ],
+            [
+                "the_phantom_of_the_opera",
+                "endYear",
+                "1992"
+            ]
+        ],
+        "schema_definition": {
+            "startYear": "The subject entity indicates the year in which the event or performance specified by the object entity began.",
+            "roleIn": "The subject entity represents the character or role played in the production specified by the object entity.",
+            "endYear": "The subject entity indicates the year in which the event or performance specified by the object entity concluded.",
+            "composer": "The subject entity is the individual or entity responsible for composing the work specified by the object entity.",
+            "debutIn": "The subject entity made its first appearance or performance in the location specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'location of formation': 0.6427063, 'located in the administrative territorial entity': 0.63940156, 'location': 0.6338038, 'residence': 0.628839, 'member of': 0.6188692}, {'performer': 0.7085045, 'participant': 0.6677334, 'position held': 0.66286576, 'screenwriter': 0.65066403, 'characters': 0.6505544}, {}, {'participant of': 0.65805304, 'participant': 0.658035, 'member of': 0.63954985, 'position held': 0.63631415, 'sports season of league or competition': 0.6317766}, {'participant': 0.6491575, 'participant of': 0.64488095, 'position held': 0.63577557, 'follows': 0.6355113, 'followed by': 0.6267473}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "christine_daa\u00e9",
+                "performer",
+                "the_phantom_of_the_opera"
+            ],
+            [
+                "the_phantom_of_the_opera",
+                "composer",
+                "andrew_lloyd_webber"
+            ],
+            [
+                "the_phantom_of_the_opera",
+                "participant of",
+                "1990"
+            ],
+            [
+                "the_phantom_of_the_opera",
+                "participant of",
+                "1992"
+            ]
+        ]
+    },
+    {
+        "index": 77,
+        "input_text": "the scars that ged bears from his encounter with the shadow in \" a wizard of earthsea \" make tenar realize that he has confronted death in a way that she has never done .\n",
+        "entity_hint": "['a_wizard_of_earthsea', 'ged', 'tenar']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "ged",
+                "encountered",
+                "a_wizard_of_earthsea"
+            ],
+            [
+                "tenar",
+                "realized",
+                "ged"
+            ],
+            [
+                "ged",
+                "confronted",
+                "death"
+            ],
+            [
+                "tenar",
+                "hasNotConfronted",
+                "death"
+            ]
+        ],
+        "schema_definition": {
+            "confronted": "The subject entity faced or dealt with the situation or concept specified by the object entity.",
+            "realized": "The subject entity came to understand or become aware of the information or truth specified by the object entity.",
+            "hasNotConfronted": "The subject entity has not faced or dealt with the situation or concept specified by the object entity.",
+            "encountered": "The subject entity came into contact with or experienced the entity specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'spouse': 0.6800268, 'participant': 0.6725449, 'position held': 0.6665598, 'part of': 0.6618839, 'sibling': 0.66179526}, {'position held': 0.6236326, 'country of citizenship': 0.6154833, 'part of': 0.61508447, 'owned by': 0.6148774, 'instance of': 0.60842675}, {'position held': 0.6702814, 'part of': 0.654868, 'participant': 0.6525718, 'spouse': 0.64947546, 'child': 0.64749074}, {'position held': 0.6072308, 'child': 0.6067952, 'part of': 0.6001153, 'sibling': 0.59581935, 'spouse': 0.5957057}]",
+        "schema_canonicalizaiton": [
+            [
+                "ged",
+                "participant",
+                "a_wizard_of_earthsea"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 78,
+        "input_text": "beginning in 2018 , he will be the voice of leonardo in \" rise of the teenage mutant ninja turtles \" .\n",
+        "entity_hint": "['rise_of_the_teenage_mutant_ninja_turtles', 'leonardo', '2018']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "leonardo",
+                "voiceOf",
+                "rise_of_the_teenage_mutant_ninja_turtles"
+            ],
+            [
+                "rise_of_the_teenage_mutant_ninja_turtles",
+                "beginningYear",
+                "2018"
+            ]
+        ],
+        "schema_definition": {
+            "beginningYear": "The subject entity marks the year in which the specified event or role begins, as indicated by the object entity.",
+            "voiceOf": "The subject entity is the character or entity that is voiced by the individual or entity specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'owned by': 0.6858231, 'position held': 0.6812371, 'participant': 0.66080064, 'spouse': 0.66002405, 'sibling': 0.65776885}, {'position held': 0.66902804, 'participant': 0.6603608, 'applies to jurisdiction': 0.6302309, 'instance of': 0.6252562, 'participant of': 0.62338126}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "rise_of_the_teenage_mutant_ninja_turtles",
+                "participant",
+                "2018"
+            ]
+        ]
+    },
+    {
+        "index": 79,
+        "input_text": "starting in 2014 , speer starred as captain treville in \" the musketeers \" .\n",
+        "entity_hint": "['the_musketeers', 'captain_treville', '2014']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "speer",
+                "starredAs",
+                "captain_treville"
+            ],
+            [
+                "captain_treville",
+                "in",
+                "the_musketeers"
+            ],
+            [
+                "speer",
+                "startYear",
+                "2014"
+            ]
+        ],
+        "schema_definition": {
+            "startYear": "The subject entity began the activity or role specified by the object entity in the year indicated by the object entity.",
+            "starredAs": "The subject entity played the role or character specified by the object entity in a performance or production.",
+            "in": "The subject entity is featured or included within the context of the object entity, such as a show, film, or other work."
+        },
+        "canonicalization_candidates": "[{'performer': 0.69772387, 'participant': 0.6533445, 'position held': 0.6426617, 'screenwriter': 0.6246478, 'member of': 0.62226796}, {'language of work or name': 0.68450236, 'part of': 0.66936195, 'notable work': 0.66538894, 'member of': 0.65060514, 'instance of': 0.6474029}, {'position held': 0.64892673, 'participant': 0.6381452, 'participant of': 0.5976114, 'member of': 0.5967809, 'country of citizenship': 0.59379786}]",
+        "schema_canonicalizaiton": [
+            [
+                "speer",
+                "performer",
+                "captain_treville"
+            ],
+            [
+                "captain_treville",
+                "notable work",
+                "the_musketeers"
+            ],
+            [
+                "speer",
+                "position held",
+                "2014"
+            ]
+        ]
+    },
+    {
+        "index": 80,
+        "input_text": "she is also known for providing the voice of the piglet in the soviet animation of winnie - the - pooh .\n",
+        "entity_hint": "['winnie_-_the_-_pooh', 'piglet', 'she']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "she",
+                "knownFor",
+                "piglet"
+            ],
+            [
+                "piglet",
+                "voiceOf",
+                "winnie_-_the_-_pooh"
+            ],
+            [
+                "winnie_-_the_-_pooh",
+                "animationType",
+                "soviet"
+            ]
+        ],
+        "schema_definition": {
+            "knownFor": "The subject entity is recognized or celebrated for a particular achievement or contribution represented by the object entity.",
+            "voiceOf": "The subject entity provides the vocal performance for the character or entity specified by the object entity.",
+            "animationType": "The subject entity is categorized under the type of animation specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'country of citizenship': 0.68340844, 'nominated for': 0.6764744, 'notable work': 0.6722108, 'winner': 0.6631856, 'position held': 0.6626456}, {'performer': 0.7073027, 'voice type': 0.6757213, 'member of': 0.6315734, 'language of work or name': 0.6302371, 'position held': 0.6225809}, {'instance of': 0.69044846, 'competition class': 0.6597356, 'member of': 0.6594208, 'part of': 0.6545948, 'child': 0.654125}]",
+        "schema_canonicalizaiton": [
+            [
+                "she",
+                "notable work",
+                "piglet"
+            ],
+            [
+                "piglet",
+                "performer",
+                "winnie_-_the_-_pooh"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 81,
+        "input_text": "knoxville voiced leonardo in the 2014 film , \" teenage mutant ninja turtles \" .\n",
+        "entity_hint": "['teenage_mutant_ninja_turtles', 'leonardo', '2014']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "leonardo",
+                "voicedIn",
+                "teenage_mutant_ninja_turtles"
+            ],
+            [
+                "teenage_mutant_ninja_turtles",
+                "releaseYear",
+                "2014"
+            ]
+        ],
+        "schema_definition": {
+            "voicedIn": "The subject entity provided the voice for the character or role specified by the object entity in the specified production.",
+            "releaseYear": "The subject entity was released or made available in the year specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'performer': 0.64888734, 'voice type': 0.6098386, 'screenwriter': 0.60179347, 'language of work or name': 0.5976229, 'position held': 0.58889186}, {'position held': 0.6398542, 'platform': 0.6305779, 'developer': 0.6295274, 'country of citizenship': 0.6276586, 'located in the administrative territorial entity': 0.62349224}]",
+        "schema_canonicalizaiton": [
+            [
+                "leonardo",
+                "performer",
+                "teenage_mutant_ninja_turtles"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 82,
+        "input_text": "although her career spanned many decades , she is perhaps best remembered as the voice of wilma flintstone for the hanna - barbera cartoon \" the flintstones \" .\n",
+        "entity_hint": "['the_flintstones', 'wilma_flintstone']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "wilma_flintstone",
+                "voiceOf",
+                "the_flintstones"
+            ]
+        ],
+        "schema_definition": {
+            "voiceOf": "The subject entity provides the voice for the character or role specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'performer': 0.6750932, 'voice type': 0.6546945, 'position held': 0.63525885, 'owned by': 0.6325793, 'screenwriter': 0.6269592}]",
+        "schema_canonicalizaiton": [
+            [
+                "wilma_flintstone",
+                "performer",
+                "the_flintstones"
+            ]
+        ]
+    },
+    {
+        "index": 83,
+        "input_text": "in 2018 , turner portrayed a fictitious version of herself in the pilot episode of the television series \" black lightning \" , praising actor cress williams ' character jefferson pierce .\n",
+        "entity_hint": "['black_lightning', 'jefferson_pierce', '2018', 'turner', 'cress_williams']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "turner",
+                "portrayed",
+                "black_lightning"
+            ],
+            [
+                "black_lightning",
+                "featuresCharacter",
+                "jefferson_pierce"
+            ],
+            [
+                "turner",
+                "year",
+                "2018"
+            ],
+            [
+                "cress_williams",
+                "plays",
+                "jefferson_pierce"
+            ]
+        ],
+        "schema_definition": {
+            "portrayed": "The subject entity acted in the role of the character specified by the object entity.",
+            "featuresCharacter": "The subject entity includes or showcases the character specified by the object entity within its narrative.",
+            "year": "The subject entity is associated with the specified year, indicating when an event related to it took place.",
+            "plays": "The subject entity performs the role of the character specified by the object entity in a production."
+        },
+        "canonicalization_candidates": "[{'performer': 0.6759392, 'position held': 0.6670501, 'participant': 0.6655421, 'spouse': 0.6400981, 'owned by': 0.6348488}, {'part of': 0.6781697, 'characters': 0.67411494, 'instance of': 0.6620496, 'child': 0.65974236, 'language of work or name': 0.65957975}, {'participant of': 0.6756537, 'participant': 0.6755741, 'position held': 0.6494587, 'follows': 0.64454323, 'member of': 0.6432344}, {'performer': 0.7005257, 'participant': 0.67090166, 'position held': 0.66932714, 'screenwriter': 0.64571, 'operator': 0.64449084}]",
+        "schema_canonicalizaiton": [
+            [
+                "turner",
+                "performer",
+                "black_lightning"
+            ],
+            [
+                "black_lightning",
+                "characters",
+                "jefferson_pierce"
+            ],
+            [
+                "turner",
+                "participant of",
+                "2018"
+            ],
+            [
+                "cress_williams",
+                "performer",
+                "jefferson_pierce"
+            ]
+        ]
+    },
+    {
+        "index": 84,
+        "input_text": "chan , who was also the writer and director of \" fist of legend \" , announced that donnie yen would replace jet li as chen zhen in the film .\n",
+        "entity_hint": "['fist_of_legend', 'chen_zhen', 'chan', 'donnie_yen', 'jet_li']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "chan",
+                "writerOf",
+                "fist_of_legend"
+            ],
+            [
+                "chan",
+                "directorOf",
+                "fist_of_legend"
+            ],
+            [
+                "fist_of_legend",
+                "character",
+                "chen_zhen"
+            ],
+            [
+                "donnie_yen",
+                "replaces",
+                "jet_li"
+            ],
+            [
+                "chen_zhen",
+                "playedBy",
+                "donnie_yen"
+            ]
+        ],
+        "schema_definition": {
+            "playedBy": "The subject entity is portrayed by the person specified by the object entity in a performance or production.",
+            "directorOf": "The subject entity was directed by the person specified by the object entity.",
+            "replaces": "The subject entity takes the place of the person specified by the object entity in a role or position.",
+            "writerOf": "The subject entity was written by the person specified by the object entity.",
+            "character": "The subject entity is a character represented in the work specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'screenwriter': 0.76111174, 'composer': 0.7236023, 'owned by': 0.72091514, 'position held': 0.6803919, 'developer': 0.6687186}, {'position held': 0.6722889, 'owned by': 0.67075944, 'screenwriter': 0.65587515, 'child': 0.6441082, 'spouse': 0.63917553}, {'notable work': 0.6894227, 'language of work or name': 0.6891694, 'characters': 0.681103, 'position held': 0.6735195, 'screenwriter': 0.67254233}, {'position held': 0.7409704, 'participant': 0.6765263, 'country of citizenship': 0.6661718, 'spouse': 0.66230893, 'owned by': 0.6575447}, {'performer': 0.6986898, 'participant': 0.66229063, 'position held': 0.6616652, 'screenwriter': 0.64685917, 'owned by': 0.63796246}]",
+        "schema_canonicalizaiton": [
+            [
+                "chan",
+                "screenwriter",
+                "fist_of_legend"
+            ],
+            [
+                "chan",
+                "screenwriter",
+                "fist_of_legend"
+            ],
+            [
+                "fist_of_legend",
+                "characters",
+                "chen_zhen"
+            ],
+            null,
+            [
+                "chen_zhen",
+                "performer",
+                "donnie_yen"
+            ]
+        ]
+    },
+    {
+        "index": 85,
+        "input_text": "laurent leclaire is a fictional character created by \u00e9mile zola , first appeared in his own written novel \" th\u00e9r\u00e8se raquin \" published in 1867 .\n",
+        "entity_hint": "['\u00e9mile_zola', 'th\u00e9r\u00e8se_raquin', 'laurent_leclaire', '1867']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "laurent_leclaire",
+                "createdBy",
+                "\u00e9mile_zola"
+            ],
+            [
+                "laurent_leclaire",
+                "firstAppearedIn",
+                "th\u00e9r\u00e8se_raquin"
+            ],
+            [
+                "th\u00e9r\u00e8se_raquin",
+                "publishedYear",
+                "1867"
+            ]
+        ],
+        "schema_definition": {
+            "firstAppearedIn": "The subject entity made its initial appearance in the work specified by the object entity.",
+            "publishedYear": "The subject entity was published or released in the year specified by the object entity.",
+            "createdBy": "The subject entity was created or developed by the individual or entity specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'developer': 0.76972276, 'owned by': 0.68109035, 'screenwriter': 0.66214657, 'participant': 0.66024065, 'architect': 0.6598962}, {'notable work': 0.6543683, 'language of work or name': 0.64487463, 'developer': 0.6288413, 'after a work by': 0.6288405, 'screenwriter': 0.6181848}, {'publisher': 0.67270625, 'position held': 0.6546426, 'platform': 0.654448, 'developer': 0.64406383, 'country of citizenship': 0.63562226}]",
+        "schema_canonicalizaiton": [
+            [
+                "laurent_leclaire",
+                "developer",
+                "\u00e9mile_zola"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 86,
+        "input_text": "he made his major film acting debut in the film \" walk the line \" , playing johnny cash 's guitar player luther perkins .\n",
+        "entity_hint": "['walk_the_line', 'luther_perkins', 'johnny_cash']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "luther_perkins",
+                "playedIn",
+                "walk_the_line"
+            ],
+            [
+                "luther_perkins",
+                "associatedWith",
+                "johnny_cash"
+            ]
+        ],
+        "schema_definition": {
+            "playedIn": "The subject entity performed a role in the film specified by the object entity.",
+            "associatedWith": "The subject entity has a connection or relationship with the person or entity specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'performer': 0.68112326, 'screenwriter': 0.65052414, 'participant': 0.6394738, 'original language of film or TV show': 0.63697094, 'position held': 0.6304951}, {'spouse': 0.7463311, 'child': 0.7237227, 'position held': 0.7123525, 'owned by': 0.70466924, 'sibling': 0.69993997}]",
+        "schema_canonicalizaiton": [
+            [
+                "luther_perkins",
+                "performer",
+                "walk_the_line"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 87,
+        "input_text": "much of the animation of the big tornado is taken from the 1935 \" mickey mouse \" cartoon \" the band concert \" .\n",
+        "entity_hint": "['the_band_concert', 'mickey_mouse', '1935']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "the_band_concert",
+                "inspiredBy",
+                "mickey_mouse"
+            ],
+            [
+                "the_band_concert",
+                "releaseYear",
+                "1935"
+            ]
+        ],
+        "schema_definition": {
+            "releaseYear": "The subject entity was released or published in the year specified by the object entity.",
+            "inspiredBy": "The subject entity was influenced or motivated by the creative work specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'after a work by': 0.73332113, 'notable work': 0.6802192, 'genre': 0.6764871, 'language of work or name': 0.6723629, 'movement': 0.6422899}, {'publisher': 0.6674286, 'position held': 0.6543916, 'platform': 0.6431291, 'country of citizenship': 0.63549185, 'developer': 0.63228095}]",
+        "schema_canonicalizaiton": [
+            [
+                "the_band_concert",
+                "after a work by",
+                "mickey_mouse"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 88,
+        "input_text": "the 3 good fairies from sleeping beauty also get introduced as teachers .\n",
+        "entity_hint": "['sleeping_beauty', 'the_3_good_fairies']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "the_3_good_fairies",
+                "from",
+                "sleeping_beauty"
+            ],
+            [
+                "the_3_good_fairies",
+                "introduced_as",
+                "teachers"
+            ]
+        ],
+        "schema_definition": {
+            "introduced_as": "The subject entity is presented or identified in the role or capacity specified by the object entity.",
+            "from": "The subject entity originates or is associated with the entity specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'sibling': 0.73093, 'part of': 0.72624165, 'child': 0.7249056, 'country of citizenship': 0.7244998, 'position held': 0.7195033}, {'position held': 0.7284405, 'part of': 0.6943904, 'country of citizenship': 0.69309664, 'participant': 0.6920828, 'owned by': 0.69169533}]",
+        "schema_canonicalizaiton": [
+            null,
+            null
+        ]
+    },
+    {
+        "index": 89,
+        "input_text": "in \" the fellowship of the ring \" , old man willow cast a spell on the hobbits ( frodo , sam , merry and pippin ) , causing them to feel sleepy .\n",
+        "entity_hint": "['the_fellowship_of_the_ring', 'merry', 'frodo', 'sam', 'pippin']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "the_fellowship_of_the_ring",
+                "causes",
+                "frodo"
+            ],
+            [
+                "the_fellowship_of_the_ring",
+                "causes",
+                "sam"
+            ],
+            [
+                "the_fellowship_of_the_ring",
+                "causes",
+                "merry"
+            ],
+            [
+                "the_fellowship_of_the_ring",
+                "causes",
+                "pippin"
+            ]
+        ],
+        "schema_definition": {
+            "causes": "The subject entity brings about a change or effect in the state or condition of the object entity."
+        },
+        "canonicalization_candidates": "[{'participant': 0.64013433, 'position held': 0.6327774, 'part of': 0.6277602, 'child': 0.6273786, 'country of citizenship': 0.6193061}, {'participant': 0.64013404, 'position held': 0.63277715, 'part of': 0.62775993, 'child': 0.62737834, 'country of citizenship': 0.61930585}, {'participant': 0.640134, 'position held': 0.63277715, 'part of': 0.62775993, 'child': 0.62737834, 'country of citizenship': 0.61930585}, {'participant': 0.6401342, 'position held': 0.63277733, 'part of': 0.6277602, 'child': 0.6273785, 'country of citizenship': 0.61930585}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "the_fellowship_of_the_ring",
+                "participant",
+                "sam"
+            ],
+            [
+                "the_fellowship_of_the_ring",
+                "participant",
+                "merry"
+            ],
+            [
+                "the_fellowship_of_the_ring",
+                "participant",
+                "pippin"
+            ]
+        ]
+    },
+    {
+        "index": 90,
+        "input_text": "in \" children of dune \" ( 1976 ) , stilgar has asserted his protection over paul and chani 's orphaned children , leto ii and ghanima .\n",
+        "entity_hint": "['children_of_dune', 'paul', '1976', 'stilgar', 'chani', 'leto_ii', 'ghanima']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "children_of_dune",
+                "year",
+                "1976"
+            ],
+            [
+                "stilgar",
+                "protects",
+                "paul"
+            ],
+            [
+                "stilgar",
+                "protects",
+                "chani"
+            ],
+            [
+                "stilgar",
+                "protects",
+                "leto_ii"
+            ],
+            [
+                "stilgar",
+                "protects",
+                "ghanima"
+            ]
+        ],
+        "schema_definition": {
+            "year": "The subject entity is associated with the specified year, indicating when it was published or released.",
+            "protects": "The subject entity provides protection or guardianship to the object entity, ensuring their safety and well-being."
+        },
+        "canonicalization_candidates": "[{'publisher': 0.67209554, 'platform': 0.6540928, 'developer': 0.6478689, 'language of work or name': 0.64754313, 'applies to jurisdiction': 0.64516735}, {'operator': 0.5678281, 'child': 0.556207, 'country of citizenship': 0.5551375, 'spouse': 0.5502959, 'position held': 0.54772496}, {'operator': 0.56782794, 'child': 0.55620694, 'country of citizenship': 0.5551374, 'spouse': 0.5502957, 'position held': 0.54772484}, {'operator': 0.5678279, 'child': 0.5562068, 'country of citizenship': 0.5551373, 'spouse': 0.55029565, 'position held': 0.54772466}, {'operator': 0.5678282, 'child': 0.556207, 'country of citizenship': 0.55513746, 'spouse': 0.55029577, 'position held': 0.54772484}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "stilgar",
+                "child",
+                "paul"
+            ],
+            [
+                "stilgar",
+                "child",
+                "chani"
+            ],
+            [
+                "stilgar",
+                "child",
+                "leto_ii"
+            ],
+            [
+                "stilgar",
+                "child",
+                "ghanima"
+            ]
+        ]
+    },
+    {
+        "index": 91,
+        "input_text": "\" the shooting star \" was the first \" tintin \" adventure to be serialised daily in its entirety .\n",
+        "entity_hint": "['the_shooting_star', 'tintin']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "the_shooting_star",
+                "isFirstAdventure",
+                "tintin"
+            ],
+            [
+                "the_shooting_star",
+                "serializedDaily",
+                "tintin"
+            ]
+        ],
+        "schema_definition": {
+            "isFirstAdventure": "The subject entity is recognized as the first adventure of the object entity in a specified context or series.",
+            "serializedDaily": "The subject entity was published or presented in a daily format, specifically related to the object entity."
+        },
+        "canonicalization_candidates": "[{'follows': 0.66035914, 'followed by': 0.64512753, 'instance of': 0.6326269, 'country of citizenship': 0.6248993, 'sports season of league or competition': 0.6200637}, {'position held': 0.63251126, 'follows': 0.629286, 'followed by': 0.6274501, 'publisher': 0.6198708, 'instance of': 0.6109412}]",
+        "schema_canonicalizaiton": [
+            null,
+            null
+        ]
+    },
+    {
+        "index": 92,
+        "input_text": "\" superstar saga \" was first revealed at e3 2003 under the name \" mario and luigi \" , where a playable demo of the game was available .\n",
+        "entity_hint": "['superstar_saga', 'mario']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "superstar_saga",
+                "revealedAt",
+                "e3 2003"
+            ],
+            [
+                "superstar_saga",
+                "originalName",
+                "\"mario and luigi\""
+            ],
+            [
+                "superstar_saga",
+                "playableDemo",
+                "available"
+            ],
+            [
+                "superstar_saga",
+                "featuresCharacter",
+                "mario"
+            ]
+        ],
+        "schema_definition": {
+            "revealedAt": "The subject entity was disclosed or announced at the event or location specified by the object entity.",
+            "originalName": "The subject entity was known by the name specified by the object entity prior to any subsequent changes.",
+            "playableDemo": "The subject entity includes a demo version that is playable, as indicated by the object entity.",
+            "featuresCharacter": "The subject entity includes or showcases the character specified by the object entity as part of its content."
+        },
+        "canonicalization_candidates": "[{'position held': 0.64887726, 'location': 0.6463798, 'participant of': 0.64350986, 'located in the administrative territorial entity': 0.63963187, 'participant': 0.63856137}, {'position held': 0.6652626, 'follows': 0.6373437, 'owned by': 0.6268134, 'country of citizenship': 0.62520176, 'spouse': 0.62131363}, {'platform': 0.6439054, 'position held': 0.6105723, 'country of citizenship': 0.606338, 'sports season of league or competition': 0.6058396, 'operator': 0.60503113}, {'part of': 0.68786496, 'instance of': 0.67661035, 'language of work or name': 0.67034614, 'child': 0.66253984, 'position held': 0.6615087}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 93,
+        "input_text": "the second - published little house book , \" farmer boy \" features almanzo wilder at ages 8 to 10 in upstate new york .\n",
+        "entity_hint": "['farmer_boy', 'almanzo_wilder', 'upstate_new_york']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "farmer_boy",
+                "features",
+                "almanzo_wilder"
+            ],
+            [
+                "almanzo_wilder",
+                "ageRange",
+                "8 to 10"
+            ],
+            [
+                "farmer_boy",
+                "location",
+                "upstate_new_york"
+            ]
+        ],
+        "schema_definition": {
+            "location": "The subject entity is situated in the geographical area specified by the object entity.",
+            "features": "The subject entity includes or showcases the person or character specified by the object entity as a significant element.",
+            "ageRange": "The subject entity pertains to the specified age range of the individual or character represented by the object entity."
+        },
+        "canonicalization_candidates": "[{'position held': 0.67341506, 'part of': 0.67260635, 'participant': 0.6723325, 'instance of': 0.6618639, 'owned by': 0.65993357}, {'child': 0.7095393, 'position held': 0.69325995, 'spouse': 0.6922114, 'owned by': 0.68866974, 'part of': 0.68840253}, {}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            [
+                "farmer_boy",
+                "location",
+                "upstate_new_york"
+            ]
+        ]
+    },
+    {
+        "index": 94,
+        "input_text": "the intro to \" a link to the past \" reveals the back story of the game , showing that series antagonist ganon was sealed away after his bid for the triforce .\n",
+        "entity_hint": "['a_link_to_the_past', 'ganon']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "a_link_to_the_past",
+                "reveals",
+                "ganon"
+            ],
+            [
+                "ganon",
+                "sealedAway",
+                "triforce"
+            ]
+        ],
+        "schema_definition": {
+            "reveals": "The subject entity provides information or insight about the object entity, often disclosing background or context related to it.",
+            "sealedAway": "The subject entity has been confined or imprisoned in a manner that prevents it from escaping or being accessed, as specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'part of': 0.6269921, 'instance of': 0.6114514, 'position held': 0.6097518, 'follows': 0.59938926, 'member of': 0.5940714}, {'position held': 0.632809, 'applies to jurisdiction': 0.6160836, 'spouse': 0.6094982, 'part of': 0.60935855, 'country of citizenship': 0.6088842}]",
+        "schema_canonicalizaiton": [
+            null,
+            null
+        ]
+    },
+    {
+        "index": 95,
+        "input_text": "in the old english poem \" beowulf \" ( lines 2016 to 2018 ) , hro\u00f0gar 's wife , wealh\u00feeow , moves through the hall serving mead to the warriors and defusing conflict .\n",
+        "entity_hint": "['beowulf', 'wealh\u00feeow', 'hro\u00f0gar', 'hall', 'warriors']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "wealh\u00feeow",
+                "serves",
+                "mead"
+            ],
+            [
+                "wealh\u00feeow",
+                "wifeOf",
+                "hro\u00f0gar"
+            ],
+            [
+                "wealh\u00feeow",
+                "movesThrough",
+                "hall"
+            ],
+            [
+                "hall",
+                "contains",
+                "warriors"
+            ],
+            [
+                "hro\u00f0gar",
+                "hasWife",
+                "wealh\u00feeow"
+            ]
+        ],
+        "schema_definition": {
+            "hasWife": "The subject entity is married to the object entity, indicating a spousal relationship.",
+            "serves": "The subject entity provides or offers the specified item or service to the object entity.",
+            "movesThrough": "The subject entity travels or passes through the location specified by the object entity.",
+            "contains": "The subject entity includes or holds the specified entities within its boundaries or context.",
+            "wifeOf": "The subject entity is the spouse of the object entity, indicating a marital relationship."
+        },
+        "canonicalization_candidates": "[{'operator': 0.72714394, 'located in the administrative territorial entity': 0.6550865, 'developer': 0.6547653, 'applies to jurisdiction': 0.6522198, 'position held': 0.6471592}, {'spouse': 0.85904825, 'country of citizenship': 0.6833844, 'sibling': 0.6804292, 'child': 0.67956, 'position held': 0.6765495}, {'place served by transport hub': 0.6995128, 'crosses': 0.69818777, 'residence': 0.6911502, 'location': 0.6860676, 'located in the administrative territorial entity': 0.68536526}, {'part of': 0.6802492, 'instance of': 0.6787702, 'located in the administrative territorial entity': 0.66611534, 'applies to jurisdiction': 0.66037977, 'child': 0.65969443}, {'spouse': 0.8534744, 'country of citizenship': 0.67396283, 'sibling': 0.6731781, 'child': 0.67072856, 'position held': 0.66120625}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "wealh\u00feeow",
+                "spouse",
+                "hro\u00f0gar"
+            ],
+            null,
+            null,
+            [
+                "hro\u00f0gar",
+                "spouse",
+                "wealh\u00feeow"
+            ]
+        ]
+    },
+    {
+        "index": 96,
+        "input_text": "commander geordi la forge in \" \" and the young kunta kinte in the 1977 award - winning abc television miniseries \" roots \" .\n",
+        "entity_hint": "['roots', 'kunta_kinte', 'commander_geordi_la_forge', '1977', 'abc']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "commander_geordi_la_forge",
+                "appearsIn",
+                "roots"
+            ],
+            [
+                "kunta_kinte",
+                "appearsIn",
+                "roots"
+            ],
+            [
+                "roots",
+                "year",
+                "1977"
+            ],
+            [
+                "roots",
+                "network",
+                "abc"
+            ]
+        ],
+        "schema_definition": {
+            "year": "The subject entity is associated with the year specified by the object entity, indicating when the event or production took place.",
+            "appearsIn": "The subject entity is featured or included in the production specified by the object entity.",
+            "network": "The subject entity is broadcasted or aired on the network specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'part of': 0.68154883, 'participant': 0.6681667, 'member of': 0.6626581, 'language of work or name': 0.65798944, 'manufacturer': 0.655359}, {'part of': 0.6815489, 'participant': 0.6681666, 'member of': 0.6626581, 'language of work or name': 0.6579895, 'manufacturer': 0.65535915}, {'participant': 0.6705885, 'member of': 0.65685964, 'participant of': 0.65682316, 'sports season of league or competition': 0.65131366, 'language of work or name': 0.65037}, {'original network': 0.7375632, 'licensed to broadcast to': 0.66324425, 'operator': 0.6465516, 'publisher': 0.6389512, 'country of citizenship': 0.6371192}]",
+        "schema_canonicalizaiton": [
+            [
+                "commander_geordi_la_forge",
+                "participant",
+                "roots"
+            ],
+            null,
+            null,
+            [
+                "roots",
+                "original network",
+                "abc"
+            ]
+        ]
+    },
+    {
+        "index": 97,
+        "input_text": "commissionaire peterson is a character in the 1892 sherlock holmes short story \" the adventure of the blue carbuncle . \"\n",
+        "entity_hint": "['the_adventure_of_the_blue_carbuncle', 'sherlock_holmes', 'commissionaire_peterson', '1892']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "commissionaire_peterson",
+                "isCharacterIn",
+                "the_adventure_of_the_blue_carbuncle"
+            ],
+            [
+                "the_adventure_of_the_blue_carbuncle",
+                "writtenBy",
+                "sherlock_holmes"
+            ],
+            [
+                "the_adventure_of_the_blue_carbuncle",
+                "publicationYear",
+                "1892"
+            ]
+        ],
+        "schema_definition": {
+            "publicationYear": "The subject entity was published or released in the year specified by the object entity.",
+            "writtenBy": "The subject entity was authored or created by the person or entity specified by the object entity.",
+            "isCharacterIn": "The subject entity is a character that appears in the work specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'characters': 0.7048474, 'language of work or name': 0.68144715, 'notable work': 0.67243063, 'screenwriter': 0.6707373, 'position held': 0.6672977}, {'developer': 0.7369069, 'screenwriter': 0.7356745, 'owned by': 0.7163396, 'composer': 0.69729424, 'after a work by': 0.6925199}, {'publisher': 0.67270625, 'position held': 0.65464246, 'platform': 0.65444815, 'developer': 0.6440639, 'country of citizenship': 0.6356222}]",
+        "schema_canonicalizaiton": [
+            [
+                "commissionaire_peterson",
+                "characters",
+                "the_adventure_of_the_blue_carbuncle"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 98,
+        "input_text": "contemporaries of joyce and gogarty , on reading \" ulysses \" , differed over the extent to which buck mulligan was a fair and accurate portrayal of oliver gogarty .\n",
+        "entity_hint": "['ulysses', 'buck_mulligan', 'oliver_gogarty']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "ulysses",
+                "portrayalOf",
+                "buck_mulligan"
+            ],
+            [
+                "buck_mulligan",
+                "isPortrayalOf",
+                "oliver_gogarty"
+            ],
+            [
+                "oliver_gogarty",
+                "portrayedIn",
+                "ulysses"
+            ]
+        ],
+        "schema_definition": {
+            "isPortrayalOf": "The subject entity represents or depicts the object entity in a specific context or work.",
+            "portrayedIn": "The subject entity is featured or represented within the context of the work specified by the object entity.",
+            "portrayalOf": "The subject entity serves as a representation or depiction of the object entity, often in a narrative or artistic context."
+        },
+        "canonicalization_candidates": "[{'part of': 0.63489056, 'instance of': 0.62607527, 'position held': 0.61777997, 'language of work or name': 0.61777675, 'after a work by': 0.60491455}, {'instance of': 0.69114166, 'part of': 0.6863929, 'position held': 0.68527436, 'language of work or name': 0.67479146, 'after a work by': 0.67054594}, {'part of': 0.701085, 'notable work': 0.6967859, 'instance of': 0.68648845, 'language of work or name': 0.68242586, 'position held': 0.67887294}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            [
+                "oliver_gogarty",
+                "notable work",
+                "ulysses"
+            ]
+        ]
+    },
+    {
+        "index": 99,
+        "input_text": "some of her earliest off - broadway credits were in a 1958 production of \" the crucible \" as elizabeth proctor and as illse in a play version of \" m\u00e4dchen in uniform \" .\n",
+        "entity_hint": "['the_crucible', 'elizabeth_proctor', '1958', 'illse']\n",
+        "relation_hint": "",
+        "oie": [
+            [
+                "the_crucible",
+                "productionYear",
+                "1958"
+            ],
+            [
+                "the_crucible",
+                "character",
+                "elizabeth_proctor"
+            ],
+            [
+                "m\u00e4dchen_in_uniform",
+                "character",
+                "illse"
+            ]
+        ],
+        "schema_definition": {
+            "productionYear": "The subject entity refers to a theatrical production that was released or performed in the year specified by the object entity.",
+            "character": "The subject entity is a character portrayed in the production specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'platform': 0.6282425, 'original language of film or TV show': 0.6280395, 'language of work or name': 0.6067655, 'performer': 0.60195446, 'sports season of league or competition': 0.60140914}, {'performer': 0.6954597, 'characters': 0.67739415, 'screenwriter': 0.6702845, 'position held': 0.6499899, 'participant': 0.6448591}, {'performer': 0.6954596, 'characters': 0.67739403, 'screenwriter': 0.6702844, 'position held': 0.64998984, 'participant': 0.64485884}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "the_crucible",
+                "performer",
+                "elizabeth_proctor"
+            ],
+            [
+                "m\u00e4dchen_in_uniform",
+                "performer",
+                "illse"
+            ]
+        ]
+    }
+]

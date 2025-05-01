@@ -1,0 +1,50 @@
+creator,The subject entity is the creator/author of the object.
+broadcastedBy,The subject entity is broadcasted or aired by the object entity.
+firstAired,The subject entity is first aired on the date specified by the object entity.
+established,The subject entity was established or created in the year specified by the object entity.
+location,The subject entity is located in the place specified by the object entity.
+municipality,The subject entity is located in the municipality specified by the object entity.
+category,The subject entity falls under the category specified by the object entity.
+hasToItsNorth,The subject entity has the object entity located to its north.
+country,The subject entity is located in the country specified by the object entity.
+governmentType,The subject entity operates under the form of government specified by the object entity.
+address,The subject entity is located at the address specified by the object.
+currentTenants,The subject entity is currently occupied or used by the object entity.
+owner,The subject entity is owned by the object entity.
+operatingOrganisation,The subject entity is operated or managed by the object entity.
+runwayLength,The subject entity has a runway length as specified by the object.
+birthDate,The subject entity was born on the date specified by the object entity.
+nationality,The subject entity holds the nationality specified by the object entity.
+deathPlace,The subject entity died in the location specified by the object entity.
+selectedByNasa,The subject entity was selected by NASA in the year specified by the object entity.
+birthPlace,The subject entity was born in the location specified by the object entity.
+occupation,The subject entity has the job or profession specified by the object entity.
+icaoLocationIdentifier,The subject entity has an ICAO location identifier as specified by the object.
+elevationAboveTheSeaLevel,The subject entity is located at the height specified by the object entity above sea level.
+league,The subject entity participates or competes in the league specified by the object entity.
+champions,The subject entity was won or was championed by the object entity.
+numberOfMembers,The subject entity has the number of members as specified by the object entity.
+ground,The subject entity uses the facility or location specified by the object entity as their home ground or base.
+affiliation,The subject entity is affiliated or associated with the object entity.
+city,The subject entity is located in the city specified by the object entity.
+leader,The subject entity is led or governed by the object entity.
+course,The subject entity is typically served during the meal course specified by the object entity.
+instrument,The subject entity plays the instrument specified by the object entity.
+associatedBand/associatedMusicalArtist,The subject entity is or was associated with the band or musical artist specified by the object entity.
+activeYearsStartYear,The subject entity started their active career in the year specified by the object entity.
+foundingDate,The subject entity was established or founded on the date specified by the object entity.
+product,The subject entity produces or manufactures the object entity.
+industry,The subject entity operates in the industry specified by the object entity.
+architect,The subject entity was designed or planned by the object entity.
+currency,The subject entity uses the object entity as its official form of monetary exchange.
+demonym,The subject entity's inhabitants are referred to by the term specified by the object entity.
+mainIngredient,The subject entity is primarily made up of the ingredients specified by the object entity.
+mission,The subject entity participated in the event or operation specified by the object entity.
+region,The subject entity is found or originated in the region specified by the object entity.
+spouse,The subject entity is married to the person specified by the object entity.
+inOfficeWhilePresident,The subject entity held office during the presidency of the person specified by the object entity.
+keyPerson,The subject entity has the object entity as a significant or influential individual.
+type,The subject entity is classified or categorized as the type specified by the object entity.
+youthclub,The subject entity was associated with the object entity during their early or formative years.
+club,The subject entity was previously associated with or played for the object entity.
+populationMetro,The subject entity has a metropolitan population as specified by the object entity.

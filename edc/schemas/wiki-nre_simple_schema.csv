@@ -1,0 +1,20 @@
+located in the administrative territorial entity,The subject entity is situated within the administrative territorial entity specified by the object entity.
+country,The subject entity is located in the country specified by the object entity.
+director,The subject entity was directed by the person specified by the object entity.
+cast member,The subject entity includes the person specified by the object entity as a member of its cast.
+screenwriter,The subject entity was written by the person specified by the object entity.
+part of,The subject entity is a part of the entity specified by the object entity.
+located on terrain feature,The subject entity is situated on the terrain feature specified by the object entity.
+original language of film or TV show,The subject entity is originally in the language specified by the object entity.
+employer,The subject entity is employed by the entity specified by the object entity.
+place served by transport hub,The subject entity is a location that is served by the transport hub specified by the object entity.
+named after,The subject entity is named after the entity specified by the object entity.
+owned by,The subject entity is owned by the entity specified by the object entity.
+country of citizenship,The subject entity holds the citizenship of the country specified by the object entity.
+participant in,The subject entity took part in the event specified by the object entity.
+place of birth,The subject entity was born in the location specified by the object entity.
+educated at,The subject entity received education or training at the institution specified by the object entity.
+production company,The subject entity was produced by the company specified by the object entity.
+distributed by,The subject entity was distributed by the company specified by the object entity.
+film editor,The subject entity was edited by the person specified by the object entity.
+member of sports team,The subject entity is a member of the sports team specified by the object entity.

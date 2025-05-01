@@ -3,6 +3,7 @@ import time
 import logging
 import random
 from collections import deque
+import os
 
 class APIKeyManager:
     def __init__(self, api_keys):
@@ -61,7 +62,9 @@ def openai_chat_completion(model, system_prompt, history, temperature=0, max_tok
             api_key = key_manager.get_available_key()
             
             openai.api_key = api_key
-            openai.base_url = "https://generativelanguage.googleapis.com/v1beta/openai/"
+            # Get base URL from environment variable or use default
+            llm_base_url = os.getenv("LLM_BASE_URL", "https://generativelanguage.googleapis.com/v1beta/openai/")
+            openai.base_url = llm_base_url
             
             response = openai.chat.completions.create(
                 model=model, 

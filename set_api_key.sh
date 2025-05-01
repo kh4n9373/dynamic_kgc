@@ -5,12 +5,12 @@
 
 ENV_FILE=".env"
 
-grep -v "GEMINI_API_KEY" $ENV_FILE > temp_env || touch temp_env
+grep -v "LLM_API_KEY" $ENV_FILE > temp_env || touch temp_env
 mv temp_env $ENV_FILE
 
 if [ -n "$1" ]; then
-    echo "GEMINI_API_KEY=$1" >> $ENV_FILE
-    echo "Added main GEMINI_API_KEY to $ENV_FILE"
+    echo "LLM_API_KEY=$1" >> $ENV_FILE
+    echo "Added main LLM_API_KEY to $ENV_FILE"
     shift
 else
     echo "Error: Please provide at least one API key"
@@ -19,8 +19,8 @@ fi
 
 count=1
 for key in "$@"; do
-    echo "GEMINI_API_KEY_${count}=$key" >> $ENV_FILE
-    echo "Added GEMINI_API_KEY_${count} to $ENV_FILE"
+    echo "LLM_API_KEY_${count}=$key" >> $ENV_FILE
+    echo "Added LLM_API_KEY_${count} to $ENV_FILE"
     count=$((count+1))
 done
 

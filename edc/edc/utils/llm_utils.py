@@ -40,15 +40,15 @@ class ApiKeyManager:
     def _load_api_keys(self):
         """Load API keys from environment variables"""
         keys = []
-        # Look for GEMINI_API_KEY and GEMINI_API_KEY_1, GEMINI_API_KEY_2, etc.
-        main_key = os.getenv("GEMINI_API_KEY")
+        # Look for LLM_API_KEY and LLM_API_KEY_1, LLM_API_KEY_2, etc.
+        main_key = os.getenv("LLM_API_KEY")
         if main_key:
             keys.append(main_key)
         
         # Look for additional keys
         i = 1
         while True:
-            key = os.getenv(f"GEMINI_API_KEY_{i}")
+            key = os.getenv(f"LLM_API_KEY_{i}")
             if key:
                 keys.append(key)
                 i += 1
@@ -145,7 +145,7 @@ def get_detailed_instruct(task_description: str, query: str) -> str:
 
 def get_embedding_sts(text: str, device="cpu"): 
     model_name = "BAAI/bge-m3"
-    model_save_path = "bge_m3"
+    model_save_path = "embedding_model"
     # model_path = "bge_model_ctranslate2_base"
 
     device = "cpu"
@@ -281,7 +281,9 @@ def openai_chat_completion_with_key(model, messages, temperature=0, max_tokens=5
         thread_local.api_key = api_key_manager.get_key()
     
     openai.api_key = thread_local.api_key
-    openai.base_url = "https://generativelanguage.googleapis.com/v1beta/openai/"
+    # Get base URL from environment variable or use default
+    llm_base_url = os.getenv("LLM_BASE_URL", "https://generativelanguage.googleapis.com/v1beta/openai/")
+    openai.base_url = llm_base_url
     
     try:
         # print("MESSAGES: \n", messages)

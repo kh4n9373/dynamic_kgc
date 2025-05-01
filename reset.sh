@@ -1,0 +1,9 @@
+rm -rf preprocessed_dataset
+rm -rf preprocessed_documents
+rm -rf preprocessed_edc_result
+rm -rf raw_dataset_constructed
+rm -rf dataset_constructed
+rm -rf evaluation
+rm -rf cluster_visualization
+rm -rf cluster_model
+rm -rf edc/output

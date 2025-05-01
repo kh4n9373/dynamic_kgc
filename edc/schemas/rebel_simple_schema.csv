@@ -1,0 +1,50 @@
+country,The subject entity is located in the country specified by the object entity.
+contains administrative territorial entity,The subject entity contains the administrative territorial entity specified by the object entity.
+contains settlement,The subject entity contains the settlement specified by the object entity.
+located in the administrative territorial entity,The subject entity is located in the administrative territorial entity specified by the object entity.
+date of birth,The subject entity was born on the date specified by the object entity.
+place of birth,The subject entity was born in the location specified by the object entity.
+date of death,The subject entity died on the date specified by the object entity.
+place of death,The subject entity died in the location specified by the object entity.
+start time,The subject entity began at the time specified by the object entity.
+location,The subject entity is located in the place specified by the object entity.
+country of citizenship,The subject entity holds the citizenship of the country specified by the object entity.
+subclass of,The subject entity is a subclass or specific type of the object entity.
+language used,The subject entity uses the language specified by the object entity.
+mouth of the watercourse,The subject entity is the point where the watercourse specified by the object entity flows into.
+mountain range,The subject entity belongs to the mountain range specified by the object entity.
+tributary,The subject entity is a tributary that flows into the watercourse specified by the object entity.
+member of,The subject entity is a member of the group or organization specified by the object entity.
+inception,The subject entity was established or began in the year specified by the object entity.
+publication date,The subject entity was published or released on the date specified by the object entity.
+genre,The subject entity belongs to the genre specified by the object entity.
+director,The subject entity was directed by the person or entity specified by the object entity.
+cast member,The subject entity includes the person specified by the object entity as a member of its cast.
+media franchise,The subject entity is a part of the media franchise specified by the object entity.
+instance of,The subject entity is an instance or example of the type specified by the object entity.
+point in time,The object entity specifies a specific point in time the subject entity took place in.
+participant in,The subject entity took part in the event specified by the object entity.
+applies to jurisdiction,The subject entity is applicable or relevant to the jurisdiction specified by the object entity.
+number of seats,The subject entity has the number of seats specified by the object entity.
+sport,The subject entity is associated with the sport specified by the object entity.
+position played on team / speciality,The subject entity plays the specified position or has the specified speciality on the team.
+publisher,The subject entity was published or released by the person or entity specified by the object entity.
+uses,The subject entity utilizes or employs the method or process specified by the object entity.
+founded by,The subject entity was established or created by the person or entity specified by the object entity.
+discontinued date,The subject entity ceased to exist or operate on the date specified by the object entity.
+editor,The subject entity was managed or supervised by the person specified by the object entity.
+work period (start),The subject entity began its work or activity in the year specified by the object entity.
+record label,The subject entity was released under the record label specified by the object entity.
+country of origin,The subject entity originates from the country specified by the object entity.
+member of sports team,The subject entity is a member of the sports team specified by the object entity.
+work location,The subject entity worked at the location specified by the object entity.
+headquarters location,The subject entity has its headquarters located in the place specified by the object entity.
+heritage designation,The subject entity has been designated as the type specified by the object entity.
+maintained by,The subject entity is maintained or looked after by the entity specified by the object entity.
+part of,The subject entity is a part of or belongs to the object entity.
+occupant,The subject entity is occupied by the entity specified by the object entity.
+home venue,The subject entity uses the venue specified by the object entity as its home location.
+platform,The subject entity is available on the platform specified by the object entity.
+has part,The subject entity has the part specified by the object entity.
+narrative location,The subject entity's storyline or setting is based in the location specified by the object entity.
+father,The subject entity is the father of the object entity.

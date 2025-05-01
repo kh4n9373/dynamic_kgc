@@ -3,10 +3,10 @@ from pyvis.network import Network
 import networkx as nx
 import os
 import json
-import ast  # For safely evaluating string representations of Python literals
-import argparse  # For parsing command-line arguments
+import ast
+import argparse
 
-# Create argument parser
+# Parse command line arguments
 parser = argparse.ArgumentParser(description='Visualize knowledge graph from triplets file')
 parser.add_argument('--triplets_file', type=str, 
                     default='/Users/khangtuan/Documents/dynamic-kg/edc/output/example_target_alignment/iter0/canon_kg.txt',
@@ -20,9 +20,7 @@ if not os.path.exists('templates'):
     os.makedirs('templates')
 
 def create_knowledge_graph(triplets):
-    """
-    Create an interactive knowledge graph from triplets
-    """
+    """Create an interactive knowledge graph from triplets"""
     # Create a NetworkX graph
     G = nx.DiGraph()
     
@@ -59,7 +57,6 @@ def create_knowledge_graph(triplets):
             color = "#7bed9f"  # Green for objects only
             title = f"Node: {node}\nType: Object"
         
-        # Add node with hover info and styling
         net.add_node(node, label=node, title=title, color=color, 
                     size=25, borderWidth=2, borderWidthSelected=4,
                     font={'size': 14, 'face': 'arial'})
@@ -68,11 +65,11 @@ def create_knowledge_graph(triplets):
     for source, target, attr in G.edges(data=True):
         relation = attr['title']
         net.add_edge(source, target, title=relation, label=relation, 
-                    arrows='to', smooth=False,  # Changed from curved to straight
+                    arrows='to', smooth=False,
                     color={'color': '#848484', 'highlight': '#ff4500'},
                     width=1.5, physics=True)
     
-    # Add configuration options similar to Obsidian
+    # Add network visualization options
     net.set_options("""
     var options = {
         "nodes": {
@@ -148,7 +145,7 @@ def create_knowledge_graph(triplets):
     with open(graph_path, 'r') as file:
         html_content = file.read()
     
-    # Add hover effect JavaScript before the closing body tag
+    # Add hover effect JavaScript
     hover_js = """
     <script type="text/javascript">
       // Direct access to vis.js network instance
@@ -199,425 +196,403 @@ def create_knowledge_graph(triplets):
                     size: originalSizes[node.id] * 1.4
                   });
                 } else {
-                  // Make other nodes gray
+                  // Make all other nodes slightly faded
+                  var fadedColor = Object.assign({}, originalColors[node.id]);
+                  
+                  if (typeof fadedColor === 'string') {
+                    // If color is a string, convert to object
+                    fadedColor = {
+                      background: fadedColor,
+                      border: "#000000"
+                    };
+                  }
+                  
+                  // Add opacity to the color
+                  fadedColor.opacity = 0.5;
+                  
                   nodeUpdates.push({
                     id: node.id,
-                    color: {
-                      background: "#D3D3D3",
-                      border: "#A9A9A9"
-                    }
+                    color: fadedColor,
+                    size: originalSizes[node.id] * 0.9
                   });
                 }
               });
               
-              // Update all nodes at once
+              // Apply all updates at once for better performance
               network.body.data.nodes.update(nodeUpdates);
+              
+              // Get connected edges
+              var connectedEdges = network.getConnectedEdges(hoveredId);
+              
+              // Highlight connected edges
+              var edgeUpdates = [];
+              network.body.data.edges.get().forEach(function(edge) {
+                if (connectedEdges.includes(edge.id)) {
+                  edgeUpdates.push({
+                    id: edge.id,
+                    width: 3,
+                    color: { color: '#ff4500', opacity: 1 }
+                  });
+                } else {
+                  edgeUpdates.push({
+                    id: edge.id,
+                    width: 1,
+                    color: { color: '#848484', opacity: 0.4 }
+                  });
+                }
+              });
+              
+              // Apply edge updates
+              network.body.data.edges.update(edgeUpdates);
             });
             
-            // Reset on blur
+            // On hover end
             network.on("blurNode", function(params) {
               console.log("Node blur detected");
               
-              // Prepare updates to reset all nodes
+              // Reset all nodes to original state
               var nodeUpdates = [];
               
               nodes.forEach(function(node) {
                 nodeUpdates.push({
                   id: node.id,
-                  size: originalSizes[node.id],
-                  color: originalColors[node.id]
+                  color: originalColors[node.id],
+                  size: originalSizes[node.id]
                 });
               });
               
-              // Update all nodes at once
+              // Apply all updates at once
               network.body.data.nodes.update(nodeUpdates);
+              
+              // Reset all edges
+              var edgeUpdates = [];
+              network.body.data.edges.get().forEach(function(edge) {
+                edgeUpdates.push({
+                  id: edge.id,
+                  width: 1.5,
+                  color: { color: '#848484', opacity: 1 }
+                });
+              });
+              
+              // Apply edge updates
+              network.body.data.edges.update(edgeUpdates);
             });
             
-            console.log("Hover effects setup complete");
           } catch (e) {
-            console.error("Error setting up hover effects:", e);
+            console.error("Error setting up hover effects", e);
           }
-        }, 1000); // Wait 1 second for network to be fully initialized
+        }, 1000); // Wait for the network to be fully initialized
       });
     </script>
     """
     
-    # Insert the hover effect JavaScript before the closing body tag
-    modified_html = html_content.replace('</body>', hover_js + '</body>')
+    # Insert hover effect JavaScript before closing body tag
+    enhanced_html = html_content.replace('</body>', hover_js + '</body>')
     
-    # Write the modified HTML back to the file
     with open(graph_path, 'w') as file:
-        file.write(modified_html)
+        file.write(enhanced_html)
+    
+    # Create a standalone version for easier sharing
+    with open('knowledge_graph.html', 'w') as file:
+        file.write(enhanced_html)
     
     return graph_path
 
-# Create index.html template with enhanced UI
+
 def create_index_template():
-    index_html = """
+    """Create HTML template for the index page"""
+    html = """
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Interactive Knowledge Graph</title>
+        <title>Knowledge Graph Visualizer</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
         <style>
-            body, html {
+            body {
+                font-family: 'Roboto', sans-serif;
                 margin: 0;
                 padding: 0;
-                height: 100%;
-                font-family: Arial, sans-serif;
-            }
-            .container {
-                display: flex;
-                height: 100%;
-            }
-            .controls {
-                width: 250px;
-                padding: 20px;
                 background-color: #f5f5f5;
-                box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-                z-index: 100;
-                overflow-y: auto;
+                color: #333;
             }
-            .controls h1 {
-                font-size: 1.5em;
-                margin-top: 0;
+            #container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
             }
-            .controls h2 {
-                font-size: 1.2em;
-                margin-top: 20px;
+            .header {
+                background-color: #4257b2;
+                color: white;
+                padding: 20px;
+                border-radius: 5px 5px 0 0;
+                margin-bottom: 20px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             }
-            .form-group {
-                margin-bottom: 15px;
+            h1 {
+                margin: 0;
+                font-weight: 500;
+            }
+            .card {
+                background-color: white;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                padding: 20px;
+                margin-bottom: 20px;
             }
             label {
                 display: block;
-                margin-bottom: 5px;
+                margin-bottom: 8px;
+                font-weight: 500;
             }
-            input[type="text"], button, select {
+            textarea {
                 width: 100%;
-                padding: 8px;
-                box-sizing: border-box;
+                min-height: 100px;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                font-family: monospace;
+                margin-bottom: 10px;
+                resize: vertical;
             }
-            button {
-                background-color: #4CAF50;
+            #formatInfo {
+                font-size: 14px;
+                color: #666;
+                margin-bottom: 20px;
+            }
+            .button {
+                background-color: #4257b2;
                 color: white;
                 border: none;
+                padding: 10px 20px;
+                border-radius: 4px;
                 cursor: pointer;
-                margin-top: 5px;
+                font-weight: 500;
+                transition: background-color 0.3s;
             }
-            button:hover {
-                background-color: #45a049;
+            .button:hover {
+                background-color: #374499;
             }
-            .graph-container {
-                flex-grow: 1;
-                position: relative;
-                height: 100%;
+            #errorMessage {
+                color: #d32f2f;
+                margin-top: 10px;
+                display: none;
+            }
+            #loading {
+                display: none;
+                margin-top: 10px;
+                color: #666;
+            }
+            .spinner {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                border: 3px solid rgba(66, 87, 178, 0.3);
+                border-radius: 50%;
+                border-top-color: #4257b2;
+                animation: spin 1s ease-in-out infinite;
+                margin-right: 10px;
+                vertical-align: middle;
+            }
+            @keyframes spin {
+                to { transform: rotate(360deg); }
             }
             iframe {
                 width: 100%;
-                height: 100%;
+                height: 700px;
                 border: none;
+                border-radius: 4px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             }
-            .checkbox-group {
-                margin-bottom: 10px;
+            .footer {
+                text-align: center;
+                padding: 20px;
+                color: #666;
+                font-size: 14px;
+                margin-top: 40px;
             }
-            .triplet-form {
-                margin-top: 20px;
-                padding-top: 20px;
-                border-top: 1px solid #ddd;
+            .examples {
+                margin-top: 10px;
+                margin-bottom: 20px;
             }
-            .triplets-list {
-                margin-top: 15px;
-                max-height: 200px;
-                overflow-y: auto;
+            .example-button {
+                background-color: #f1f1f1;
                 border: 1px solid #ddd;
-                padding: 10px;
-            }
-            .triplet-item {
-                padding: 5px;
+                padding: 5px 10px;
+                margin-right: 5px;
                 margin-bottom: 5px;
-                background-color: #eee;
-                border-radius: 3px;
-                display: flex;
-                justify-content: space-between;
-            }
-            .remove-btn {
-                background-color: #f44336;
-                color: white;
-                border: none;
-                padding: 2px 5px;
+                border-radius: 4px;
                 cursor: pointer;
-                font-size: 0.8em;
+                font-size: 14px;
+                display: inline-block;
+                transition: background-color 0.3s;
+            }
+            .example-button:hover {
+                background-color: #e0e0e0;
             }
         </style>
     </head>
     <body>
-        <div class="container">
-            <div class="controls">
-                <h1>Knowledge Graph Explorer</h1>
-                
-                <h2>Search</h2>
-                <div class="form-group">
-                    <input type="text" id="searchNode" placeholder="Search nodes...">
-                    <button onclick="searchNodes()">Search</button>
-                </div>
-                
-                <h2>Filters</h2>
-                <div class="checkbox-group">
-                    <label><input type="checkbox" id="showSubjects" checked> Show Subjects</label>
-                </div>
-                <div class="checkbox-group">
-                    <label><input type="checkbox" id="showObjects" checked> Show Objects</label>
-                </div>
-                <div class="checkbox-group">
-                    <label><input type="checkbox" id="showBoth" checked> Show Mixed Nodes</label>
-                </div>
-                
-                <h2>View Controls</h2>
-                <div class="form-group">
-                    <button onclick="resetView()">Reset View</button>
-                </div>
-                <div class="form-group">
-                    <button onclick="expandAll()">Expand Graph</button>
-                </div>
-                
-                <div class="triplet-form">
-                    <h2>Add New Data</h2>
-                    <div class="form-group">
-                        <label>Subject:</label>
-                        <input type="text" id="subject" placeholder="E.g., John_Doe">
-                    </div>
-                    <div class="form-group">
-                        <label>Relation:</label>
-                        <input type="text" id="relation" placeholder="E.g., student">
-                    </div>
-                    <div class="form-group">
-                        <label>Object:</label>
-                        <input type="text" id="object" placeholder="E.g., University">
-                    </div>
-                    <button onclick="addTriplet()">Add Triplet</button>
-                    
-                    <h3>Current Triplets</h3>
-                    <div class="triplets-list" id="tripletsList"></div>
-                    
-                    <div class="form-group" style="margin-top: 15px;">
-                        <button onclick="regenerateGraph()">Regenerate Graph</button>
-                    </div>
-                </div>
+        <div id="container">
+            <div class="header">
+                <h1>Knowledge Graph Visualizer</h1>
             </div>
             
-            <div class="graph-container">
+            <div class="card">
+                <label for="triplets">Enter Knowledge Graph Triplets:</label>
+                <div id="formatInfo">
+                    Format: Each line should contain a triplet in the form of a Python list: ["Subject", "Relation", "Object"]<br>
+                    Example: [["Person", "works_at", "Company"], ["Person", "lives_in", "City"]]
+                </div>
+                
+                <div class="examples">
+                    <span class="example-button" onclick="loadExample('basic')">Basic Example</span>
+                    <span class="example-button" onclick="loadExample('academic')">Academic Example</span>
+                    <span class="example-button" onclick="loadExample('company')">Corporate Example</span>
+                </div>
+                
+                <textarea id="triplets" placeholder='[["Person", "works_at", "Company"], ["Person", "lives_in", "City"]]'></textarea>
+                
+                <button class="button" onclick="updateGraph()">Visualize Graph</button>
+                
+                <div id="loading">
+                    <div class="spinner"></div> Generating knowledge graph...
+                </div>
+                <div id="errorMessage"></div>
+            </div>
+            
+            <div class="card">
                 <iframe id="graphFrame" src="/graph"></iframe>
+            </div>
+            
+            <div class="footer">
+                Knowledge Graph Visualizer | Based on NetworkX, Pyvis, and vis.js
             </div>
         </div>
         
         <script>
-            // Store triplets in memory
-            let triplets = [
-                ['John_Doe', 'student', 'National_University_of_Singapore'],
-                ['National_University_of_Singapore', 'located_in', 'Singapore'],
-                ['John_Doe', 'age', '22']
-            ];
-            
-            // Show initial triplets
-            displayTriplets();
-            
-            // Functions to interact with the graph
-            function getGraphDocument() {
-                return document.getElementById('graphFrame').contentWindow.document;
-            }
-            
-            function getNetwork() {
-                const doc = getGraphDocument();
-                const network = doc.querySelector('.vis-network');
-                return network ? network.visNetwork : null;
-            }
-            
-            function searchNodes() {
-                const network = getNetwork();
-                if (!network) return;
+            function updateGraph() {
+                const tripletsText = document.getElementById('triplets').value.trim();
+                const errorMessage = document.getElementById('errorMessage');
+                const loading = document.getElementById('loading');
                 
-                const searchTerm = document.getElementById('searchNode').value.toLowerCase();
-                const allNodes = network.body.data.nodes.get();
-                const nodesToHighlight = allNodes.filter(node => 
-                    node.label.toLowerCase().includes(searchTerm));
+                if (!tripletsText) {
+                    errorMessage.style.display = 'block';
+                    errorMessage.textContent = 'Please enter triplets data.';
+                    return;
+                }
                 
-                if (nodesToHighlight.length > 0) {
-                    network.focus(nodesToHighlight[0].id, {
-                        scale: 1.2,
-                        animation: true
+                try {
+                    // Try to parse as JSON to validate
+                    JSON.parse(tripletsText.replace(/'/g, '"'));
+                    
+                    errorMessage.style.display = 'none';
+                    loading.style.display = 'block';
+                    
+                    fetch('/update_graph', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ triplets: tripletsText }),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        loading.style.display = 'none';
+                        if (data.success) {
+                            document.getElementById('graphFrame').src = '/graph?' + new Date().getTime();
+                        } else {
+                            errorMessage.style.display = 'block';
+                            errorMessage.textContent = data.error || 'An error occurred.';
+                        }
+                    })
+                    .catch(error => {
+                        loading.style.display = 'none';
+                        errorMessage.style.display = 'block';
+                        errorMessage.textContent = 'An error occurred while updating the graph.';
+                        console.error('Error:', error);
                     });
-                    
-                    network.selectNodes([nodesToHighlight[0].id]);
+                } catch (e) {
+                    errorMessage.style.display = 'block';
+                    errorMessage.textContent = 'Invalid triplets format. Please check your input.';
                 }
             }
             
-            function applyFilters() {
-                const network = getNetwork();
-                if (!network) return;
+            function loadExample(type) {
+                let example = '';
                 
-                const showSubjects = document.getElementById('showSubjects').checked;
-                const showObjects = document.getElementById('showObjects').checked;
-                const showBoth = document.getElementById('showBoth').checked;
-                
-                const allNodes = network.body.data.nodes.get();
-                
-                allNodes.forEach(node => {
-                    const nodeType = node.title.includes('Both') ? 'both' : 
-                                    node.title.includes('Subject') ? 'subject' : 'object';
-                    
-                    const visible = (nodeType === 'both' && showBoth) || 
-                                   (nodeType === 'subject' && showSubjects) || 
-                                   (nodeType === 'object' && showObjects);
-                    
-                    network.body.data.nodes.update({id: node.id, hidden: !visible});
-                });
-            }
-            
-            // Add event listeners for filters
-            document.getElementById('showSubjects').addEventListener('change', applyFilters);
-            document.getElementById('showObjects').addEventListener('change', applyFilters);
-            document.getElementById('showBoth').addEventListener('change', applyFilters);
-            
-            function resetView() {
-                const network = getNetwork();
-                if (network) network.fit({animation: true});
-            }
-            
-            function expandAll() {
-                const network = getNetwork();
-                if (!network) return;
-                
-                const options = network.physics.options;
-                options.hierarchicalRepulsion.nodeDistance = 200;
-                network.physics.setOptions(options);
-                network.startSimulation();
-            }
-            
-            function addTriplet() {
-                const subject = document.getElementById('subject').value.trim();
-                const relation = document.getElementById('relation').value.trim();
-                const object = document.getElementById('object').value.trim();
-                
-                if (subject && relation && object) {
-                    triplets.push([subject, relation, object]);
-                    displayTriplets();
-                    
-                    // Clear input fields
-                    document.getElementById('subject').value = '';
-                    document.getElementById('relation').value = '';
-                    document.getElementById('object').value = '';
-                } else {
-                    alert('Please fill in all three fields');
+                if (type === 'basic') {
+                    example = '[["Person", "works_at", "Company"], ["Person", "lives_in", "City"], ["Company", "located_in", "City"], ["Person", "friends_with", "Another Person"]]';
+                } else if (type === 'academic') {
+                    example = '[["Student", "enrolled_in", "Course"], ["Professor", "teaches", "Course"], ["Course", "part_of", "Department"], ["Student", "advised_by", "Professor"], ["Department", "part_of", "University"], ["Professor", "works_at", "University"], ["Student", "studies_at", "University"], ["Professor", "published", "Research Paper"], ["Student", "contributed_to", "Research Paper"], ["Research Paper", "cited_in", "Journal"]]';
+                } else if (type === 'company') {
+                    example = '[["CEO", "leads", "Company"], ["Employee", "works_for", "Department"], ["Department", "part_of", "Company"], ["Company", "sells", "Product"], ["Customer", "buys", "Product"], ["Product", "has_feature", "Feature"], ["Employee", "reports_to", "Manager"], ["Manager", "reports_to", "CEO"], ["Company", "competes_with", "Competitor"], ["Competitor", "sells", "Alternative Product"]]';
                 }
-            }
-            
-            function removeTriplet(index) {
-                triplets.splice(index, 1);
-                displayTriplets();
-            }
-            
-            function displayTriplets() {
-                const list = document.getElementById('tripletsList');
-                list.innerHTML = '';
                 
-                triplets.forEach((triplet, index) => {
-                    const item = document.createElement('div');
-                    item.className = 'triplet-item';
-                    item.innerHTML = `
-                        <div>${triplet[0]} → ${triplet[1]} → ${triplet[2]}</div>
-                        <button class="remove-btn" onclick="removeTriplet(${index})">X</button>
-                    `;
-                    list.appendChild(item);
-                });
+                document.getElementById('triplets').value = example;
             }
-            
-            function regenerateGraph() {
-                // Send triplets to server to regenerate graph
-                fetch('/update_graph', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ triplets: triplets }),
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        // Reload the iframe to show new graph
-                        document.getElementById('graphFrame').src = '/graph?t=' + new Date().getTime();
-                    }
-                });
-            }
-            
-            // Wait for iframe to load
-            document.getElementById('graphFrame').onload = function() {
-                // Allow some time for the graph to initialize
-                setTimeout(() => {
-                    const network = getNetwork();
-                    if (network) {
-                        // Set initial view
-                        resetView();
-                    }
-                }, 1000);
-            };
         </script>
     </body>
     </html>
     """
     
-    with open(os.path.join("templates", "index.html"), "w") as f:
-        f.write(index_html)
+    with open(os.path.join("templates", "index.html"), 'w') as file:
+        file.write(html)
+
 
 def load_triplets_from_file(file_path):
-    """
-    Load triplets from a file where each line contains an array of triplets
-    
-    Args:
-        file_path: Path to the file containing triplets
-        
-    Returns:
-        List of merged triplets
-    """
-    all_triplets = []
+    """Load triplets from a file"""
+    triplets = []
     
     try:
-        with open(file_path, 'r') as f:
-            for line in f:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            for line in file:
                 line = line.strip()
-                if line:  # Skip empty lines
-                    # Safely evaluate the string representation of the list
-                    triplets_in_line = ast.literal_eval(line)
-                    all_triplets.extend(triplets_in_line)
+                if not line:
+                    continue
+                    
+                try:
+                    # First try to parse as JSON
+                    triplet_list = json.loads(line)
+                except json.JSONDecodeError:
+                    try:
+                        # Then try to evaluate as Python literal
+                        triplet_list = ast.literal_eval(line)
+                    except (SyntaxError, ValueError):
+                        print(f"Warning: Could not parse line: {line}")
+                        continue
+                
+                # Handle single triplet or list of triplets
+                if isinstance(triplet_list, list):
+                    if len(triplet_list) == 3 and all(isinstance(x, str) for x in triplet_list):
+                        # Single triplet as a list of three strings
+                        triplets.append(triplet_list)
+                    elif all(isinstance(x, list) for x in triplet_list):
+                        # List of triplets
+                        for triplet in triplet_list:
+                            if len(triplet) == 3 and all(isinstance(x, str) for x in triplet):
+                                triplets.append(triplet)
     except FileNotFoundError:
-        print(f"Error: File {file_path} not found.")
-        return []
-    except SyntaxError:
-        print(f"Error: Could not parse triplets in {file_path}. Check the file format.")
-        return []
+        print(f"Error: File not found - {file_path}")
+    except Exception as e:
+        print(f"Error loading triplets: {e}")
     
-    return all_triplets
+    return triplets
 
-# Path to the triplets file from command-line arguments
-triplets_file_path = args.triplets_file
 
-# Load triplets from file
-loaded_triplets = load_triplets_from_file(triplets_file_path)
-
-# Use loaded triplets or fallback to default if file is empty/invalid
-default_triplets = [
-    ['John_Doe', 'student', 'National_University_of_Singapore'],
-    ['National_University_of_Singapore', 'located_in', 'Singapore'],
-    ['John_Doe', 'age', '22']
-]
-
-# Use loaded triplets if available, otherwise use defaults
-triplets_to_use = loaded_triplets if loaded_triplets else default_triplets
-
-# Initial setup
-create_knowledge_graph(triplets_to_use)
+# Create an index page
 create_index_template()
 
-# Flask routes
+# Load triplets from file
+if args.triplets_file:
+    triplets = load_triplets_from_file(args.triplets_file)
+    if triplets:
+        print(f"Loaded {len(triplets)} triplets from {args.triplets_file}")
+        create_knowledge_graph(triplets)
+    else:
+        print(f"No valid triplets found in {args.triplets_file}")
+        # Create an empty graph
+        create_knowledge_graph([["Example", "is_a", "Triplet"]])
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -628,11 +603,24 @@ def graph():
 
 @app.route('/update_graph', methods=['POST'])
 def update_graph():
-    data = request.get_json()
-    triplets = data.get('triplets', triplets_to_use)
-    create_knowledge_graph(triplets)
-    return jsonify({"success": True})
+    try:
+        data = request.get_json()
+        triplets_text = data.get('triplets', '[]')
+        
+        # Convert string representation to Python object
+        triplets_text = triplets_text.replace("'", '"')
+        triplets = json.loads(triplets_text)
+        
+        # Create knowledge graph
+        create_knowledge_graph(triplets)
+        
+        return jsonify({'success': True})
+    except Exception as e:
+        print(f"Error updating graph: {e}")
+        return jsonify({'success': False, 'error': str(e)})
+
 
 if __name__ == '__main__':
-    print(f"Loaded {len(triplets_to_use)} triplets from {triplets_file_path if loaded_triplets else 'default values'}")
+    print("Starting Knowledge Graph Visualizer...")
+    print("Access the visualizer at http://127.0.0.1:5000/")
     app.run(debug=True)
