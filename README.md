@@ -245,3 +245,9 @@ python visualize.py --triplets_file edc/output/{dataset}_target_alignment/iter0/
 ```
 
 Then navigate to `http://127.0.0.1:5000/` in your browser.
+
+
+
+# Training (upcoming)
+
+Here we will describe how we train the embedding model , utilizing the folder `/fcre-oie` for the constructed csv dataset in the folder `/dataset_constructed`
