@@ -6,7 +6,6 @@ import json
 import ast
 import argparse
 
-# Parse command line arguments
 parser = argparse.ArgumentParser(description='Visualize knowledge graph from triplets file')
 parser.add_argument('--triplets_file', type=str, 
                     default='/Users/khangtuan/Documents/dynamic-kg/edc/output/example_target_alignment/iter0/canon_kg.txt',
@@ -15,37 +14,29 @@ args = parser.parse_args()
 
 app = Flask(__name__)
 
-# Create directory for templates if it doesn't exist
 if not os.path.exists('templates'):
     os.makedirs('templates')
 
 def create_knowledge_graph(triplets):
     """Create an interactive knowledge graph from triplets"""
-    # Create a NetworkX graph
     G = nx.DiGraph()
     
-    # Track node types to assign colors
     subjects = set()
     objects = set()
     
-    # Add nodes and edges from triplets
     for triplet in triplets:
         subject, relation, object_ = triplet
         subjects.add(subject)
         objects.add(object_)
         
-        # Add edge
         G.add_edge(subject, object_, title=relation)
     
-    # Create an interactive network
     net = Network(height="700px", width="100%", bgcolor="#ffffff", 
                   font_color="black", directed=True, notebook=False)
     
-    # Configure physics for smoother interaction
     net.barnes_hut(spring_length=200, spring_strength=0.01, 
                    damping=0.09, central_gravity=0.1)
     
-    # Add nodes with colors based on their role
     for node in G.nodes():
         if node in subjects and node in objects:
             color = "#e377c2"  # Purple for nodes that are both subject and object
@@ -61,7 +52,6 @@ def create_knowledge_graph(triplets):
                     size=25, borderWidth=2, borderWidthSelected=4,
                     font={'size': 14, 'face': 'arial'})
     
-    # Add edges with hover info
     for source, target, attr in G.edges(data=True):
         relation = attr['title']
         net.add_edge(source, target, title=relation, label=relation, 
@@ -69,7 +59,6 @@ def create_knowledge_graph(triplets):
                     color={'color': '#848484', 'highlight': '#ff4500'},
                     width=1.5, physics=True)
     
-    # Add network visualization options
     net.set_options("""
     var options = {
         "nodes": {

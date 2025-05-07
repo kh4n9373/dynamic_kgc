@@ -6,7 +6,6 @@ import os
 import glob
 
 def main():
-    # Parse command line arguments
     parser = argparse.ArgumentParser(description='Run text clustering with configurable parameters')
     parser.add_argument('--dbscan_eps', type=float, default=0.7, 
                         help='DBSCAN eps parameter (neighborhood radius)')
@@ -78,7 +77,6 @@ def main():
     print(f"Clustering parameters: dbscan_eps={args.dbscan_eps}, dbscan_min_samples={args.dbscan_min_samples}")
     print(f"UMAP parameters: umap_n_neighbors={args.umap_n_neighbors}, umap_min_dist={args.umap_min_dist}")
 
-    # Initialize the cluster classifier
     cc = ClusterClassifier(
         embed_device="mps", 
         dbscan_eps=args.dbscan_eps,
@@ -87,14 +85,11 @@ def main():
         umap_min_dist=args.umap_min_dist
     )
 
-    # Run clustering
     embs, labels, summaries = cc.fit(texts)
 
-    # Save visualization
     os.makedirs(os.path.dirname(args.save_path), exist_ok=True)
     cc.show(save_path=args.save_path)
     
-    # Generate distribution visualizations
     distributions_dir = os.path.dirname(args.save_path) + "/distributions"
     os.makedirs(distributions_dir, exist_ok=True)
     try:
@@ -112,7 +107,6 @@ def main():
     
     print(f"Clustering complete! Found {num_clusters} clusters and {noise_count} noise points.")
     
-    # Print cluster summaries
     if summaries:
         print("\nCluster summaries:")
         for label, summary in summaries.items():
