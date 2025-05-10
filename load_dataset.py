@@ -6,9 +6,6 @@ import os
 import numpy as np
 
 class RelationDataset(Dataset):
-    """
-    Dataset for relation extraction with sentences, entities, and relation labels.
-    """
     def __init__(self, sentences, head_entities, tail_entities, relations):
         """
         Initialize the dataset.
@@ -54,29 +51,22 @@ def load_data(csv_path, train_test_split_ratio=0.8, save_split_data=True):
               train_data and test_data are dictionaries with keys:
               'sentences', 'head_entities', 'tail_entities', 'relations'
     """
-    # Read the CSV file
     df = pd.read_csv(csv_path)
     
-    # Filter rows where NOTA is 'false'
     filtered_df = df[df['NOTA'] == 'false']
     
-    # Extract relevant columns
     sentences = filtered_df['sentence'].tolist()
     head_entities = filtered_df['extracted_subject'].tolist()
     tail_entities = filtered_df['extracted_object'].tolist()
     relation_names = filtered_df['relation'].tolist()
     
-    # Create mapping from relation names to IDs
     unique_relations = sorted(set(relation_names))
     relation_to_id = {rel: idx for idx, rel in enumerate(unique_relations)}
     
-    # Tạo mapping ngược lại từ id sang relation name
     id_to_relation = {idx: rel for rel, idx in relation_to_id.items()}
     
-    # Convert relation names to numerical IDs
     relations = [relation_to_id[rel] for rel in relation_names]
     
-    # Create DataFrame for stratified split
     data_df = pd.DataFrame({
         'sentence': sentences,
         'head_entity': head_entities,
@@ -85,26 +75,20 @@ def load_data(csv_path, train_test_split_ratio=0.8, save_split_data=True):
         'relation_id': relations
     })
     
-    # Count occurrences of each relation to analyze class distribution
     relation_counts = data_df['relation_name'].value_counts()
     print("Relation class distribution:")
     for rel, count in relation_counts.items():
         print(f"  {rel}: {count} examples")
-    
-    # Use stratified sampling to maintain class balance
-    # Handle case where some classes have only one sample
+  
     classes_with_one_sample = relation_counts[relation_counts == 1].index.tolist()
     if classes_with_one_sample:
         print(f"Warning: {len(classes_with_one_sample)} relations have only one sample and will be placed in training set")
         
-        # Separate single-example classes and put them in training set
         single_sample_df = data_df[data_df['relation_name'].isin(classes_with_one_sample)]
         multi_sample_df = data_df[~data_df['relation_name'].isin(classes_with_one_sample)]
         
-        # Stratified split for relations with multiple samples
         if len(multi_sample_df) > 0:
             try:
-                # Check if there are enough samples per class for stratified split
                 multi_relation_counts = multi_sample_df['relation_name'].value_counts()
                 if any(multi_relation_counts < 5):  # Need at least a few samples per class
                     print("Some classes have too few samples for stratified split. Using random split instead.")
@@ -128,15 +112,12 @@ def load_data(csv_path, train_test_split_ratio=0.8, save_split_data=True):
                     random_state=42
                 )
             
-            # Combine with single-sample cases
             train_df = pd.concat([train_multi, single_sample_df])
             test_df = test_multi
         else:
-            # If all relations have only one sample, put them all in training
             train_df = single_sample_df
             test_df = pd.DataFrame(columns=data_df.columns)
     else:
-        # Standard stratified split if all classes have multiple samples
         try:
             train_df, test_df = train_test_split(
                 data_df, 
@@ -152,20 +133,16 @@ def load_data(csv_path, train_test_split_ratio=0.8, save_split_data=True):
                 random_state=42
             )
     
-    # Print split statistics
     print(f"\nSplit statistics:")
     print(f"  Total examples: {len(data_df)}")
     print(f"  Training examples: {len(train_df)} ({len(train_df)/len(data_df)*100:.1f}%)")
     print(f"  Testing examples: {len(test_df)} ({len(test_df)/len(data_df)*100:.1f}%)")
     
-    # Save split data to CSV files if requested
     if save_split_data:
-        # Create directory structure: training_data/{csv_file_basename}/
         csv_basename = os.path.splitext(os.path.basename(csv_path))[0]
         output_dir = os.path.join("training_data", csv_basename)
         os.makedirs(output_dir, exist_ok=True)
         
-        # Save train and test sets
         train_path = os.path.join(output_dir, "train.csv")
         test_path = os.path.join(output_dir, "test.csv")
         
@@ -182,7 +159,6 @@ def load_data(csv_path, train_test_split_ratio=0.8, save_split_data=True):
         print(f"  Test: {test_path}")
         print(f"  Relation mapping: {relation_mapping_path}")
     
-    # Prepare data for return
     train_data = {
         'sentences': train_df['sentence'].tolist(),
         'head_entities': train_df['head_entity'].tolist(),
@@ -197,13 +173,10 @@ def load_data(csv_path, train_test_split_ratio=0.8, save_split_data=True):
         'relations': test_df['relation_id'].tolist()
     }
     
-    # Ensure we have some test data
     if len(test_data['sentences']) == 0:
         print("Warning: Test set is empty! Using 20% of training data as test set.")
-        # Move 20% of training data to test
         train_size = int(0.8 * len(train_data['sentences']))
         
-        # Create indices for splitting
         indices = list(range(len(train_data['sentences'])))
         np.random.seed(42)
         np.random.shuffle(indices)
@@ -211,7 +184,6 @@ def load_data(csv_path, train_test_split_ratio=0.8, save_split_data=True):
         train_indices = indices[:train_size]
         test_indices = indices[train_size:]
         
-        # Create new train and test data
         new_train_data = {
             'sentences': [train_data['sentences'][i] for i in train_indices],
             'head_entities': [train_data['head_entities'][i] for i in train_indices],
@@ -232,9 +204,7 @@ def load_data(csv_path, train_test_split_ratio=0.8, save_split_data=True):
         print(f"  New training examples: {len(train_data['sentences'])}")
         print(f"  New testing examples: {len(test_data['sentences'])}")
         
-        # Also update the saved files if requested
         if save_split_data:
-            # Update DataFrames for saving
             train_rows = []
             for i in range(len(train_data['sentences'])):
                 row = {
@@ -243,7 +213,6 @@ def load_data(csv_path, train_test_split_ratio=0.8, save_split_data=True):
                     'tail_entity': train_data['tail_entities'][i],
                     'relation_id': train_data['relations'][i]
                 }
-                # Find the relation name from ID
                 relation_name = id_to_relation[train_data['relations'][i]]
                 row['relation_name'] = relation_name
                 train_rows.append(row)
@@ -263,7 +232,7 @@ def load_data(csv_path, train_test_split_ratio=0.8, save_split_data=True):
             new_train_df = pd.DataFrame(train_rows)
             new_test_df = pd.DataFrame(test_rows)
             
-            # Save updated datasets
+
             csv_basename = os.path.splitext(os.path.basename(csv_path))[0]
             output_dir = os.path.join("training_data", csv_basename)
             
@@ -272,8 +241,5 @@ def load_data(csv_path, train_test_split_ratio=0.8, save_split_data=True):
             
             new_train_df.to_csv(train_path, index=False)
             new_test_df.to_csv(test_path, index=False)
-            
-            # Cập nhật lại file mapping nếu cần, nhưng trong trường hợp này không cần
-            # vì mapping không thay đổi, chỉ có phân phối dữ liệu thay đổi
-    
+
     return train_data, test_data, relation_to_id
