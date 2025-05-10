@@ -1,0 +1,11 @@
+sentence,head_entity,tail_entity,relation_name,relation_id
+Saudi Arabia is an absolute monarchy.,Saudi Arabia,absolute monarchy,governmentType,4
+The Persistence of Memory was painted by Salvador Dalí.,The Persistence of Memory,Salvador Dalí,creator,2
+The Great Wall of China receives 10 million visitors annually.,Great Wall of China,10 million,visitorCount,9
+"Leonardo da Vinci was born in Vinci, Italy.",Leonardo da Vinci,"Vinci, Italy",birthPlace,0
+India has a population of 1.38 billion.,India,1.38 billion,population,8
+Mandarin is the official language of China.,Mandarin,China,officialLanguage,7
+The Grand Canyon is located in Arizona.,Grand Canyon,Arizona,location,6
+France is part of the European Union.,France,European Union,isPartOf,5
+Amazon was founded by Jeff Bezos.,Amazon,Jeff Bezos,founder,3
+Ottawa is the capital of Canada.,Ottawa,Canada,capital,1

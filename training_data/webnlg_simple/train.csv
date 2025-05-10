@@ -1,0 +1,16 @@
+sentence,head_entity,tail_entity,relation_name,relation_id
+The government type in France is unitary state.,France,unitary state,governmentType,8
+"The location of Trane is Swords, Dublin.",Trane,"Swords, Dublin",location,10
+"Alan B. Miller Hall, in Virginia, USA, was designed by Robert A.M. Stern. The address of the hall is ""101 Ukrop Way"" and the current tenants are the Mason School of Business.",Alan B. Miller Hall,Virginia,location,10
+"The Ciudad Ayala city, a part of Morelos with population density and population of 1604.0 and 1,777,539 respectively, has a UTC offset of -6. The government type of Ciudad Ayala is council-manager government and City Manager is one of the leaders.",Ciudad Ayala,1777539,populationMetro,12
+"The Ciudad Ayala city, a part of Morelos with population density and population of 1604.0 and 1,777,539 respectively, has a UTC offset of -6. The government type of Ciudad Ayala is council-manager government and City Manager is one of the leaders.",Ciudad Ayala,City,type,13
+"Alan B. Miller Hall, in Virginia, USA, was designed by Robert A.M. Stern. The address of the hall is ""101 Ukrop Way"" and the current tenants are the Mason School of Business.",Alan B. Miller Hall,"""101 Ukrop Way""",address,0
+"Alan B. Miller Hall, in Virginia, USA, was designed by Robert A.M. Stern. The address of the hall is ""101 Ukrop Way"" and the current tenants are the Mason School of Business.",Alan B. Miller Hall,Mason School of Business,currentTenants,5
+Liselotte Grschebina was born in Karlsruhe and died in Israel. Ethnic groups in Israel include Arabs.,Liselotte Grschebina,Karlsruhe,birthPlace,1
+Liselotte Grschebina was born in Karlsruhe and died in Israel. Ethnic groups in Israel include Arabs.,Liselotte Grschebina,Israel,deathPlace,6
+Agremiação Sportiva Arapiraquense managed by Vica has 17000 members and play in the Campeonato Brasileiro Série C league which is from Brazil.,Agremiação Sportiva Arapiraquense,Campeonato Brasileiro Série C,league,9
+Agremiação Sportiva Arapiraquense managed by Vica has 17000 members and play in the Campeonato Brasileiro Série C league which is from Brazil.,Campeonato Brasileiro Série C,Brazil,country,4
+Agremiação Sportiva Arapiraquense managed by Vica has 17000 members and play in the Campeonato Brasileiro Série C league which is from Brazil.,Agremiação Sportiva Arapiraquense,17000,numberOfMembers,11
+"Bananaman first aired on the 10th of March, 1983 and was created by Steve Bright. It was broadcast by the BBC.",Bananaman,BBC,broadcastedBy,2
+"The 11th Mississippi Infantry Monument, built in 2000, is placed in the municipality of Gettysburg in Pennsylvania which is in Adams County, USA. The 11th Mississippi Infantry Monument is classified as a Contributing Property. Cumberland county, Pennsylvania is to the north of Adams County.",11th Mississippi Infantry Monument,2000,established,7
+"The 11th Mississippi Infantry Monument, built in 2000, is placed in the municipality of Gettysburg in Pennsylvania which is in Adams County, USA. The 11th Mississippi Infantry Monument is classified as a Contributing Property. Cumberland county, Pennsylvania is to the north of Adams County.",11th Mississippi Infantry Monument,Contributing Property,category,3

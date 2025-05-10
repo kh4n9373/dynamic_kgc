@@ -1,0 +1,16 @@
+{
+  "0": "address",
+  "1": "birthPlace",
+  "2": "broadcastedBy",
+  "3": "category",
+  "4": "country",
+  "5": "currentTenants",
+  "6": "deathPlace",
+  "7": "established",
+  "8": "governmentType",
+  "9": "league",
+  "10": "location",
+  "11": "numberOfMembers",
+  "12": "populationMetro",
+  "13": "type"
+}

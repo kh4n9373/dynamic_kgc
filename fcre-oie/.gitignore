@@ -1,5 +1,0 @@
-*.ipynb
-*.env
-__pycache__
-*.log
-generate-sample-relation-descriptions.py

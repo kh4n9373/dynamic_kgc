@@ -1,0 +1,41 @@
+sentence,head_entity,tail_entity,relation_name,relation_id
+Microsoft was founded by Bill Gates.,Microsoft,Bill Gates,founder,3
+California is part of the United States.,California,United States,isPartOf,5
+Apple Inc. was founded by Steve Jobs.,Apple Inc.,Steve Jobs,founder,3
+Portuguese is the official language of Brazil.,Portuguese,Brazil,officialLanguage,7
+Rome is the capital of Italy.,Rome,Italy,capital,1
+English is the official language of the United Kingdom.,English,United Kingdom,officialLanguage,7
+Mount Everest is located in Nepal.,Mount Everest,Nepal,location,6
+Hamlet was written by William Shakespeare.,Hamlet,William Shakespeare,creator,2
+The Mona Lisa was painted by Leonardo da Vinci.,Mona Lisa,Leonardo da Vinci,creator,2
+Berlin is the capital of Germany.,Berlin,Germany,capital,1
+The United States is a federal republic.,United States,federal republic,governmentType,4
+Sweden is a parliamentary democracy.,Sweden,parliamentary democracy,governmentType,4
+Sicily is part of Italy.,Sicily,Italy,isPartOf,5
+The United States has a population of 331 million.,United States,331 million,population,8
+Tokyo has a population of 37 million.,Tokyo,37 million,population,8
+"Albert Einstein was born in Ulm, Germany.",Albert Einstein,"Ulm, Germany",birthPlace,0
+Arabic is the official language of Egypt.,Arabic,Egypt,officialLanguage,7
+Disney World receives 58 million visitors annually.,Disney World,58 million,visitorCount,9
+The United States is part of North America.,United States,North America,isPartOf,5
+Paris is the capital of France.,Paris,France,capital,1
+Don Quixote was written by Miguel de Cervantes.,Don Quixote,Miguel de Cervantes,creator,2
+The Eiffel Tower receives 7 million visitors annually.,Eiffel Tower,7 million,visitorCount,9
+Google was founded by Larry Page and Sergey Brin.,Google,Larry Page and Sergey Brin,founder,3
+France is a unitary republic.,France,unitary republic,governmentType,4
+"Isaac Newton was born in Woolsthorpe Manor, England.",Isaac Newton,"Woolsthorpe Manor, England",birthPlace,0
+The Louvre Museum receives 10 million visitors annually.,Louvre Museum,10 million,visitorCount,9
+Spanish is the official language of Spain.,Spanish,Spain,officialLanguage,7
+Brazil has a population of 212 million.,Brazil,212 million,population,8
+The Nile River is located in Egypt.,Nile River,Egypt,location,6
+China has a population of 1.4 billion.,China,1.4 billion,population,8
+Facebook was founded by Mark Zuckerberg.,Facebook,Mark Zuckerberg,founder,3
+The Great Wall is located in China.,Great Wall,China,location,6
+The Eiffel Tower is located in Paris.,Eiffel Tower,Paris,location,6
+Barack Obama was born in Hawaii.,Barack Obama,Hawaii,birthPlace,0
+The United Kingdom is a constitutional monarchy.,United Kingdom,constitutional monarchy,governmentType,4
+Starry Night was painted by Vincent van Gogh.,Starry Night,Vincent van Gogh,creator,2
+Hokkaido is part of Japan.,Hokkaido,Japan,isPartOf,5
+Tokyo is the capital of Japan.,Tokyo,Japan,capital,1
+The Grand Canyon receives 6 million visitors annually.,Grand Canyon,6 million,visitorCount,9
+"Marie Curie was born in Warsaw, Poland.",Marie Curie,"Warsaw, Poland",birthPlace,0

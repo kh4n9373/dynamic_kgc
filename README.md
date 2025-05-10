@@ -248,6 +248,32 @@ Then navigate to `http://127.0.0.1:5000/` in your browser.
 
 
 
-# Training (upcoming)
+# Training & Test
 
-Here we will describe how we train the embedding model , utilizing the folder `/fcre-oie` for the constructed csv dataset in the folder `/dataset_constructed`
+## Training
+Run example training at `example_training.sh`
+
+For real train:
+```
+python train.py \
+  --csv_path {PATH_TOYOUR_CONSTRUCTED_DATASET} \
+  --epochs 50 \
+  --learning_rate 2e-5 \
+  --train_split 0.8 \
+  --val_split 0.2
+```
+for more configuration, check `python train.py --help`
+
+## Testing
+Run example testing at `example_testing.sh`
+
+For real test:
+```
+python test.py \
+  --dataset_name {NAME_OF_THE_TRAINED_DATASET} \
+  --model_path {PATH_TO_THE_MODEL_CHECKPOINT} 
+```
+
+Check the visualization of training process at `/training_process`
+
+
